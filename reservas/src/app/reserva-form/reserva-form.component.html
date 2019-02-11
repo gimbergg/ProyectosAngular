@@ -1,0 +1,79 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Reserva</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <mat-horizontal-stepper #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>RESERVA</ng-template>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="Fecha de la reserva" formControlName="fecha">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi #picker></mat-datepicker>
+                      </mat-form-field> 
+                </div>
+                <mat-form-field  class="full-width">
+                    <mat-icon matPrefix>search</mat-icon>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Paciente">
+                  </mat-form-field>
+              </div>
+              <br>
+            <div>
+              <button mat-button matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>ESPECIALIDAD</ng-template>
+            <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-select placeholder="Especialidad" formControlName="especialidad">
+                    <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                      {{ state.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
+                    State is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                  <mat-form-field class="full-width">
+                    <mat-select placeholder="Medico" formControlName="medico">
+                      <mat-option *ngFor="let doctor of doctors" [value]="doctor.abbreviation">
+                        {{ doctor.name }}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
+                      State is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+            <div>
+              <button mat-button matStepperPrevious>Atras</button>
+              <button mat-button matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>HORARIOS DISPONIBLES</ng-template>
+
+          TABLA DE HORARIOS
+
+          <div>
+            <button mat-button matStepperPrevious>Atras</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+<mat-card-actions>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+</mat-card>
+</form>

@@ -1,0 +1,19 @@
+
+<mat-tab-group>
+    <mat-tab label="Doctores"> 
+      <br>
+        <mat-form-field  class="example-full-width">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Doctor">
+        </mat-form-field>
+      <app-actividad-doctores></app-actividad-doctores>
+    </mat-tab>
+    <mat-tab label="Especialidades"> 
+      <br>
+      <mat-form-field  class="example-full-width">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Especialidad">
+        </mat-form-field>
+      <app-actividad-especialidad></app-actividad-especialidad> 
+    </mat-tab>
+  </mat-tab-group>
