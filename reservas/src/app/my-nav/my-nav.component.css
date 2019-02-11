@@ -10,6 +10,10 @@
   background: inherit;
 }
 
+.my-row-sidebar{
+  background:rgb(2,76,69) !important;
+  color:#FFF;
+  }
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
