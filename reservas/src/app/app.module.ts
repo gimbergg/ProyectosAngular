@@ -36,7 +36,6 @@ import { ActividadComponent } from './actividad/actividad.component';
 import { ActividadDoctoresComponent } from './actividad-doctores/actividad-doctores.component';
 import { ActividadEspecialidadComponent } from './actividad-especialidad/actividad-especialidad.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
