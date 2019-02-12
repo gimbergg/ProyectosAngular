@@ -2,6 +2,7 @@
 <mat-tab-group>
     <mat-tab label="Doctores"> 
       <br>
+      <button mat-raised-button color="primary" (click)="openDialog()"><i class="material-icons">add_circle</i> Nuevo</button>
         <mat-form-field  class="example-full-width">
           <mat-icon matPrefix>search</mat-icon>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Doctor">
@@ -10,6 +11,7 @@
     </mat-tab>
     <mat-tab label="Especialidades"> 
       <br>
+      <button mat-raised-button color="primary" (click)="openDialog2()"><i class="material-icons">add_circle</i> Nuevo</button>
       <mat-form-field  class="example-full-width">
           <mat-icon matPrefix>search</mat-icon>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Especialidad">

@@ -35,6 +35,9 @@ import { ReservaFormComponent } from './reserva-form/reserva-form.component';
 import { ActividadComponent } from './actividad/actividad.component';
 import { ActividadDoctoresComponent } from './actividad-doctores/actividad-doctores.component';
 import { ActividadEspecialidadComponent } from './actividad-especialidad/actividad-especialidad.component';
+import { ActividadDocFormComponent } from './actividad-doc-form/actividad-doc-form.component';
+import { ActividadEspecFormComponent } from './actividad-espec-form/actividad-espec-form.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { ActividadEspecialidadComponent } from './actividad-especialidad/activid
     ReservaFormComponent,
     ActividadComponent,
     ActividadDoctoresComponent,
-    ActividadEspecialidadComponent
+    ActividadEspecialidadComponent,
+    ActividadDocFormComponent,
+    ActividadEspecFormComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +93,9 @@ import { ActividadEspecialidadComponent } from './actividad-especialidad/activid
   entryComponents:[
     UsuariosFormComponent, 
     PacientesFormComponent,
-    ReservaFormComponent
+    ReservaFormComponent,
+    ActividadDocFormComponent,
+    ActividadEspecFormComponent
   ],
   providers: [MatDatepickerModule, Title],
   bootstrap: [AppComponent]

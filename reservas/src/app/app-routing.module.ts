@@ -7,6 +7,7 @@ import { ReservaComponent } from './reserva/reserva.component';
 import { PacientesListComponent } from './pacientes-list/pacientes-list.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ActividadComponent } from './actividad/actividad.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
   //{ path: '', component: MyNavComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'reserva', component: ReservaComponent },
   { path: 'pacienteslist', component: PacientesListComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: 'actividad', component: ActividadComponent }
+  { path: 'actividad', component: ActividadComponent },
+  { path: 'inicio', component: InicioComponent }
 ];
 
 @NgModule({
@@ -30,5 +32,6 @@ export const routingComponent = [
   PacientesListComponent,
   ReservaComponent,
   UsuariosComponent,
-  ActividadComponent
+  ActividadComponent,
+  InicioComponent
 ]
