@@ -17,7 +17,7 @@ export class PacientesListComponent implements OnInit {
   dataSource: PacientesListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'seguro', 'telefono'];
+  displayedColumns = ['id', 'name', 'seguro', 'telefono','acciones'];
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
