@@ -16,7 +16,7 @@ class GamesControllers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const usuarios = yield database_1.default.query('SELECT * FROM Mule_hbm_email');
-            res.json({ mensaje: usuarios });
+            res.json(usuarios);
         });
     }
     getOne(req, res) {
