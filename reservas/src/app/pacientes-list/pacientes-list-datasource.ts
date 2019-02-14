@@ -12,7 +12,9 @@ export interface PacientesListItem {
   email: string;
   orgVenta: number;
 }
-const data = [{id:"",usuario:"",email:"",orgVenta:123}];
+
+
+const data = [{id:"",usuario:"",email:"",orgVenta:43},{id:"",usuario:"",email:"",orgVenta:123}];
 // TODO: Reemplaza esto con datos reales de tu aplicación.
 const PACIENTES: PacientesListItem[] = data//[{id:"",usuario:"",email:"",orgVenta:123}]
 
@@ -88,6 +90,7 @@ export class PacientesListDataSource extends DataSource<PacientesListItem> {
         case 'usuario': return compare(a.usuario, b.usuario, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         case 'email': return compare(+a.email, +b.email, isAsc);
+        case 'orgVenta': return compare(+a.orgVenta, +b.orgVenta, isAsc);
         default: return 0;
       }
     });

@@ -37,5 +37,9 @@ export class PacientesListComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new PacientesListDataSource(this.paginator, this.sort);
+    this.pacientesService.getGames().subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
   }
 }
