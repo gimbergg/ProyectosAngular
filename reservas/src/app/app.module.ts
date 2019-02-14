@@ -1,5 +1,6 @@
 import { BrowserModule, Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,9 @@ import { ActividadEspecialidadComponent } from './actividad-especialidad/activid
 import { ActividadDocFormComponent } from './actividad-doc-form/actividad-doc-form.component';
 import { ActividadEspecFormComponent } from './actividad-espec-form/actividad-espec-form.component';
 import { InicioComponent } from './inicio/inicio.component';
+
+//conection
+import { PacientesService } from './services/pacientes.service';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,8 @@ import { InicioComponent } from './inicio/inicio.component';
     MatDialogModule,
     MatRadioModule,
     ReactiveFormsModule,
-    MatStepperModule
+    MatStepperModule,
+    HttpClientModule
   ],
   exports:[
     MatDatepickerModule,
@@ -97,7 +102,11 @@ import { InicioComponent } from './inicio/inicio.component';
     ActividadDocFormComponent,
     ActividadEspecFormComponent
   ],
-  providers: [MatDatepickerModule, Title],
+  providers: [
+    MatDatepickerModule, 
+    Title,
+    PacientesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
