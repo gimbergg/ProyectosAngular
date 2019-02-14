@@ -24,7 +24,7 @@ class  Server {
     }
 
     router():void{
-        this.app.use('/',indexRoutes);
+        this.app.use(indexRoutes);
         this.app.use('/api/game',gamesRoutes);
     }
 

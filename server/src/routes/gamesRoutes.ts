@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { gamesControllers } from '../controllers/gamesControllers'
 
 class GamesRoutes{
     public router: Router = Router();
@@ -9,11 +8,7 @@ class GamesRoutes{
     }
 
     config():void{
-        this.router.get('/',gamesControllers.list);
-        this.router.get('/:id',gamesControllers.getOne);
-        this.router.post('/',gamesControllers.create);
-        this.router.put('/:id',gamesControllers.update);
-        this.router.delete('/:id',gamesControllers.delete);
+        this.router.get('/',(req, res) => res.send('games'));
     }
 }
 const gamesRoutes = new GamesRoutes();
