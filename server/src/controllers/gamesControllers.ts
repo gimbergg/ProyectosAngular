@@ -5,7 +5,7 @@ class GamesControllers{
     
     public async list(req: Request, res: Response){
         const usuarios = await pool.query('SELECT * FROM Mule_hbm_email');
-        res.json(usuarios);
+        res.json({mensaje: usuarios});
     }
 
     public async getOne(req: Request, res: Response): Promise<any> {

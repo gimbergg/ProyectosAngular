@@ -24,21 +24,21 @@
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="usuario">
+    <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
-      <td mat-cell *matCellDef="let row">{{row.usuario}}</td>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
     </ng-container>
-    <!-- Name Column -->
-    <ng-container matColumnDef="email">
+
+    <ng-container matColumnDef="seguro">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero Seguro</th>
-      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+      <td mat-cell *matCellDef="let row">{{row.seguro}}</td>
     </ng-container>
-    <!-- Name Column -->
-    <ng-container matColumnDef="orgVenta">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>OrgVenta</th>
-      <td mat-cell *matCellDef="let row">{{row.orgVenta}}</td>
+
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Telefono</th>
+      <td mat-cell *matCellDef="let row">{{row.telefono}}</td>
     </ng-container>  
-    <!-- Name Column -->
+
     <ng-container matColumnDef="acciones">
         <th mat-header-cell *matHeaderCellDef color="primary"> Acciones</th>   
         <td mat-cell *matCellDef="let element"> 
