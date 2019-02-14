@@ -8,13 +8,22 @@ import { PacientesService } from '../services/pacientes.service';
 // TODO: Reemplace esto con su propio tipo de modelo de datos
 export interface PacientesListItem {
   id: string;
-  usuario: string;
-  email: string;
-  orgVenta: number;
+  Usuario: string;
+  Email: string;
+  OrgVenta: number;
 }
 
 
-const data = [{id:"",usuario:"",email:"",orgVenta:43},{id:"",usuario:"",email:"",orgVenta:123}];
+const data = [
+  {id:"11111",Usuario:"LIMIN",Email:"INGLIM@gmail.com",OrgVenta:2000},
+  {id:"12345",Usuario:"JALCON",Email:"jalcon@gmail.com",OrgVenta:2000},
+  {id:"40c853b9-0aa8-11e9-82a4-00155d01cb0e",Usuario:"FPACAJES",Email:"fpacajes@hansa.com.bo",OrgVenta:1100},
+  {id:"40c856f4-0aa8-11e9-82a4-00155d01cb0e",Usuario:"ARAMOS",Email:"aramos@hansa.com.bo",OrgVenta:1100},
+  {id:"40c85805-0aa8-11e9-82a4-00155d01cb0e",Usuario:"MORELLANA",Email:"morellana@hansa.com.bo",OrgVenta:1100},
+  {id:"72a3bbf2-09f1-11e9-82a4-00155d01cb0e",Usuario:"LALCON",Email:"lalcon@hansa.com.bo",OrgVenta:1200},
+  {id:"72a3be7a-09f1-11e9-82a4-00155d01cb0e",Usuario:"ARAMOS",Email:"aramos@hansa.com.bo",OrgVenta:1200},
+  {id:"72a3bee8-09f1-11e9-82a4-00155d01cb0e",Usuario:"MORELLANA",Email:"morellana@hansa.com.bo",OrgVenta:99},
+  {id:"b0ccbc10-0a1d-11e9-82a4-00155d01cb0e",Usuario:"FPACAJES",Email:"fpacajes@hansa.com.bo",OrgVenta:1200}];
 // TODO: Reemplaza esto con datos reales de tu aplicación.
 const PACIENTES: PacientesListItem[] = data//[{id:"",usuario:"",email:"",orgVenta:123}]
 
@@ -87,10 +96,10 @@ export class PacientesListDataSource extends DataSource<PacientesListItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'usuario': return compare(a.usuario, b.usuario, isAsc);
+        case 'Usuario': return compare(a.Usuario, b.Usuario, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
-        case 'email': return compare(+a.email, +b.email, isAsc);
-        case 'orgVenta': return compare(+a.orgVenta, +b.orgVenta, isAsc);
+        case 'Email': return compare(+a.Email, +b.Email, isAsc);
+        case 'OrgVenta': return compare(+a.OrgVenta, +b.OrgVenta, isAsc);
         default: return 0;
       }
     });

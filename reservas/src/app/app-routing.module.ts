@@ -9,8 +9,10 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ActividadComponent } from './actividad/actividad.component';
 import { InicioComponent } from './inicio/inicio.component';
 
+import { LoginComponent } from './login/login.component';
+
 const routes: Routes = [
-  //{ path: '', component: MyNavComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'pacientes', component: PacientesComponent },
   { path: 'reserva', component: ReservaComponent },
   { path: 'pacienteslist', component: PacientesListComponent },

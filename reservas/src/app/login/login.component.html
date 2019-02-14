@@ -1,0 +1,48 @@
+<form [formGroup]="loginForm"  novalidate (ngSubmit)="loginForm.valid">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>LOGIN</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Usuario" formControlName="user">
+            <mat-error *ngIf="loginForm.controls['user'].hasError('required')">
+                user <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Contracenia" formControlName="pass" [type]="hide ? 'password':'text'">
+              <mat-icon matSuffix (click)="hide = !hide">
+                {{hide ? 'visibility' : 'visibility_off'}}
+              </mat-icon>
+            <mat-error *ngIf="loginForm.controls['pass'].hasError('required')">
+              password <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Repita su Contracenia " formControlName="pass2" [type]="hide2 ? 'password':'text'">
+              <mat-icon matSuffix (click)="hide2 = !hide2">
+                {{hide2 ? 'visibility' : 'visibility_off'}}
+              </mat-icon>
+            <mat-error *ngIf="loginForm.controls['pass2'].hasError('required')">
+                password <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button class="mat-raised-button mat-primary" type="submit" [disabled]="!loginForm.valid" (click)="onLoginSubmit(element.user,element.pass)">Enviar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+  

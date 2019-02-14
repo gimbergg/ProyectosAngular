@@ -42,6 +42,7 @@ import { InicioComponent } from './inicio/inicio.component';
 
 //conection
 import { PacientesService } from './services/pacientes.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { PacientesService } from './services/pacientes.service';
     ActividadEspecialidadComponent,
     ActividadDocFormComponent,
     ActividadEspecFormComponent,
-    InicioComponent
+    InicioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

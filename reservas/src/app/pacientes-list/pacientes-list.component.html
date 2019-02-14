@@ -19,32 +19,51 @@
     
     <!-- Id Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
       <td mat-cell *matCellDef="let row">{{row.id}}</td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="usuario">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
-      <td mat-cell *matCellDef="let row">{{row.usuario}}</td>
+    <ng-container matColumnDef="Usuario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Usuario</th>
+      <td mat-cell *matCellDef="let row">{{row.Usuario}}</td>
     </ng-container>
     <!-- Name Column -->
     <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero Seguro</th>
-      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let row">{{row.Email}}</td>
     </ng-container>
     <!-- Name Column -->
     <ng-container matColumnDef="orgVenta">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>OrgVenta</th>
-      <td mat-cell *matCellDef="let row">{{row.orgVenta}}</td>
+      <td mat-cell *matCellDef="let row">{{row.OrgVenta}}</td>
     </ng-container>  
     <!-- Name Column -->
-    <ng-container matColumnDef="acciones">
-        <th mat-header-cell *matHeaderCellDef color="primary"> Acciones</th>   
-        <td mat-cell *matCellDef="let element"> 
-            <button mat-icon-button><mat-icon aria-label="Example icon-button with a heart icon" color="primary">add</mat-icon></button>
-            <button mat-icon-button><mat-icon aria-label="Example icon-button with a heart icon" color="warn">delete_forever</mat-icon></button>
-        </td>
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef> Details </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="redirectToDetails(element.id)">
+            <mat-icon class="mat-18">reorder</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef> Update </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" (click)="redirectToUpdate(element.id)">
+            <mat-icon class="mat-18">system_update</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="redirectToDelete(element.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+        </button>
+      </td>
     </ng-container>
     
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

@@ -5,8 +5,6 @@ import { PacientesFormComponent } from '../pacientes-form/pacientes-form.compone
 import { PacientesService } from '../services/pacientes.service';
 import { PacientesListDataSource } from './pacientes-list-datasource';
 
-
-
 @Component({
   selector: 'app-pacientes-list',
   templateUrl: './pacientes-list.component.html',
@@ -21,7 +19,7 @@ export class PacientesListComponent implements OnInit {
   dataSource: PacientesListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'usuario', 'email', 'orgVenta','acciones'];
+  displayedColumns = ['id', 'Usuario', 'email', 'orgVenta','details','update','delete'];
   constructor(public dialog: MatDialog, private pacientesService: PacientesService) {}
 
   openDialog(): void {
@@ -38,8 +36,21 @@ export class PacientesListComponent implements OnInit {
   ngOnInit() {
     this.dataSource = new PacientesListDataSource(this.paginator, this.sort);
     this.pacientesService.getGames().subscribe(
-      res => console.log(res),
+      res => {
+        res
+      },
       err => console.log(err)
     );
+  }
+  public redirectToDetails = (id: string) => {
+    alert(id);
+  }
+ 
+  public redirectToUpdate = (id: string) => {
+    alert(id);
+  }
+ 
+  public redirectToDelete = (id: string) => {
+    alert(id);
   }
 }

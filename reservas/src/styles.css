@@ -14,10 +14,22 @@ margin-right:10px;
 .my-text{
 font-size: 13px !important;
 }
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}
 tr.mat-header-row{
   background:rgba(2,76,69,0.04) !important;
   font-weight: bold;
 }
+
 .mat-dialog-container {
   background:rgba(255,255,255,0.25) !important;
 }
@@ -29,9 +41,7 @@ h1 {
     text-shadow: 9px 7px 6px rgba(0,0,0,0.2);
   text-anchor: unset;
   }
-.content-title{
 
-}
 .titulo{
   float: left;
   margin: auto;
