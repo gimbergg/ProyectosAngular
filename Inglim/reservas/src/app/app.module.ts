@@ -33,10 +33,24 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 import {ToastModule } from 'ng6-toastr/ng2-toastr';
 import {ToastsManager } from 'ng6-toastr/ng2-toastr';
+import { HomePageComponent } from './componentes/home-page/home-page.component';
+import { RegistroPageComponent } from './componentes/registro-page/registro-page.component';
+import { NavBarPageComponent } from './componentes/nav-bar-page/nav-bar-page.component';
+import { LoginPageComponent } from './componentes/login-page/login-page.component';
+import { PrivadoPageComponent } from './componentes/privado-page/privado-page.component';
+import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
+
+import { UsuarioService } from './servicios/usuario.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    RegistroPageComponent,
+    NavBarPageComponent,
+    LoginPageComponent,
+    PrivadoPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +89,7 @@ import {ToastsManager } from 'ng6-toastr/ng2-toastr';
     MatFormFieldModule,
     BrowserAnimationsModule
   ],
-  providers: [ToastsManager],
+  providers: [ToastsManager, UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
