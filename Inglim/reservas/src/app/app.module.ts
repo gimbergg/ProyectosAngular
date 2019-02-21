@@ -41,6 +41,9 @@ import { PrivadoPageComponent } from './componentes/privado-page/privado-page.co
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
 
 import { UsuarioService } from './servicios/usuario.service';
+import { UserComponent } from './user/user.component';
+import { SingInComponent } from './user/sing-in/sing-in.component';
+import { SingUpComponent } from './user/sing-up/sing-up.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { UsuarioService } from './servicios/usuario.service';
     NavBarPageComponent,
     LoginPageComponent,
     PrivadoPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    UserComponent,
+    SingInComponent,
+    SingUpComponent
   ],
   imports: [
     BrowserModule,

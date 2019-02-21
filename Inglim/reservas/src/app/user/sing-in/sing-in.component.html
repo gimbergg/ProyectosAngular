@@ -1,0 +1,37 @@
+<div *ngIf="isLoginError" class="red-text center error-message">
+    <i class="material-icons">error</i> Incorrect username or password
+</div>
+<form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Sign In</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+              <mat-label><mat-icon>person</mat-icon> <b> Usuario</b></mat-label>              
+            <input matInput placeholder="Ingres Usuario" formControlName="user"name="user" #user ngModel required>
+            <mat-error *ngIf="loginForm.controls['user'].hasError('required')">
+                User is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+              <mat-label><mat-icon>vpn_key</mat-icon> <b> Password</b></mat-label>
+            <input matInput  placeholder="Ingrese su password" formControlName="pass"name="pass" #pass ngModel type="password" required>
+            <mat-error *ngIf="loginForm.controls['pass'].hasError('required')">
+              Password is<strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid" >Ingresar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

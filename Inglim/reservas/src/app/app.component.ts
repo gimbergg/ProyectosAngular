@@ -12,5 +12,4 @@ export class AppComponent {
     this.toastsManager.setRootViewContainerRef(vcr);
     //this.toastsManager.success('Exito','Pagina Cargada');
   }
-  
 }
