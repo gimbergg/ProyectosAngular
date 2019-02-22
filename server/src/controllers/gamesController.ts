@@ -4,16 +4,19 @@ import pool from '../database';
 class GamesController{
     
     public async list(req: Request, res: Response){
-        const usuarios = await pool.query('SELECT * FROM Mule_hbm_email');
-        res.json(usuarios);
+        res.json([{user: '12345',pass:'12345'},{user: 'asdsad',pass:'Inglim'}]);
+        //const usuarios = await pool.query('SELECT * FROM Mule_hbm_email');
+        //res.json(usuarios);
     }
 
     public async getOne(req: Request, res: Response): Promise<any> {
         const {id} = req.params;
-        const usuario = await pool.query('SELECT * FROM Mule_hbm_email WHERE id = ?',[id]);
-        if(usuario.length > 0){
-            return res.json(usuario[0]);
-        }
+        //const usuario = await pool.query('SELECT * FROM Mule_hbm_email WHERE id = ?',[id]);
+        const usuario = {user:'Liming',pass:'12345'};
+        //if(usuario.length > 0){
+            //return res.json(usuario[0]);x
+            return res.json(usuario);
+       // }
         res.status(404).json({mensaje: "Sin resultados!!!"});
         console.log(usuario)
     }

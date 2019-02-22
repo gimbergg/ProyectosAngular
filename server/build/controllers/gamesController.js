@@ -15,17 +15,20 @@ const database_1 = __importDefault(require("../database"));
 class GamesController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const usuarios = yield database_1.default.query('SELECT * FROM Mule_hbm_email');
-            res.json(usuarios);
+            res.json([{ user: '12345', pass: '12345' }, { user: 'asdsad', pass: 'Inglim' }]);
+            //const usuarios = await pool.query('SELECT * FROM Mule_hbm_email');
+            //res.json(usuarios);
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const usuario = yield database_1.default.query('SELECT * FROM Mule_hbm_email WHERE id = ?', [id]);
-            if (usuario.length > 0) {
-                return res.json(usuario[0]);
-            }
+            //const usuario = await pool.query('SELECT * FROM Mule_hbm_email WHERE id = ?',[id]);
+            const usuario = { user: 'Liming', pass: '12345' };
+            //if(usuario.length > 0){
+            //return res.json(usuario[0]);x
+            return res.json(usuario);
+            // }
             res.status(404).json({ mensaje: "Sin resultados!!!" });
             console.log(usuario);
         });

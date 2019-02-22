@@ -1,0 +1,43 @@
+{
+  "name": "paciente",
+  "plural": "pacientes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "apellidos": {
+      "type": "string",
+      "required": true
+    },
+    "ci": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "telefono": {
+      "type": "number",
+      "default": 0
+    },
+    "email": {
+      "type": "string"
+    },
+    "edad": {
+      "type": "number",
+      "required": true
+    },
+    "seguro": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
