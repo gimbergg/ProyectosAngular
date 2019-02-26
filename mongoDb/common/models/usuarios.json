@@ -1,26 +1,27 @@
 {
-  "name": "person",
-  "plural": "people",
+  "name": "usuarios",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "firstname": {
+    "nombre": {
       "type": "string",
       "required": true
+    },
+    "Apellidos": {
+      "type": "string",
+      "required": true
+    },
+    "ci": {
+      "type": "number",
+      "required": true,
+      "default": 0
     }
   },
   "validations": [],
   "relations": {},
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }

@@ -31,16 +31,9 @@
       "strictObjectIDCoercion": true
     }
   },
-  "Role": {
-    "dataSource": "db",
-    "public": false
-  },
-  "person": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Mule_PM": {
-    "dataSource": "db",
+
+  "Mule_OKM": {
+    "dataSource": "mongodb",
     "public": true
   }
 }
