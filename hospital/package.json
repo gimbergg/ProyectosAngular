@@ -11,6 +11,9 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
+    "@angular/animations": "^7.2.7",
+    "@angular/cdk": "^7.3.3",
+    "@angular/material": "^7.3.3",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "helmet": "^3.10.0",

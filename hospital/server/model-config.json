@@ -36,7 +36,11 @@
     "public": false
   },
   "usuario": {
-    "dataSource": "mongodb",
+    "dataSource": "db",
+    "public": true
+  },
+  "pacientes": {
+    "dataSource": "db",
     "public": true
   }
 }
