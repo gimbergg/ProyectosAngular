@@ -25,8 +25,8 @@ export class ViewComponent implements OnInit {
     const paciente_id = this.route.snapshot.params["id"];
     this.getDetails(paciente_id);
    }
-   id: string = '5c78600af038784b8c3738b7';
-  getDetails(id) {
+   
+  getDetails(id: String) {
     this.dataApi.getPacientesById(id)
       .subscribe(paciente => (this.paciente = paciente))
   }

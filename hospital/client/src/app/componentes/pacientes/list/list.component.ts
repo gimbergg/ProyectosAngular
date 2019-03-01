@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { DataApiService } from 'src/app/services/data-api.service';
 
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
 
 import { PacietnesInterface } from '../../../models/pacientes-interface';
@@ -54,7 +54,7 @@ export class ListComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-  
+
   openDialogAdd(id): void {
     console.log(id);
     const dialogRef = this.dialog.open(ViewComponent, {
