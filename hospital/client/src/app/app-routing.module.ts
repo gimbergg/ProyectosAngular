@@ -10,14 +10,14 @@ import { PerfilComponent } from './componentes/user/perfil/perfil.component';
 import { Page404Component } from './componentes/page404/page404.component';
 
 const routes: Routes = [
-  {path: '',component: HomeComponent},
-  {path: 'pacientes', component: ListComponent},
-  {path: 'pacientes/:id', component: ViewComponent},
-  {path: 'pacientes/create', component: FormCreateComponent},
-  {path: 'user/login', component: LoginComponent},
-  {path: 'user/register', component: RegisterComponent},
-  {path: 'user/perfil', component: PerfilComponent}, // Only user auth
-  {path: '**', component: Page404Component}
+  { path: '', component: HomeComponent },
+  { path: 'pacientes', component: ListComponent },
+  { path: 'pacientes/:id', component: ViewComponent },
+  { path: 'pacientes/create', component: FormCreateComponent },
+  { path: 'user/login', component: LoginComponent },
+  { path: 'user/register', component: RegisterComponent },
+  { path: 'user/perfil', component: PerfilComponent }, // Only user auth
+  { path: '**', component: Page404Component }
 ];
 
 @NgModule({

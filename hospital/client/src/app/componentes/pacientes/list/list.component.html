@@ -1,3 +1,71 @@
-<p>
-  list works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6"><h1 class="titulo">{{title}}</h1></div>
+    <div class="col-sm-6">
+      <div class="opciones">
+        <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle mat-raised-button (click)="openDialog()"><i class="material-icons">add_circle</i> Nuevo</mat-button-toggle>
+          <mat-button-toggle value="italic">Resumen</mat-button-toggle>
+          <mat-button-toggle value="underline">Reporte</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <div class="col-sm-12">
+        <mat-form-field  class="example-full-width">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar paciente">
+        </mat-form-field>
+    </div>
+  </div>
+</div>
+<!--{{pacientes | json}}-->
+<div class="mat-elevation-z8" >
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="apellidos">
+      <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ci">
+      <th mat-header-cell *matHeaderCellDef> ci </th>
+      <td mat-cell *matCellDef="let element"> {{element.ci}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="seguro">
+      <th mat-header-cell *matHeaderCellDef> seguro </th>
+      <td mat-cell *matCellDef="let element"> {{element.seguro}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="direccion">
+      <th mat-header-cell *matHeaderCellDef> direccion </th>
+      <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef> telefono </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+    </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef color="primary"> Acciones</th>   
+        <td mat-cell *matCellDef="let element"> 
+            <button (click)="openDialogAdd(element.id)" mat-icon-button><mat-icon aria-label="Example icon-button with a heart icon" color="primary">add</mat-icon></button>
+            <button mat-icon-button><mat-icon aria-label="Example icon-button with a heart icon" color="warn" >delete_forever</mat-icon></button>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
