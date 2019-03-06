@@ -32,6 +32,8 @@ h1 {
 .opciones{
   float: right;
   margin: auto;
-  width: 50%;
   text-align: right;
+}
+.buscar{
+  display: block !important;
 }

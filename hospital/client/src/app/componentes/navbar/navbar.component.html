@@ -2,27 +2,25 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
-    <mat-toolbar><i class="material-icons">local_hospital</i> {{app_name}}</mat-toolbar>
+    <mat-toolbar><mat-icon color="accent">local_hospital</mat-icon>  {{app_name}}</mat-toolbar>
     <mat-toolbar-row class="my-row-sidebar">
-      <span>Avatar nombre Usuario</span>
+        <span>Avatar nombre Usuario</span>
     </mat-toolbar-row>
     <mat-nav-list>
-      <span><a routerLink="/inicio" mat-list-item class="my-text"><i class="material-icons">home</i> Incio</a></span>
-      <span><a routerLink="/pacientes" routerLinkActive="active" mat-list-item class="my-text"><i
-            class="material-icons">person_outline</i> Pacientes</a></span>
-      <span><a routerLink="/actividad" mat-list-item class="my-text"><i class="material-icons">assignment_ind</i>
+      <span><a routerLink="/inicio" mat-list-item class="my-text"><mat-icon color="primary">home</mat-icon> Incio</a></span>
+      <span><a routerLink="/pacientes" routerLinkActive="active" mat-list-item class="my-text"><mat-icon color="primary">person_outline</mat-icon> Pacientes</a></span>
+      <span><a routerLink="/actividad" mat-list-item class="my-text"><mat-icon color="primary">assignment_ind</mat-icon>
           Actividad</a></span>
-      <span><a routerLink="/reserva" mat-list-item class="my-text"><i class="material-icons">assignment</i> Reservas
-          <mat-icon matBadge="15" matBadgeColor="warn"></mat-icon></a>
+      <span><a routerLink="/reserva" mat-list-item class="my-text"><mat-icon color="primary">assignment</mat-icon> Reservas</a>
       </span>
-      <span><a mat-list-item class="my-text"><i class="material-icons">attach_file</i> Reportes</a></span>
+      <span><a mat-list-item class="my-text"><mat-icon color="primary">attach_file</mat-icon> Reportes</a></span>
     </mat-nav-list>
     <mat-toolbar-row class="my-row-sidebar">
-      <span><i class="material-icons">settings</i>Configuraciones</span>
+      <span><mat-icon color="accent">settings</mat-icon>Configuraciones</span>
     </mat-toolbar-row>
     <mat-nav-list>
-      <a routerLink="/usuarios" mat-list-item class="my-text"><i class="material-icons">people</i> Usuarios</a>
-      <a mat-list-item class="my-text"><i class="material-icons">power_settings_new</i> Salir</a>
+      <a routerLink="/usuarios" mat-list-item class="my-text"><mat-icon color="primary">people</mat-icon>  Usuarios</a>
+      <a mat-list-item class="my-text"><mat-icon color="primary">power_settings_new</mat-icon>  Salir</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -34,10 +32,10 @@
       <span class="example-fill-remaining-space"></span>
       <span>
         <mat-menu #appMenu="matMenu">
-          <button mat-menu-item><i class="material-icons">info</i> Perfil</button>
-          <button mat-menu-item><i class="material-icons">power_settings_new</i> Salir</button>
+          <button mat-menu-item><mat-icon>info</mat-icon>  Perfil</button>
+          <button mat-menu-item><mat-icon>power_settings_new</mat-icon>  Salir</button>
         </mat-menu>
-        <button mat-button [matMenuTriggerFor]="appMenu"><i class="material-icons">person</i> Usuario </button>
+        <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>person</mat-icon>  Usuario </button>
       </span>
     </mat-toolbar>
     <!-- Add Content Here -->
@@ -45,5 +43,6 @@
     <div class="container-fluid">
       <router-outlet></router-outlet>
     </div>
+    <br>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -55,8 +55,9 @@ export class ListComponent implements OnInit {
     });
   }
 
-  openDialogAdd(id): void {
-    console.log(id);
+  openDialogEdit(id: string): void {
+    this.dataApi.getPacientesById(id);
+    console.log(this.dataApi.getPacientesById(id));
     const dialogRef = this.dialog.open(ViewComponent, {
       width: '70%',
       height: 'auto'
@@ -65,14 +66,21 @@ export class ListComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+  onDelete(id: string){
+    if(confirm('Are you sure to delete this record ?')){
+    this.dataApi.deletePacientes(id);
+    alert('Eliminacion Exitosa');
+    }
+  }
 }
 
 export class PacientesDataSource extends DataSource<any> {
   constructor(private dataApiService: DataApiService) {
     super();
   }
+
   connect(): Observable<PacietnesInterface[]> {
-    return this.dataApiService.getAllPacinetes();
+    return this.dataApiService.getAllPacinetes<PacietnesInterface[]>();
   }
   disconnect() { }
 }

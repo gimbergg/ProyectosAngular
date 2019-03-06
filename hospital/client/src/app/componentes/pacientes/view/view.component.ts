@@ -12,6 +12,7 @@ import { PacietnesInterface } from 'src/app/models/pacientes-interface';
 export class ViewComponent implements OnInit {
 
   constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
+
   private paciente: PacietnesInterface = {
     nombre: '',
     apellidos: '',
@@ -21,14 +22,16 @@ export class ViewComponent implements OnInit {
     direccion: '',
     reserva: ''
   }
+
   ngOnInit(){
     const paciente_id = this.route.snapshot.params["id"];
     this.getDetails(paciente_id);
    }
-   
+  
   getDetails(id: String) {
     this.dataApi.getPacientesById(id)
-      .subscribe(paciente => (this.paciente = paciente))
+      .subscribe(paciente => (this.paciente = paciente));
+    console.log(id);
   }
-
+  
 }

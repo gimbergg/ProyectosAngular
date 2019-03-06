@@ -17,8 +17,7 @@
 }
 
 .sidenav .mat-toolbar {
-  background:rgba(2,76,69,0.7) !important;
-  color:#FFF;
+  color:#000;
   background: inherit;
   text-shadow: 10px 7px 6px rgba(0,0,0,0.6);
   text-anchor: unset;
@@ -26,8 +25,7 @@
 }
 
 .my-row-sidebar{
-  background:rgba(2,76,69,0.7) !important;
-  color:#FFF;
+  color:#000;
   }
 
 .mat-toolbar.mat-primary {
@@ -38,4 +36,11 @@
 }
 .example-fill-remaining-space {
   flex: 1 1 auto;
+}
+#foto{
+  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
+  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 80%;
+  border-radius: 50%;
+  align-content: right;
 }

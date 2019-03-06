@@ -15,6 +15,7 @@ import { LoginComponent } from './componentes/user/login/login.component';
 import { RegisterComponent } from './componentes/user/register/register.component';
 import { PerfilComponent } from './componentes/user/perfil/perfil.component';
 import { Page404Component } from './componentes/page404/page404.component';
+import { MatCardModule } from '@angular/material/card';
 
 import { HttpClientModule } from '@angular/common/http';
 //services
@@ -57,6 +58,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     ReactiveFormsModule,
     MatStepperModule,
+    MatCardModule,
 
     BrowserAnimationsModule,
     LayoutModule,
