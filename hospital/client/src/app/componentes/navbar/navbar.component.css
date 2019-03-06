@@ -19,7 +19,7 @@
 .sidenav .mat-toolbar {
   color:#000;
   background: inherit;
-  text-shadow: 10px 7px 6px rgba(0,0,0,0.6);
+  text-shadow: 10px 7px 6px rgba(0,0,0,0.2);
   text-anchor: unset;
   font-size: 24px;
 }

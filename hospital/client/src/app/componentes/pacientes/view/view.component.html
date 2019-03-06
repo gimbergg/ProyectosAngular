@@ -1,6 +1,98 @@
-<h2>VISTA DE DETALLE DEL PACIENTE</h2>
-{{paciente | json}}
-<p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque rerum, neque soluta expedita repudiandae harum corporis perferendis iste, tenetur, ullam officiis. Odio nesciunt aliquam cupiditate. Nulla harum quasi laboriosam!
-
-</p>
+<form [formGroup]="addressForm">
+<mat-card class="shipping-card">
+    <mat-card-header>
+    <mat-card-title>Informacion del Paciente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <div class="row">
+        <div class="col">
+        <mat-form-field class="full-width" hideRequiredMarker>
+            <input matInput placeholder="Nombre" formControlName="nombre" value="{{paciente.nombre}}">
+        </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Apellidos" formControlName="apellidos" value="{{paciente.apellidos}}">
+            </mat-form-field>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Cdeula de Identidad" formControlName="ci" value="{{paciente.ci}}">
+        </mat-form-field>
+        </div>
+        <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Nro. Aseguradora" formControlName="aseguradora" value="{{paciente.aseguradora}}">
+        </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Telefono o Celular" formControlName="telefono" value="{{paciente.telefono}}">
+        </mat-form-field>
+        </div>
+        <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Direccion y domicilio" formControlName="direccion" value="{{paciente.direccion}}">
+        </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Origen de seguro" formControlName="seguro" value="{{paciente.seguro}}">
+        </mat-form-field>
+        </div>
+        <div class="col">
+        <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="picker" formControlName="vigencia" placeholder="Vigencia">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        </div>
+    </div>
+    <mat-card-header>
+        <mat-card-title>Informacion de Contacto</mat-card-title>
+    </mat-card-header>
+        <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre y Apllidos de contacto" formControlName="nombrec" value="{{paciente.nombrec}}">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+            <input matInput placeholder="Cdeula de Identidad" formControlName="cic" value="{{paciente.cic}}">
+            </mat-form-field>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+            <input matInput placeholder="Telefono o Celular" formControlName="telefonoc" value="{{paciente.telefonoc}}">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+            <input matInput placeholder="Correo Electronico" formControlName="email" value="{{paciente.email}}">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+            <input matInput placeholder="Parentesco" formControlName="parentesco" value="{{paciente.parentesco}}">
+            </mat-form-field>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Antecedentes" formControlName="antecedentes" value="{{paciente.antecedentes}}">
+            </mat-form-field>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+</form>

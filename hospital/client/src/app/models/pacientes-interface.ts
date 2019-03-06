@@ -5,5 +5,13 @@ export interface PacietnesInterface{
     seguro?: string,
     telefono?: string,
     direccion?: string,
-    reserva?: string
+    reserva?: string,
+    vigencia?: string,
+    tipo?: string,
+    nombrec?: string,
+    cic?: string,
+    telefonoc?: string,
+    email?: string,
+    parentesco?: string,
+    antecedentes?: string,
 }

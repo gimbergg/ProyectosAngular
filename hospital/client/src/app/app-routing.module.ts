@@ -8,12 +8,14 @@ import { LoginComponent } from './componentes/user/login/login.component';
 import { RegisterComponent } from './componentes/user/register/register.component';
 import { PerfilComponent } from './componentes/user/perfil/perfil.component';
 import { Page404Component } from './componentes/page404/page404.component';
+import { ListUserComponent } from './componentes/user/list-user/list-user.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'pacientes', component: ListComponent },
   { path: 'pacientes/:id', component: ViewComponent },
   { path: 'pacientes/create', component: FormCreateComponent },
+  { path: 'user', component: ListUserComponent },
   { path: 'user/login', component: LoginComponent },
   { path: 'user/register', component: RegisterComponent },
   { path: 'user/perfil', component: PerfilComponent }, // Only user auth

@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { DataApiService } from 'src/app/services/data-api.service';
-
 import { Observable } from 'rxjs';
-import { DataSource } from '@angular/cdk/collections';
+import { MatDialog, MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { DataApiService } from 'src/app/services/data-api.service';
+import { DataSource, isDataSource } from '@angular/cdk/collections';
 
 import { PacietnesInterface } from '../../../models/pacientes-interface';
 import { FormCreateComponent } from '../form-create/form-create.component';
@@ -25,16 +24,18 @@ export class ListComponent implements OnInit {
 
   displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'seguro', 'telefono', 'direccion', 'id', 'acciones'];
   dataSource = new PacientesDataSource(this.dataApi);
+
   applyFilter(filterValue: string) {
     //this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.getListPacientes();
     //this.dataSource.sort = this.sort;
-    //this.dataSource.paginator = this.paginator;
+    //this.dataSource2.paginator = this.paginator;
   }
 
   getListPacientes() {
@@ -47,7 +48,7 @@ export class ListComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(FormCreateComponent, {
-      width: '70%',
+      width: '50%',
       height: 'auto'
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -57,17 +58,20 @@ export class ListComponent implements OnInit {
 
   openDialogEdit(id: string): void {
     this.dataApi.getPacientesById(id);
-    console.log(this.dataApi.getPacientesById(id));
+    console.log('ID DESDE EL PADRE: '+id);
     const dialogRef = this.dialog.open(ViewComponent, {
-      width: '70%',
-      height: 'auto'
+      width: '50%',
+      height: 'auto',
+      data: { key: id }
     });
+    
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
+
   onDelete(id: string){
-    if(confirm('Are you sure to delete this record ?')){
+    if(confirm('Esta Seguro que desea eliminar?')){
     this.dataApi.deletePacientes(id);
     alert('Eliminacion Exitosa');
     }
@@ -80,7 +84,7 @@ export class PacientesDataSource extends DataSource<any> {
   }
 
   connect(): Observable<PacietnesInterface[]> {
-    return this.dataApiService.getAllPacinetes<PacietnesInterface[]>();
+    return this.dataApiService.getAllPacinetes();
   }
   disconnect() { }
 }

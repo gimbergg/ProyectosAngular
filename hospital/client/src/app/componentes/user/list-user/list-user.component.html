@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6"><h1 class="titulo">{{title}}</h1></div>
+      <div class="col-sm-6">
+        <div class="opciones">
+          <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle mat-raised-button (click)="openDialog()"><i class="material-icons">add_circle</i> Crear Nuevo</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--{{usuarios | json}}-->
+  <mat-form-field  class="example-full-width buscar" >
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Usuario">
+    </mat-form-field>
+  <div class="mat-elevation-z8" >
+  <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="apellidos">
+        <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> username </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+      <!-- Symbol Column -->
+      
+      <!-- Name Column -->
+      <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef color="primary"> Acciones</th>   
+          <td mat-cell *matCellDef="let element"> 
+              <button  (click)="openDialogEdit(element.id)" mat-icon-button><mat-icon color="primary">launch</mat-icon></button>
+              <button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>
+          </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>

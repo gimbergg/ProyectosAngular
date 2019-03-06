@@ -24,18 +24,15 @@ export class DataApiService {
     const url_api = 'http://localhost:3000/api/pacientes';
     return this.http.get(url_api);
   }
-
   //http://localhost:3000/api/pacientes/5c786379f038784b8c3738b8
   getPacientesById(id: String){
     const url_api = `http://localhost:3000/api/pacientes/${id}`;
     return (this.paciente = this.http.get(url_api));
   }
-  
   getReservas(){
     const url_api = `http://localhost:3000/api/pacientes?filter[where][reserva]=si`;
     return (this.paciente = this.http.get(url_api));
   }
-
   savePacientes(paciente: PacietnesInterface){
     // TODO: obtener token
     // TODO: not null
@@ -45,7 +42,6 @@ export class DataApiService {
     .post<PacietnesInterface>(url_api, paciente,{headers: this.headers})
     .pipe(map(data => data));
   }
-
   updatePacientes(paciente){
     // TODO: obtener token
     // TODO: not null
@@ -55,14 +51,21 @@ export class DataApiService {
     .put<PacietnesInterface>(url_api, paciente,{headers: this.headers})
     .pipe(map(data => data));
   }
-
   deletePacientes(id: String){
     // TODO: obtener token
     // TODO: not null
-    let token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/pacientes?access_token=${token}`;
+    console.log(id);
+    //const url_api = `http://localhost:3000/api/pacientes/${id}`;
+    let token = 'u5idvjrEp7FDwQqjUClhIvZK0T2DCml5r5JkFHGiuF2OUIvP1hmndCKpbXv4WfsQ';//this.authService.getToken();
+    const url_api = `http://localhost:3000/api/pacientes/${id}/?access_token=${token}`;
+    console.log(url_api);
     return this.http
     .delete<PacietnesInterface>(url_api,{headers: this.headers})
     .pipe(map(data => data));
+  }
+
+  getAllUsers(){
+    const url_api = 'http://localhost:3000/api/pacientes';
+    return this.http.get(url_api);
   }
 }

@@ -12,13 +12,14 @@
     </div>
   </div>
 </div>
+<img src="../img/icon-phone.png">
 <!--{{pacientes | json}}-->
 <mat-form-field  class="example-full-width buscar" >
     <mat-icon matPrefix>search</mat-icon>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar paciente">
   </mat-form-field>
 <div class="mat-elevation-z8" >
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
     <!-- Name Column -->
     <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef> Nombre </th>
@@ -58,7 +59,7 @@
     <ng-container matColumnDef="acciones">
         <th mat-header-cell *matHeaderCellDef color="primary"> Acciones</th>   
         <td mat-cell *matCellDef="let element"> 
-            <button (click)="openDialogEdit(element.id)" mat-icon-button><mat-icon color="primary">launch</mat-icon></button>
+            <button  (click)="openDialogEdit(element.id)" mat-icon-button><mat-icon color="primary">launch</mat-icon></button>
             <button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>
         </td>
     </ng-container>

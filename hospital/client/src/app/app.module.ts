@@ -7,7 +7,25 @@ import { HomeComponent } from './componentes/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, MatNativeDateModule, MatRadioModule, MatMenuModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule, MatGridListModule, MatButtonToggleModule, MatDialogModule, MatStepperModule } from '@angular/material';
+import { MatToolbarModule, 
+  MatButtonModule,
+   MatSidenavModule,
+   MatIconModule,
+   MatListModule,
+   MatTableModule,
+   MatPaginatorModule,
+   MatSortModule,
+   MatNativeDateModule,
+   MatRadioModule,
+   MatMenuModule,
+   MatFormFieldModule,
+   MatSelectModule,
+   MatInputModule,
+   MatDatepickerModule,
+   MatGridListModule,
+   MatButtonToggleModule,
+   MatDialogModule,
+   MatStepperModule } from '@angular/material';
 import { ListComponent } from './componentes/pacientes/list/list.component';
 import { FormCreateComponent } from './componentes/pacientes/form-create/form-create.component';
 import { ViewComponent } from './componentes/pacientes/view/view.component';
@@ -20,7 +38,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 //services
 import { DataApiService } from './services/data-api.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ListUserComponent } from './componentes/user/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +52,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     PerfilComponent,
-    Page404Component
+    Page404Component,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +77,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonToggleModule,
     MatDialogModule,
     ReactiveFormsModule,
+    FormsModule,
     MatStepperModule,
     MatCardModule,
 
@@ -67,7 +88,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+
+    
   ],
   exports:[
     MatDatepickerModule,

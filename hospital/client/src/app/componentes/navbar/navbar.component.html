@@ -4,6 +4,7 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar><mat-icon color="accent">local_hospital</mat-icon>  {{app_name}}</mat-toolbar>
     <mat-toolbar-row class="my-row-sidebar">
+        <img src="../img/icon-phone.png">
         <span>Avatar nombre Usuario</span>
     </mat-toolbar-row>
     <mat-nav-list>
@@ -19,7 +20,7 @@
       <span><mat-icon color="accent">settings</mat-icon>Configuraciones</span>
     </mat-toolbar-row>
     <mat-nav-list>
-      <a routerLink="/usuarios" mat-list-item class="my-text"><mat-icon color="primary">people</mat-icon>  Usuarios</a>
+      <a routerLink="user" mat-list-item class="my-text"><mat-icon color="primary">people</mat-icon>  Usuarios</a>
       <a mat-list-item class="my-text"><mat-icon color="primary">power_settings_new</mat-icon>  Salir</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -32,7 +33,7 @@
       <span class="example-fill-remaining-space"></span>
       <span>
         <mat-menu #appMenu="matMenu">
-          <button mat-menu-item><mat-icon>info</mat-icon>  Perfil</button>
+          <button routerLink="/user/perfil" mat-menu-item><mat-icon>info</mat-icon>  Perfil</button>
           <button mat-menu-item><mat-icon>power_settings_new</mat-icon>  Salir</button>
         </mat-menu>
         <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>person</mat-icon>  Usuario </button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-form-create',
@@ -9,6 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class FormCreateComponent implements OnInit {
   addressForm = this.fb.group({
     nombre: null,
+    apellidos: null,
     ci: null,
     aseguradora: null,
     seguro: null,
@@ -25,12 +27,15 @@ export class FormCreateComponent implements OnInit {
 
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,public dialogRef: MatDialogRef<FormCreateComponent>) {}
 
   onSubmit() {
     console.log('Creacion de Paciente');
+    this.onClose();
   }
-
+  onClose() {
+    this.dialogRef.close();
+  }
   ngOnInit() {
   }
 
