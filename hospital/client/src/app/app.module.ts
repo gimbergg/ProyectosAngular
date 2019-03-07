@@ -43,6 +43,7 @@ import { ListUserComponent } from './componentes/user/list-user/list-user.compon
 import { ViewDocComponent } from './componentes/doctores/view-doc/view-doc.component';
 import { ListDocComponent } from './componentes/doctores/list-doc/list-doc.component';
 import { FormDocComponent } from './componentes/doctores/form-doc/form-doc.component';
+import { PerfilEditComponent } from './componentes/user/perfil-edit/perfil-edit.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FormDocComponent } from './componentes/doctores/form-doc/form-doc.compo
     ListUserComponent,
     ViewDocComponent,
     ListDocComponent,
-    FormDocComponent
+    FormDocComponent,
+    PerfilEditComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +111,8 @@ import { FormDocComponent } from './componentes/doctores/form-doc/form-doc.compo
     FormCreateComponent,
     ViewComponent,
     FormDocComponent,
-    ViewDocComponent
+    ViewDocComponent,
+    PerfilEditComponent
   ],
   providers: [MatDatepickerModule,DataApiService],
   bootstrap: [AppComponent]

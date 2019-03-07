@@ -1,3 +1,30 @@
-<p>
-  perfil works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6"><h1 class="titulo">{{title}}</h1></div>
+      <div class="col-sm-6">
+        <div class="opciones">
+          <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle mat-raised-button (click)="openDialogEdit()"><i class="material-icons icon-coloradd">edit</i> Editar Informacion</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
+  <img src="../../../../assets/20181228172435.jpg" class="rounded-circle img-perfil" alt="perfil" >
+</div>
+<br>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Progress bar configuration</h2>
+    <section class="example-section">
+      <label class="example-margin">Nombre: </label>
+      <p>{{user.name}}</p>
+
+    </section>
+    <section class="example-section">
+      <label class="example-margin">Email: </label>
+      <p>{{user.email}}</p>
+    </section>
+  </mat-card-content>
+</mat-card>

@@ -3,6 +3,7 @@ import { FormBuilder, Validators,FormGroup, FormControl  } from '@angular/forms'
 import { MatDialogRef } from '@angular/material';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserInterface } from 'src/app/models/user-interface';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,9 @@ export class RegisterComponent implements OnInit {
   });
   constructor(
     private authService:AuthService,
-    private fb: FormBuilder) {}
+    private fb: FormBuilder,
+    public dialogRef: MatDialogRef<RegisterComponent>,
+    private router:Router) {}
 
   private user: UserInterface = {
       name:"",
@@ -37,10 +40,21 @@ export class RegisterComponent implements OnInit {
         this.addressForm.get('password').value
         )
       .subscribe(
-        response => console.log('exitoso', response),
-        error => console.error('ERORR', error)
+        user => {
+          this.authService.setUser(user);
+          let token = user.id;
+          this.authService.setToken(token);
+          this.router.navigate(['user/perfil']);
+          this.onClose();
+        },
+        err =>{
+          console.log(err)
+        }
     );
       
+  }
+  onClose() {
+    this.dialogRef.close();
   }
 
 }

@@ -1,7 +1,7 @@
 <form [formGroup]="addressForm"  (ngSubmit)="onRegister()">
     <mat-card class="shipping-card">
         <mat-card-header>
-        <mat-card-title>Crear Paciente</mat-card-title>
+        <mat-card-title>Crear usuario</mat-card-title>
         </mat-card-header>
         <mat-card-content>
         <div class="row">
@@ -13,14 +13,16 @@
                 El nombre es <strong>obligatorio</strong>
                 </mat-error>
             </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <mat-form-field class="full-width">
                     <input matInput placeholder="Email" formControlName="email">
                 </mat-form-field>
                 <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
-                    Los email son <strong>obligatorio</strong>
-                    </mat-error>
-                </div>
+                Los email son <strong>obligatorio</strong>
+                </mat-error>
+            </div>
         </div>
         <div class="row">
             <div class="col">

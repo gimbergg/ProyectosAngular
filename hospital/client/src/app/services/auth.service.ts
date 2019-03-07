@@ -55,7 +55,7 @@ export class AuthService {
 
   getCurrenUser():UserInterface{
     let user_string = localStorage.getItem('currentUser');
-    if(isNullOrUndefined(user_string)){
+    if(!isNullOrUndefined(user_string)){
       let user:UserInterface = JSON.parse(user_string);
       return user;
     }else{
@@ -67,7 +67,7 @@ export class AuthService {
     let accessToken= localStorage.getItem('accessToken');
     const url_api = `http://localhost:3000/api/Users/logout?access_token=${accessToken}`;
     localStorage.removeItem('accessToken');
-    localStorage.removeItem('accessToken');
+    localStorage.removeItem('currentUser');
     return this.http
     .post<UserInterface>(url_api,{headers:this.headers});
   }
