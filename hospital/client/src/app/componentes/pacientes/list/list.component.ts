@@ -48,7 +48,7 @@ export class ListComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(FormCreateComponent, {
-      width: '50%',
+      width: '60%',
       height: 'auto'
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -60,7 +60,7 @@ export class ListComponent implements OnInit {
     this.dataApi.getPacientesById(id);
     console.log('ID DESDE EL PADRE: '+id);
     const dialogRef = this.dialog.open(ViewComponent, {
-      width: '50%',
+      width: '60%',
       height: 'auto',
       data: { key: id }
     });

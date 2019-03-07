@@ -65,7 +65,16 @@ export class DataApiService {
   }
 
   getAllUsers(){
-    const url_api = 'http://localhost:3000/api/pacientes';
+    const url_api = 'http://localhost:3000/api/Users';
     return this.http.get(url_api);
   }
+
+  getAllDoctores(){
+    const url_api = 'http://localhost:3000/api/doctores';
+    return this.http.get(url_api);
+  }
+  getDoctoresById(id: String){
+      const url_api = `http://localhost:3000/api/doctores/${id}`;
+      return (this.paciente = this.http.get(url_api));
+    }
 }

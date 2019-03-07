@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/services/auth.service'
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
+  title = 'Usuarios';
+  subtitle = 'Gestion de usuarios';
 
   constructor(
     private authService:AuthService,
@@ -21,13 +23,23 @@ export class ListUserComponent implements OnInit {
   private user: UserInterface = {
     name:"",
     email:"",
+    username:"",
     password:""
   };
 
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'seguro', 'telefono', 'direccion', 'id', 'acciones'];
+  displayedColumns: string[] = ['name', 'email', 'username', 'acciones'];
   dataSource = new UsersDataSource(this.dataApi);
 
   ngOnInit() {
+    this.getListUser();
+  }
+  
+  getListUser() {
+    this.dataApi
+      .getAllUsers()
+      .subscribe(
+        (user: UserInterface) => this.user = user
+      );
   }
 
 }

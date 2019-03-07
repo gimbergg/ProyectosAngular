@@ -31,7 +31,11 @@ export class RegisterComponent implements OnInit {
 
   onRegister(): void{
     console.log(this.addressForm.value);    
-    this.authService.registerUser(this.addressForm.get('name').value,this.addressForm.get('email').value,this.addressForm.get('password').value)
+    this.authService.registerUser(
+        this.addressForm.get('name').value,
+        this.addressForm.get('email').value,
+        this.addressForm.get('password').value
+        )
       .subscribe(
         response => console.log('exitoso', response),
         error => console.error('ERORR', error)

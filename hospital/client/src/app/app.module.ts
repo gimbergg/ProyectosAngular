@@ -40,6 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataApiService } from './services/data-api.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListUserComponent } from './componentes/user/list-user/list-user.component';
+import { ViewDocComponent } from './componentes/doctores/view-doc/view-doc.component';
+import { ListDocComponent } from './componentes/doctores/list-doc/list-doc.component';
+import { FormDocComponent } from './componentes/doctores/form-doc/form-doc.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import { ListUserComponent } from './componentes/user/list-user/list-user.compon
     RegisterComponent,
     PerfilComponent,
     Page404Component,
-    ListUserComponent
+    ListUserComponent,
+    ViewDocComponent,
+    ListDocComponent,
+    FormDocComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +107,9 @@ import { ListUserComponent } from './componentes/user/list-user/list-user.compon
   ],
   entryComponents:[
     FormCreateComponent,
-    ViewComponent
+    ViewComponent,
+    FormDocComponent,
+    ViewDocComponent
   ],
   providers: [MatDatepickerModule,DataApiService],
   bootstrap: [AppComponent]

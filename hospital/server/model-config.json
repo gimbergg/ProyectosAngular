@@ -42,5 +42,9 @@
   "pacientes": {
     "dataSource": "db",
     "public": true
+  },
+  "doctores": {
+    "dataSource": "db",
+    "public": true
   }
 }
