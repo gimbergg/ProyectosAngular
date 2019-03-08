@@ -2,10 +2,9 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
-    <mat-toolbar><mat-icon color="accent">local_hospital</mat-icon>  {{app_name}}</mat-toolbar>
+    <mat-toolbar><mat-icon color="accent">local_hospital</mat-icon>  {{app_name}}</mat-toolbar><br>
     <span> <img src="../../../../assets/20181228172435.jpg" class="rounded-circle img-nav" alt="perfil" ></span>
     <mat-toolbar-row class="my-row-sidebar">
-        
         <span>Avatar nombre Usuario</span>
     </mat-toolbar-row>
     <mat-nav-list>
@@ -13,7 +12,7 @@
       <span><a routerLink="/pacientes" routerLinkActive="active" mat-list-item class="my-text"><mat-icon color="primary">person_outline</mat-icon> Pacientes</a></span>
       <span><a routerLink="/doctores" mat-list-item class="my-text"><mat-icon color="primary">assignment_ind</mat-icon>
           Actividad</a></span>
-      <span><a routerLink="/reserva" mat-list-item class="my-text"><mat-icon color="primary">assignment</mat-icon> Reservas</a>
+      <span><a routerLink="/reservas" mat-list-item class="my-text"><mat-icon color="primary">assignment</mat-icon> <span matBadge="4" matBadgeOverlap="false"> Reservas </span> </a>
       </span>
       <span><a mat-list-item class="my-text"><mat-icon color="primary">attach_file</mat-icon> Reportes</a></span>
     </mat-nav-list>
@@ -43,7 +42,7 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <br>
-    <div class="container-fluid ">
+    <div class="container-fluid contenido">
       <router-outlet></router-outlet>
     </div>
     <br>

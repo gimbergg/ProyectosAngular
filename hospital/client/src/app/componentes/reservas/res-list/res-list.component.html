@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6"><h1 class="titulo">{{title}}</h1></div>
+      <div class="col-sm-6">
+        <div class="opciones">
+          <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle mat-raised-button (click)="openDialogAdd()"><i class="material-icons">add_circle</i> Crear Nuevo</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--{{pacientes | json}}-->
+  <mat-form-field  class="example-full-width buscar" >
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+    </mat-form-field>
+  <div class="mat-elevation-z8" >

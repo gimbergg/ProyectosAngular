@@ -1,0 +1,30 @@
+.img-perfil{
+    margin-left: 0%;  
+    width: 110px; 
+    height: 110px;
+    margin: -90px auto 0;
+    text-align: center;
+    background: #eaeaea;
+    border: 3px solid #ddd;
+  }
+.mat-card-content{
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.example-card {
+  max-width: 400px;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.mat-card-actions{
+  position: absolute;
+    margin: -150% auto 0;
+    /* text-align: right; */
+    margin-left: 70%;
+}
+.btn-ir{
+  border-radius: 0px !important;
+}

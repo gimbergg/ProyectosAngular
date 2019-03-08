@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataApiService } from 'src/app/services/data-api.service';
+import { MatDialog } from '@angular/material';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserInterface } from 'src/app/models/user-interface';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +10,16 @@ import { DataApiService } from 'src/app/services/data-api.service';
 })
 export class HomeComponent implements OnInit {
 
-  
-  constructor(private dataApi: DataApiService) {}
+  constructor(
+    private authService: AuthService,
+    public dialog: MatDialog
+  ) {}
+
+  user: UserInterface;
 
   ngOnInit() {
+    this.user = this.authService.getCurrenUser();
+    console.log(this.user.name);
   }
 
 }

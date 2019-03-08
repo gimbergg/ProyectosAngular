@@ -26,6 +26,7 @@ import { MatToolbarModule,
    MatButtonToggleModule,
    MatDialogModule,
    MatStepperModule } from '@angular/material';
+import { MatBadgeModule } from '@angular/material/badge';
 import { ListComponent } from './componentes/pacientes/list/list.component';
 import { FormCreateComponent } from './componentes/pacientes/form-create/form-create.component';
 import { ViewComponent } from './componentes/pacientes/view/view.component';
@@ -44,6 +45,9 @@ import { ViewDocComponent } from './componentes/doctores/view-doc/view-doc.compo
 import { ListDocComponent } from './componentes/doctores/list-doc/list-doc.component';
 import { FormDocComponent } from './componentes/doctores/form-doc/form-doc.component';
 import { PerfilEditComponent } from './componentes/user/perfil-edit/perfil-edit.component';
+import { ResListComponent } from './componentes/reservas/res-list/res-list.component';
+import { ResFormComponent } from './componentes/reservas/res-form/res-form.component';
+import { ResViewComponent } from './componentes/reservas/res-view/res-view.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,10 @@ import { PerfilEditComponent } from './componentes/user/perfil-edit/perfil-edit.
     ViewDocComponent,
     ListDocComponent,
     FormDocComponent,
-    PerfilEditComponent
+    PerfilEditComponent,
+    ResListComponent,
+    ResFormComponent,
+    ResViewComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +95,8 @@ import { PerfilEditComponent } from './componentes/user/perfil-edit/perfil-edit.
     FormsModule,
     MatStepperModule,
     MatCardModule,
-
+    MatBadgeModule,
+    
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
