@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatDialog, MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { DataApiService } from 'src/app/services/data-api.service';
-import { DataSource, isDataSource } from '@angular/cdk/collections';
+import { DataSource } from '@angular/cdk/collections';
 
 import { PacietnesInterface } from '../../../models/pacientes-interface';
 import { FormCreateComponent } from '../form-create/form-create.component';
@@ -49,7 +49,8 @@ export class ListComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(FormCreateComponent, {
       width: '60%',
-      height: 'auto'
+      height: 'auto',
+      data: { key: id }
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
@@ -70,10 +71,10 @@ export class ListComponent implements OnInit {
     });
   }
 
-  onDelete(id: string){
+  onDelete(id: string): void{
     if(confirm('Esta Seguro que desea eliminar?')){
-    this.dataApi.deletePacientes(id);
-    alert('Eliminacion Exitosa');
+    this.dataApi.deletePacientes(id)
+    .subscribe();
     }
   }
 }

@@ -9,77 +9,96 @@
   "properties": {
     "nombre": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "apellidos": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "ci": {
       "type": "number",
-      "required": true,
+      "required": false,
       "default": 0
     },
     "aseguradora": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "0"
     },
     "seguro": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "0"
     },
     "vigencia": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "0"
     },
     "tipo": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "0"
     },
     "telefono": {
       "type": "number",
-      "required": true,
+      "required": false,
       "default": 0
     },
     "direccion": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "nombrec": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "cic": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "telefonoc": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "email": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "parentesco": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "antecedentes": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "reserva": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

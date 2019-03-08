@@ -40,6 +40,7 @@ export class ViewComponent implements OnInit {
       antecedentes:[{value: 'asdsadsad', disabled: true}, Validators.required]
     });
   private paciente: PacietnesInterface = {
+    id: null,
     nombre:'',
     apellidos:'',
     ci:'',
@@ -48,7 +49,6 @@ export class ViewComponent implements OnInit {
     direccion:'',
     reserva:'',
     vigencia:'',
-    tipo:'',
     nombrec:'',
     cic:'',
     telefonoc:'',

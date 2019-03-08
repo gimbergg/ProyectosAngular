@@ -1,4 +1,5 @@
 export interface PacietnesInterface{
+    id?: string;
     nombre?: string,
     apellidos?: string,
     ci?: string,
@@ -7,7 +8,7 @@ export interface PacietnesInterface{
     direccion?: string,
     reserva?: string,
     vigencia?: string,
-    tipo?: string,
+
     nombrec?: string,
     cic?: string,
     telefonoc?: string,

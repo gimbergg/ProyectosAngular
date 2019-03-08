@@ -12,6 +12,25 @@ import { AuthService } from './auth.service'
 export class DataApiService {
   
   constructor(private http: HttpClient, private authService: AuthService) { }
+
+  public selectedPaciente: PacietnesInterface = {
+    id: null,
+    nombre: '',
+    apellidos: '',
+    ci: '',
+    seguro: '',
+    telefono: '',
+    direccion: '',
+    reserva: '',
+    vigencia: '',
+    nombrec: '',
+    cic: '',
+    telefonoc: '',
+    email: '',
+    parentesco: '',
+    antecedentes: '',
+  };
+  
   headers : HttpHeaders = new HttpHeaders({
     "Content-Type":"application/json",
     Authorization: this.authService.getToken()
@@ -56,7 +75,7 @@ export class DataApiService {
     // TODO: not null
     console.log(id);
     //const url_api = `http://localhost:3000/api/pacientes/${id}`;
-    let token = 'u5idvjrEp7FDwQqjUClhIvZK0T2DCml5r5JkFHGiuF2OUIvP1hmndCKpbXv4WfsQ';//this.authService.getToken();
+    let token = this.authService.getToken();
     const url_api = `http://localhost:3000/api/pacientes/${id}/?access_token=${token}`;
     console.log(url_api);
     return this.http
@@ -65,7 +84,10 @@ export class DataApiService {
   }
 
   getAllUsers(){
-    const url_api = 'http://localhost:3000/api/Users';
+    let token = this.authService.getToken();
+    console.log(token);
+    const url_api = `http://localhost:3000/api/Users/?access_token=${token}`;
+    console.log(url_api);
     return this.http.get(url_api);
   }
 
