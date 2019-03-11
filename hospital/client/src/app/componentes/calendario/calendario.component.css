@@ -1,0 +1,23 @@
+h3 {
+    margin: 0 0 10px;
+
+  }
+  
+pre {
+background-color: #fff;
+padding: 15px;
+}
+.calendario, .mat-elevation-z8{
+    padding: 0px 15px 0px 15px;
+    background-color: #fff;
+}
+
+
+.cabecera{
+    background: #3f51b5;
+    padding: 20px;
+}
+.title-c{
+    color: #FFF;
+    font-size: 22px
+}

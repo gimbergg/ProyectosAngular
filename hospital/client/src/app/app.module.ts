@@ -50,6 +50,11 @@ import { ResListComponent } from './componentes/reservas/res-list/res-list.compo
 import { ResFormComponent } from './componentes/reservas/res-form/res-form.component';
 import { ResViewComponent } from './componentes/reservas/res-view/res-view.component';
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarioComponent } from './componentes/calendario/calendario.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +74,8 @@ import { ResViewComponent } from './componentes/reservas/res-view/res-view.compo
     PerfilEditComponent,
     ResListComponent,
     ResFormComponent,
-    ResViewComponent
+    ResViewComponent,
+    CalendarioComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +112,13 @@ import { ResViewComponent } from './componentes/reservas/res-view/res-view.compo
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    HttpClientModule    
+    HttpClientModule,
+
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    NgbModalModule
   ],
   exports:[
     MatDatepickerModule,

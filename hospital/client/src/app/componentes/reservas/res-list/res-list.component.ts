@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-res-list',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResListComponent implements OnInit {
   title = 'Citas Medicas';
-  constructor() { }
 
-  ngOnInit() {
-  }
-
+   constructor() { }
+ 
+   ngOnInit() {
+    
+   }
+  
 }

@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav *ngIf="islogged"  #drawer class="sidenav" fixedInViewport="true"
+  <mat-sidenav  #drawer class="sidenav" fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
     <mat-toolbar><mat-icon color="accent">local_hospital</mat-icon>  {{app_name}}</mat-toolbar><br>
@@ -50,7 +50,7 @@
           size="medium"
           color="#fff"
           type="ball-scale-multiple">
-        <p style="font-size: 20px; color: white">Loading...</p>
+        <p style="font-size: 20px; color: white">Cargando...</p>
         </ngx-spinner>
       <router-outlet></router-outlet>
     </div>

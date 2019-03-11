@@ -1,0 +1,207 @@
+<div class="calendario">
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Event action occurred</h5>
+    <button mat-raised-button color="primary" type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div>
+    <div>
+      Cita:
+      <pre>{{ modalData?.event | json }}</pre>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button mat-raised-button color="primary" type="button" class="btn btn-outline-secondary" (click)="close()">
+      OK
+    </button>
+  </div>
+</ng-template>
+  
+  <div class="row text-center cabecera">
+    <div class="col-md-4">
+      <div class="btn-group">
+        <button
+          mat-raised-button color="primary"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="activeDayIsOpen = false"
+        >
+        <mat-icon aria-label="Side nav toggle icon">keyboard_arrow_left</mat-icon>
+        </button>
+        <button
+        mat-raised-button color="default"
+          mwlCalendarToday
+          [(viewDate)]="viewDate"
+        >
+          Hoy
+        </button>
+        <button
+          mat-raised-button color="primary"
+          mwlCalendarNextView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="activeDayIsOpen = false"
+        >
+        <mat-icon aria-label="Side nav toggle icon">keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+      <h3 class="title-c">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+    <div class="col-md-4">
+      <div class="btn-group">
+        <button
+        mat-stroked-button color="primary"
+          (click)="view = CalendarView.Month"
+          [class.active]="view === CalendarView.Month"
+        >
+          Mes
+        </button>
+        <button
+          mat-stroked-button color="warn"
+          (click)="view = CalendarView.Week"
+          [class.active]="view === CalendarView.Week"
+        >
+          Semana
+        </button>
+        <button
+          mat-stroked-button color="default"
+          (click)="view = CalendarView.Day"
+          [class.active]="view === CalendarView.Day"
+        >
+          Dia
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <div [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="CalendarView.Day"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-day-view>
+  </div>
+  
+  <br /><br /><br />
+  
+  <h3>
+    Edit events
+    <button mat-raised-button color="primary" class="pull-right" (click)="addEvent()">
+      Add new
+    </button>
+    <div class="clearfix"></div>
+  </h3>
+  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Primary color</th>
+        <th>Secondary color</th>
+        <th>Starts at</th>
+        <th>Ends at</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let event of events; let index = index">
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="event.title"
+            (keyup)="refresh.next()"
+          />
+        </td>
+        <td>
+          <input
+            type="color"
+            [(ngModel)]="event.color.primary"
+            (change)="refresh.next()"
+          />
+        </td>
+        <td>
+          <input
+            type="color"
+            [(ngModel)]="event.color.secondary"
+            (change)="refresh.next()"
+          />
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="text"
+            mwlFlatpickr
+           
+            
+            
+            
+            
+            dateFormat="Y-m-dTH:i"
+            altFormat="F j, Y H:i"
+            placeholder="Not set"
+          />
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="text"
+            mwlFlatpickr
+            [(ngModel)]="event.end"
+            
+            
+            
+            
+            dateFormat="Y-m-dTH:i"
+            altFormat="F j, Y H:i"
+            placeholder="Not set"
+          />
+        </td>
+        <td>
+          <button
+          mat-raised-button color="warn"
+            (click)="events.splice(index, 1); refresh.next()"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
