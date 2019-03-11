@@ -1,0 +1,37 @@
+{
+  "name": "turno",
+  "plural": "turno",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "NOMBRE_TUR": {
+      "type": "string",
+      "required": true
+    },
+    "HORA_INI_TUR": {
+      "type": "date"
+    },
+    "HORA_FIN_TUR": {
+      "type": "date"
+    },
+    "FECHA_CREACION": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "FECHA_MODIF": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

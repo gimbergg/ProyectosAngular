@@ -1,3 +1,61 @@
-<p>
-  form-doc works!
-</p>
+<form [formGroup]="addressForm" (ngSubmit)="onSubmit(addressForm)">
+    <mat-card class="shipping-card">
+        <mat-card-header>
+        <mat-card-title>Informacion del Doctor</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <div class="row">
+            <div class="col">
+                <input matInput formControlName="id" hidden>
+                <mat-form-field class="full-width" hideRequiredMarker>
+                    <input matInput placeholder="Nombre" formControlName="NOMBRE_MED">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Apellido Paterno" formControlName="APE_PAT_MED" >
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Apellido Materno" formControlName="APE_MAT_MED">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <select matNativeControl  placeholder="Sexo" formControlName="SEXO_MED">
+                        <option value=""></option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+            </mat-form-field>
+            <mat-error *ngIf="addressForm.controls['SEXO_MED'].hasError('required')">
+                El campo Sexo es <strong>obligatorio</strong>
+                </mat-error>
+            </div>
+            <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Correo electronico " formControlName="EMAIL_MED">
+            </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col">
+              <mat-form-field class="full-width">
+              <input matInput placeholder="Direccion y domicilio" formControlName="DIRECCION_MED" >
+              </mat-form-field>
+          </div>   
+          <div class="col">
+              <mat-form-field class="full-width">
+              <input matInput placeholder="Telefono" formControlName="TELEFONO_MED" >
+              </mat-form-field>
+          </div>             
+        </div>         
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="success" >Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

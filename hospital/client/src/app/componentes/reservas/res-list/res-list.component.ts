@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./res-list.component.css']
 })
 export class ResListComponent implements OnInit {
-  title = 'Reservas'
+  title = 'Citas Medicas';
   constructor() { }
 
   ngOnInit() {

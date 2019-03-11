@@ -15,7 +15,7 @@ margin-right:10px;
 font-size: 13px !important;
 }
 tr.mat-header-row{
-  background:rgba(2,76,69,0.04) !important;
+  background:rgba(2, 76, 69, 0.1) !important;
   font-weight: bold;
 }
 .mat-dialog-container {
@@ -25,13 +25,10 @@ mat-button-toggle {
   font-weight: bold;
 }
 h1 {
-    margin-top: -5px;
-    text-shadow: 9px 7px 6px rgba(0,0,0,0.2);
+  margin-top: -5px;
   text-anchor: unset;
   }
-.content-title{
 
-}
 .titulo{
   float: left;
   margin: auto;

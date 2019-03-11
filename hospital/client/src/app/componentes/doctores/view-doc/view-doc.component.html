@@ -6,44 +6,42 @@
         <mat-card-content>
         <div class="row">
             <div class="col">
-            <mat-form-field class="full-width" hideRequiredMarker>
-                <input matInput placeholder="Nombre" formControlName="nombre" value="{{doctores.nombre}}">
-            </mat-form-field>
+                <mat-form-field class="full-width" hideRequiredMarker>
+                    <input matInput placeholder="Nombre" formControlName="NOMBRE_MED" value="{{doctores.NOMBRE_MED}}">
+                </mat-form-field>
             </div>
             <div class="col">
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="Apellidos" formControlName="apellidos" value="{{doctores.apellidos}}">
+                    <input matInput placeholder="Apellido Paterno" formControlName="APE_PAT_MED" value="{{doctores.APE_PAT_MED}}">
                 </mat-form-field>
-                </div>
-        </div>
-        <div class="row">
+            </div>
             <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Cdeula de Identidad" formControlName="ci" value="{{doctores.ci}}">
-            </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Apellido Materno" formControlName="APE_MAT_MED" value="{{doctores.APE_MAT_MED}}">
+                </mat-form-field>
             </div>
         </div>
         <div class="row">
             <div class="col">
             <mat-form-field class="full-width">
-                <input matInput placeholder="Telefono o Celular" formControlName="telefono" value="{{doctores.telefono}}">
+                <input matInput placeholder="Sexo" formControlName="SEXO_MED" value="{{doctores.SEXO_MED}}">
             </mat-form-field>
             </div>
             <div class="col">
             <mat-form-field class="full-width">
-                <input matInput placeholder="Direccion " formControlName="direccion" value="{{doctores.direccion}}">
+                <input matInput placeholder="Correo electronico " formControlName="EMAIL_MED" value="{{doctores.EMAIL_MED}}">
             </mat-form-field>
             </div>
         </div>
         <div class="row">
           <div class="col">
               <mat-form-field class="full-width">
-              <input matInput placeholder="Correo Electronico" formControlName="email" value="{{doctores.email}}">
+              <input matInput placeholder="Direccion y domicilio" formControlName="DIRECCION_MED" value="{{doctores.DIRECCION_MED}}">
               </mat-form-field>
           </div>   
           <div class="col">
               <mat-form-field class="full-width">
-              <input matInput placeholder="Profecion" formControlName="profecion" value="{{doctores.profecion}}">
+              <input matInput placeholder="Telefono" formControlName="TELEFONO_MED" value="{{doctores.TELEFONO_MED}}">
               </mat-form-field>
           </div>             
       </div>         

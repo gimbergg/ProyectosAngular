@@ -1,18 +1,18 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+  <mat-sidenav *ngIf="islogged"  #drawer class="sidenav" fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
     <mat-toolbar><mat-icon color="accent">local_hospital</mat-icon>  {{app_name}}</mat-toolbar><br>
     <span> <img src="../../../../assets/avatar.png" class="rounded-circle img-nav" alt="perfil" ></span>
     <mat-toolbar-row class="my-row-sidebar">
-        <span>Avatar nombre Usuario</span>
+        <span class="rol-user">Bienvenido <b>{{user.name}} </b></span>
     </mat-toolbar-row>
     <mat-nav-list>
       <span><a routerLink="/" mat-list-item class="my-text"><mat-icon color="primary">home</mat-icon> Incio</a></span>
       <span><a routerLink="/pacientes" routerLinkActive="active" mat-list-item class="my-text"><mat-icon color="primary">person_outline</mat-icon> Pacientes</a></span>
       <span><a routerLink="/doctores" mat-list-item class="my-text"><mat-icon color="primary">assignment_ind</mat-icon>
-          Actividad</a></span>
-      <span><a routerLink="/reservas" mat-list-item class="my-text"><mat-icon color="primary">assignment</mat-icon> <span matBadge="4" matBadgeOverlap="false"> Reservas </span> </a>
+          Medicos</a></span>
+      <span><a routerLink="/citas" mat-list-item class="my-text"><mat-icon color="primary">assignment</mat-icon> <span matBadge="4" matBadgeOverlap="false"> Cita Medica </span> </a>
       </span>
       <span><a mat-list-item class="my-text"><mat-icon color="primary">attach_file</mat-icon> Reportes</a></span>
     </mat-nav-list>
@@ -26,11 +26,13 @@
   </mat-sidenav>
   
   <mat-sidenav-content class="fondo-nav">      
-    <mat-toolbar color="primary">
+    <mat-toolbar *ngIf="islogged" color="primary" >
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
+      <span><a routerLink="/" mat-list-item class="my-text"><mat-icon color="primary">home</mat-icon></a></span>
+
       <span class="example-fill-remaining-space"></span>
       <span>
         <mat-menu #appMenu="matMenu">
@@ -43,6 +45,13 @@
     <!-- Add Content Here -->
     <br>
     <div class="container-fluid contenido">
+        <ngx-spinner
+          bdColor="rgba(51,51,51,0.8)"
+          size="medium"
+          color="#fff"
+          type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Loading...</p>
+        </ngx-spinner>
       <router-outlet></router-outlet>
     </div>
     <br>

@@ -1,0 +1,33 @@
+{
+  "name": "especialidad",
+  "plural": "especialidad",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "NOMBRE_ESP": {
+      "type": "string"
+    },
+    "DESCRIPCION_ESP": {
+      "type": "string"
+    },
+    "FECHA_CREACION": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "FECHA_MODIF": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

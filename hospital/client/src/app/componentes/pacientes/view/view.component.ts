@@ -21,40 +21,32 @@ export class ViewComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data) {
       this.id = data.key;
      }
-    
+
      addressForm = this.fb.group({
-      nombre: [{value: '', disabled: true}, Validators.required],
-      apellidos: [{value: '', disabled: true}, Validators.required],
-      ci: [{value: '', disabled: true}, Validators.required],
-      aseguradora: [{value: '', disabled: true}, Validators.required],
-      seguro: [{value: '', disabled: true}, Validators.required],
-      vigencia: [{value: '', disabled: true}, Validators.required], 
-      tipo: [{value: '', disabled: true}, Validators.required],
-      telefono: [{value: '', disabled: true}, Validators.required],
-      direccion: [{value: '', disabled: true}, Validators.required],
-      nombrec:[{value: '', disabled: true}, Validators.required],
-      cic:[{value: '', disabled: true}, Validators.required],
-      telefonoc:[{value: '', disabled: true}, Validators.required],
-      email:[{value: '', disabled: true}, Validators.required],
-      parentesco:[{value: '', disabled: true}, Validators.required],
-      antecedentes:[{value: 'asdsadsad', disabled: true}, Validators.required]
+      id: [{value: '', disabled: true}, Validators.required],
+      NRO_SEGURO_PAC:[{value: '', disabled: true}, Validators.required],
+      CI_PAC:[{value: '', disabled: true}, Validators.required],
+      NOMBRE_PAC:[{value: '', disabled: true}, Validators.required],
+      APE_PAT_PAC:[{value: '', disabled: true}, Validators.required],
+      APE_MAT_PAC:[{value: '', disabled: true}, Validators.required],
+      SEXO_PAC:[{value: '', disabled: true}, Validators.required],
+      FECHA_NAC_PAC:[{value: '', disabled: true}, Validators.required],
+      EMAIL_PAC:[{value: '', disabled: true}, Validators.required],
+      DIRECCION_PAC:[{value: '', disabled: true}, Validators.required],
+      TELEFONO_PAC:[{value: '', disabled: true}, Validators.required]
     });
   private paciente: PacietnesInterface = {
     id: null,
-    nombre:'',
-    apellidos:'',
-    ci:'',
-    seguro:'',
-    telefono:'',
-    direccion:'',
-    reserva:'',
-    vigencia:'',
-    nombrec:'',
-    cic:'',
-    telefonoc:'',
-    email:'',
-    parentesco:'',
-    antecedentes:''
+    NRO_SEGURO_PAC:'',
+    CI_PAC:'',
+    NOMBRE_PAC:'',
+    APE_PAT_PAC:'',
+    APE_MAT_PAC:'',
+    SEXO_PAC:'',
+    FECHA_NAC_PAC:'',
+    EMAIL_PAC:'',
+    DIRECCION_PAC:'',
+    TELEFONO_PAC:''
   }
 
   ngOnInit(){    
@@ -66,7 +58,22 @@ export class ViewComponent implements OnInit {
   
   getDetails(id: String) {
     this.dataApi.getPacientesById(id)
-      .subscribe(paciente => (this.paciente = paciente));    
+    .subscribe(
+      paciente => {
+        (this.paciente = paciente),
+        this.addressForm.controls['id'].setValue(this.id),
+        this.addressForm.controls['NRO_SEGURO_PAC'].setValue(this.paciente.NRO_SEGURO_PAC),
+        this.addressForm.controls['CI_PAC'].setValue(this.paciente.CI_PAC),
+        this.addressForm.controls['NOMBRE_PAC'].setValue(this.paciente.NOMBRE_PAC),
+        this.addressForm.controls['APE_PAT_PAC'].setValue(this.paciente.APE_PAT_PAC),
+        this.addressForm.controls['APE_MAT_PAC'].setValue(this.paciente.APE_MAT_PAC),
+        this.addressForm.controls['SEXO_PAC'].setValue(this.paciente.SEXO_PAC),
+        this.addressForm.controls['FECHA_NAC_PAC'].setValue(this.paciente.FECHA_NAC_PAC),
+        this.addressForm.controls['EMAIL_PAC'].setValue(this.paciente.EMAIL_PAC),
+        this.addressForm.controls['DIRECCION_PAC'].setValue(this.paciente.DIRECCION_PAC),
+        this.addressForm.controls['TELEFONO_PAC'].setValue(this.paciente.TELEFONO_PAC)
+      }
+    ); 
   }
   
 }

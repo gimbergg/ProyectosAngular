@@ -16,10 +16,23 @@ margin-right:10px;
 font-size: 13px !important;
 }
 tr.mat-header-row{
-  background:rgba(2,76,69,0.04) !important;
+  background:rgba(2,76,69,0.1) !important;
   font-weight: bold;
 }
-
+.mat-header-cell{
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+}
+.mat-cell{
+  font-size: 12px;
+  padding: 4px;
+  text-align: left;
+}
+.mat-dialog-container{
+  padding: 5px !important;
+  background: #CCC;
+}
 mat-button-toggle {
   font-weight: bold;
   background: #fff !important;
@@ -29,7 +42,7 @@ mat-button-toggle .icon-coloradd{
 }
 h1 {
     margin-top: -5px;
-    text-shadow: 9px 7px 6px rgba(0,0,0,0.2);
+    text-shadow: 5px 5px 8px rgba(0,0,0,0.2);
   text-anchor: unset;
   }
 .opciones{
@@ -39,4 +52,8 @@ h1 {
 }
 .buscar{
   display: block !important;
+}
+.titulo{
+  color:rgb(2,76,69) !important;
+  font-size: 2em;
 }

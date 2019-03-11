@@ -1,0 +1,41 @@
+{
+  "name": "medico_sede",
+  "plural": "medico_sede",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "NRO_CONSULTORIO": {
+      "type": "number",
+      "default": 0
+    },
+    "ID_MEDICO": {
+      "type": "string"
+    },
+    "ID_SEDE": {
+      "type": "string"
+    },
+    "ID_TURNO": {
+      "type": "string",
+      "required": true
+    },
+    "FECHA_CREACION": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "FECHA_MODIF": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

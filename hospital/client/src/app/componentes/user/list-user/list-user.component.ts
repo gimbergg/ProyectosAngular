@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/observable';
 import { DataApiService } from 'src/app/services/data-api.service';
 import { MatDialog } from '@angular/material';
 import { UserInterface } from '../../../models/user-interface';

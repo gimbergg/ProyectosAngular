@@ -25,4 +25,6 @@
   .col:last-child {
     margin-right: 0;
   }
-  
+  .mat-card-title{
+    color: #134c44;
+  }

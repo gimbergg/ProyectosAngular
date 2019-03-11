@@ -28,11 +28,13 @@
   z-index: 1;
 }
 .sidenav .mat-toolbar {
-  color:#000;
+  font-size: 35px;
+  color: #134c44;
   background: inherit;
-  text-shadow: 10px 7px 6px rgba(0,0,0,0.2);
+  text-shadow: 5px 5px 8px rgba(0,0,0,0.3);
   text-anchor: unset;
-  font-size: 24px;
+  margin: auto;
+  margin-top: 10px;
 }
 .my-row-sidebar{
   color:#000;
@@ -50,9 +52,20 @@ mat-toolbar-row, .mat-toolbar-single-row {
   flex: 1 1 auto;
 }
 .img-nav{
-  margin-left: 30%;  
+  margin-left: 35%;  
   width: 75px; 
   height: 75px;
   border: solid #ccc 5px;
   border-style: double;
+}
+.img-menu{
+  margin-left: 35%;  
+  width: 30px; 
+  height: 30px;
+  border: solid #ccc 3px;
+  border-style: double;
+}
+.rol-user{
+  margin: auto;
+
 }

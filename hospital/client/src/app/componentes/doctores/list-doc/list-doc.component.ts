@@ -21,30 +21,41 @@ export class ListDocComponent implements OnInit {
 
   private doctores: DoctoresInterface;  
 
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'telefono', 'direccion','profecion', 'acciones'];
+  displayedColumns: string[] = ['NOMBRE_MED', 'APE_PAT_MED', 'APE_MAT_MED', 'SEXO_MED', 'EMAIL_MED','DIRECCION_MED', 'TELEFONO_MED' ,'acciones'];
   dataSource = new DoctoresDataSource(this.dataApi);
 
   ngOnInit() {
     this.getListDoctores();
   }
   getListDoctores() {
-    this.dataApi
-      .getAllPacinetes()
+    this.dataApi.getAllPacinetes()
       .subscribe(
         (doctores: DoctoresInterface) => this.doctores = doctores
       );
   }
 
-  openDialogAdd(): void {
+  openDialogAdd(id: string): void {
     const dialogRef = this.dialog.open(FormDocComponent, {
       width: '60%',
-      height: 'auto'
+      height: 'auto',
+      data: { key: '0' }
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
-
+  openDialogUpdate(id: string): void {
+    this.dataApi.getPacientesById(id);
+    //console.log(element)
+    const dialogRef = this.dialog.open(FormDocComponent, {
+      width: '60%',
+      height: 'auto',
+      data: { key: id }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
   openDialogView(id: string): void {
     this.dataApi.getPacientesById(id);
     console.log('ID DESDE EL PADRE: '+id);
@@ -57,6 +68,15 @@ export class ListDocComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+  onDelete(id: string): void{
+    if(confirm('Esta Seguro que desea eliminar?')){
+    this.dataApi.deleteDoctores(id)
+      .subscribe(
+        res => console.log('Eliminacion exitosa'),
+        err => console.log('ERROR no se pudo eliminar')
+      );
+    }
   }
 }
 

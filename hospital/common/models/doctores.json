@@ -7,29 +7,48 @@
     "validateUpsert": true
   },
   "properties": {
-    "nombre": {
+    "NOMBRE_MED": {
       "type": "string",
       "required": true
     },
-    "apellidos": {
+    "APE_PAT_MED": {
       "type": "string",
       "required": true
     },
-    "ci": {
-      "type": "string"
-    },
-    "telefono": {
-      "type": "string"
-    },
-    "email": {
-      "type": "string"
-    },
-    "direccion": {
-      "type": "string"
-    },
-    "profecion": {
+    "APE_MAT_MED": {
       "type": "string",
       "required": true
+    },
+    "SEXO_MED": {
+      "type": "string",
+      "required": true
+    },
+    "EMAIL_MED": {
+      "type": "string"
+    },
+    "DIRECCION_MED": {
+      "type": "string",
+      "required": true
+    },
+    "TELEFONO_MED": {
+      "type": "number",
+      "required": true
+    },
+    "ID_ESPECIALIDAD": {
+      "type": "string",
+      "required": false
+    },
+    "FECHA_CREACION": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "FECHA_MODIF": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
     }
   },
   "validations": [],

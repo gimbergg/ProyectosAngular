@@ -35,6 +35,7 @@ import { RegisterComponent } from './componentes/user/register/register.componen
 import { PerfilComponent } from './componentes/user/perfil/perfil.component';
 import { Page404Component } from './componentes/page404/page404.component';
 import { MatCardModule } from '@angular/material/card';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
 //services
@@ -96,6 +97,7 @@ import { ResViewComponent } from './componentes/reservas/res-view/res-view.compo
     MatStepperModule,
     MatCardModule,
     MatBadgeModule,
+    NgxSpinnerModule,
     
     BrowserAnimationsModule,
     LayoutModule,
@@ -104,9 +106,7 @@ import { ResViewComponent } from './componentes/reservas/res-view/res-view.compo
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    HttpClientModule,
-
-    
+    HttpClientModule    
   ],
   exports:[
     MatDatepickerModule,

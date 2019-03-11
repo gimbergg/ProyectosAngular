@@ -22,7 +22,7 @@ export class ListComponent implements OnInit {
 
   private pacientes: PacietnesInterface;  
 
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'seguro', 'telefono', 'direccion', 'id', 'acciones'];
+  displayedColumns: string[] = ['NRO_SEGURO_PAC', 'CI_PAC', 'NOMBRE_PAC', 'APE_PAT_PAC', 'APE_MAT_PAC', 'SEXO_PAC', 'FECHA_NAC_PAC', 'EMAIL_PAC', 'DIRECCION_PAC','TELEFONO_PAC', 'acciones'];
   dataSource = new PacientesDataSource(this.dataApi);
 
   applyFilter(filterValue: string) {
@@ -46,7 +46,19 @@ export class ListComponent implements OnInit {
       );
   }
 
-  openDialog(): void {
+  openDialog(id: string): void {
+    const dialogRef = this.dialog.open(FormCreateComponent, {
+      width: '60%',
+      height: 'auto',
+      data: { key: '0' }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  openDialogUpdate(id: string): void {
+    this.dataApi.getPacientesById(id);
+    //console.log(element)
     const dialogRef = this.dialog.open(FormCreateComponent, {
       width: '60%',
       height: 'auto',
@@ -56,10 +68,9 @@ export class ListComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-
-  openDialogEdit(id: string): void {
+  openDialogView(id: string): void {
     this.dataApi.getPacientesById(id);
-    console.log('ID DESDE EL PADRE: '+id);
+    //console.log('ID DESDE EL PADRE: '+id);
     const dialogRef = this.dialog.open(ViewComponent, {
       width: '60%',
       height: 'auto',
@@ -74,7 +85,10 @@ export class ListComponent implements OnInit {
   onDelete(id: string): void{
     if(confirm('Esta Seguro que desea eliminar?')){
     this.dataApi.deletePacientes(id)
-    .subscribe();
+      .subscribe(
+        res => console.log('Eliminacion exitosa'),
+        err => console.log('ERROR no se pudo eliminar')
+      );
     }
   }
 }

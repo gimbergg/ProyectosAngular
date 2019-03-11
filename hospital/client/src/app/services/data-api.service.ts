@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { PacietnesInterface } from '../models/pacientes-interface'
 import { AuthService } from './auth.service'
+import { DoctoresInterface } from '../models/doctores-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,21 +15,17 @@ export class DataApiService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   public selectedPaciente: PacietnesInterface = {
-    id: null,
-    nombre: '',
-    apellidos: '',
-    ci: '',
-    seguro: '',
-    telefono: '',
-    direccion: '',
-    reserva: '',
-    vigencia: '',
-    nombrec: '',
-    cic: '',
-    telefonoc: '',
-    email: '',
-    parentesco: '',
-    antecedentes: '',
+    id:null,
+    NRO_SEGURO_PAC:'',
+    CI_PAC:'',
+    NOMBRE_PAC:'',
+    APE_PAT_PAC:'',
+    APE_MAT_PAC:'',
+    SEXO_PAC:'',
+    FECHA_NAC_PAC:'',
+    EMAIL_PAC:'',
+    DIRECCION_PAC:'',
+    TELEFONO_PAC:''
   };
   
   headers : HttpHeaders = new HttpHeaders({
@@ -38,6 +35,9 @@ export class DataApiService {
 
   pacientes: Observable<any>;
   paciente: Observable<any>;
+
+  doctores: Observable<any>;
+  doctor: Observable<any>;
   
   getAllPacinetes(){
     const url_api = 'http://localhost:3000/api/pacientes';
@@ -61,11 +61,11 @@ export class DataApiService {
     .post<PacietnesInterface>(url_api, paciente,{headers: this.headers})
     .pipe(map(data => data));
   }
-  updatePacientes(paciente){
+  updatePacientes(paciente, id:string){
     // TODO: obtener token
     // TODO: not null
-    let token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/pacientes?access_token=${token}`;
+    const token = this.authService.getToken();
+    const url_api = `http://localhost:3000/api/pacientes/${id}/?access_token=${token}`;
     return this.http
     .put<PacietnesInterface>(url_api, paciente,{headers: this.headers})
     .pipe(map(data => data));
@@ -96,7 +96,37 @@ export class DataApiService {
     return this.http.get(url_api);
   }
   getDoctoresById(id: String){
-      const url_api = `http://localhost:3000/api/doctores/${id}`;
-      return (this.paciente = this.http.get(url_api));
-    }
+    const url_api = `http://localhost:3000/api/doctores/${id}`;
+    return (this.paciente = this.http.get(url_api));
+  }
+  saveDoctores(doctor: DoctoresInterface){
+    // TODO: obtener token
+    // TODO: not null
+    let token = this.authService.getToken();
+    const url_api = `http://localhost:3000/api/doctores?access_token=${token}`;
+    return this.http
+    .post<PacietnesInterface>(url_api, doctor,{headers: this.headers})
+    .pipe(map(data => data));
+  }
+  updateDoctores(doctor, id:string){
+    // TODO: obtener token
+    // TODO: not null
+    const token = this.authService.getToken();
+    const url_api = `http://localhost:3000/api/doctores/${id}/?access_token=${token}`;
+    return this.http
+    .put<PacietnesInterface>(url_api, doctor,{headers: this.headers})
+    .pipe(map(data => data));
+  }
+  deleteDoctores(id: String){
+    // TODO: obtener token
+    // TODO: not null
+    console.log(id);
+    //const url_api = `http://localhost:3000/api/pacientes/${id}`;
+    let token = this.authService.getToken();
+    const url_api = `http://localhost:3000/api/doctores/${id}/?access_token=${token}`;
+    console.log(url_api);
+    return this.http
+    .delete<PacietnesInterface>(url_api,{headers: this.headers})
+    .pipe(map(data => data));
+  }
 }

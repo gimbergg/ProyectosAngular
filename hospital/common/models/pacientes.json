@@ -7,98 +7,83 @@
     "validateUpsert": true
   },
   "properties": {
-    "nombre": {
+    "NRO_SEGURO_PAC": {
       "type": "string",
-      "required": false
+      "required": true
     },
-    "apellidos": {
-      "type": "string",
-      "required": false
-    },
-    "ci": {
+    "CI_PAC": {
       "type": "number",
+      "required": true
+    },
+    "NOMBRE_PAC": {
+      "type": "string",
+      "required": true,
+      "default": 0
+    },
+    "APE_PAT_PAC": {
+      "type": "string",
+      "required": true,
+      "default": "0"
+    },
+    "APE_MAT_PAC": {
+      "type": "string",
+      "required": true,
+      "default": "0"
+    },
+    "SEXO_PAC": {
+      "type": "string",
+      "required": false,
+      "default": "0"
+    },
+    "FECHA_NAC_PAC": {
+      "type": "date",
+      "required": true,
+      "default": "0"
+    },
+    "EMAIL_PAC": {
+      "type": "string",
       "required": false,
       "default": 0
     },
-    "aseguradora": {
+    "DIRECCION_PAC": {
       "type": "string",
-      "required": false,
-      "default": "0"
+      "required": true
     },
-    "seguro": {
+    "TELEFONO_PAC": {
       "type": "string",
-      "required": false,
-      "default": "0"
+      "required": true
     },
-    "vigencia": {
-      "type": "string",
-      "required": false,
-      "default": "0"
-    },
-    "tipo": {
-      "type": "string",
-      "required": false,
-      "default": "0"
-    },
-    "telefono": {
-      "type": "number",
-      "required": false,
-      "default": 0
-    },
-    "direccion": {
+    "MATR_BEN_PAC": {
       "type": "string",
       "required": false
     },
-    "nombrec": {
+    "MATR_TITULAR_PAC": {
       "type": "string",
       "required": false
     },
-    "cic": {
+    "REG_ASEGURADO_PAC": {
       "type": "string",
       "required": false
     },
-    "telefonoc": {
+    "EMPRESA_PAC": {
       "type": "string",
       "required": false
     },
-    "email": {
-      "type": "string",
-      "required": false
+    "FECHA_CREACION": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
     },
-    "parentesco": {
-      "type": "string",
-      "required": false
-    },
-    "antecedentes": {
-      "type": "string",
-      "required": false
-    },
-    "reserva": {
-      "type": "string",
-      "required": false
+    "FECHA_MODIF": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
     }
   },
   "validations": [],
   "relations": {},
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$authenticated",
-      "permission": "ALLOW"
-    },
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }

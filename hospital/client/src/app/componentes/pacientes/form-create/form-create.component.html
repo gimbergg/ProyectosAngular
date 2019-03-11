@@ -1,144 +1,110 @@
+
 <form [formGroup]="addressForm"  (ngSubmit)="onSubmit(addressForm)">
     <mat-card class="shipping-card">
-        <mat-card-header>
-        <mat-card-title>Crear Paciente</mat-card-title>
+        <mat-card-header>        
+            <mat-card-title>Crear Paciente</mat-card-title>
         </mat-card-header>
         <mat-card-content>
         <div class="row">
             <div class="col">
-                    <input matInput formControlName="id" hidden>
+            <input matInput formControlName="id" hidden>
             <mat-form-field class="full-width">                
-                <input matInput placeholder="Nombre" formControlName="nombre">
+                <input matInput placeholder="Nro Seguro" formControlName="NRO_SEGURO_PAC" >
             </mat-form-field>
-            <mat-error *ngIf="addressForm.controls['nombre'].hasError('required')">
+            <mat-error *ngIf="addressForm.controls['NRO_SEGURO_PAC'].hasError('required')">
                 El nombre es <strong>obligatorio</strong>
                 </mat-error>
             </div>
             <div class="col">
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="Apellidos" formControlName="apellidos">
+                    <input matInput placeholder="Cedula de Identidad o Libreta S.M" formControlName="CI_PAC">
                 </mat-form-field>
-                <mat-error *ngIf="addressForm.controls['apellidos'].hasError('required')">
-                    Los apellidos son <strong>obligatorio</strong>
-                    </mat-error>
-                </div>
-        </div>
-        <div class="row">
-            <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Cdeula de Identidad" formControlName="ci">
-            </mat-form-field>
-            <mat-error *ngIf="addressForm.controls['ci'].hasError('required')">
-                El CI es <strong>obligatorio</strong>
-                </mat-error>
-            </div>
-            <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Nro. Aseguradora" formControlName="aseguradora">
-            </mat-form-field>
-            <mat-error *ngIf="addressForm.controls['aseguradora'].hasError('required')">
-                La aseguradora es <strong>obligatorio</strong>
+                <mat-error *ngIf="addressForm.controls['CI_PAC'].hasError('required')" >
+                EL CI son <strong>obligatorio</strong>
                 </mat-error>
             </div>
         </div>
         <div class="row">
-            <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Telefono o Celular" formControlName="telefono">
-            </mat-form-field>
-            <mat-error *ngIf="addressForm.controls['telefono'].hasError('required')">
-                El CI es <strong>obligatorio</strong>
-                </mat-error>
-            </div>
-            <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Direccion y domicilio" formControlName="direccion">
-            </mat-form-field>
-            <mat-error *ngIf="addressForm.controls['direccion'].hasError('required')">
-                La aseguradora es <strong>obligatorio</strong>
-                </mat-error>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Origen de seguro" formControlName="seguro">
-            </mat-form-field>
-            <mat-error *ngIf="addressForm.controls['seguro'].hasError('required')">
-                El oridgen de seguro es <strong>obligatorio</strong>
-                </mat-error>
-            </div>
-            <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput [matDatepicker]="picker" placeholder="Vigencia" formControlName="vigencia">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-            <mat-error *ngIf="addressForm.controls['vigencia'].hasError('required')">
-                El campo es Vigencia <strong>fecha</strong>
-                </mat-error>
-            </div>
-        </div>
-        <mat-card-header>
-            <mat-card-title>Crear Contacto</mat-card-title>
-        </mat-card-header>
-            <div class="row">
             <div class="col">
                 <mat-form-field class="full-width">
-                <input matInput placeholder="Nombre y Apllidos de contacto" formControlName="nombrec">
+                    <input matInput placeholder="Nombre" formControlName="NOMBRE_PAC">
                 </mat-form-field>
-                <mat-error *ngIf="addressForm.controls['nombrec'].hasError('required')">
-                    El nombre es <strong>obligatorio</strong>
-                </mat-error>
-            </div>
-            <div class="col">
-                <mat-form-field class="full-width">
-                <input matInput placeholder="Cdeula de Identidad" formControlName="cic">
-                </mat-form-field>
-                <mat-error *ngIf="addressForm.controls['cic'].hasError('required')">
+                <mat-error *ngIf="addressForm.controls['NOMBRE_PAC'].hasError('required')">
                     El CI es <strong>obligatorio</strong>
                 </mat-error>
             </div>
-            </div>
-            <div class="row">
             <div class="col">
                 <mat-form-field class="full-width">
-                <input matInput placeholder="Telefono o Celular" formControlName="telefonoc">
+                    <input matInput placeholder="Apellido Paterno" formControlName="APE_PAT_PAC">
                 </mat-form-field>
-                <mat-error *ngIf="addressForm.controls['telefonoc'].hasError('required')">
-                    El Telefono es <strong>obligatorio</strong>
+                <mat-error *ngIf="addressForm.controls['APE_PAT_PAC'].hasError('required')">
+                    La aseguradora es <strong>obligatorio</strong>
                 </mat-error>
             </div>
             <div class="col">
                 <mat-form-field class="full-width">
-                <input matInput placeholder="Correo Electronico" formControlName="email">
+                    <input matInput placeholder="Apellido Materno" formControlName="APE_MAT_PAC">
                 </mat-form-field>
-                <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
-                    El campo es <strong>obligatorio</strong>
+                <mat-error *ngIf="addressForm.controls['APE_MAT_PAC'].hasError('required')">
+                    La aseguradora es <strong>obligatorio</strong>
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <mat-form-field class="full-width">
+                <select matNativeControl  placeholder="Sexo" formControlName="SEXO_PAC">
+                        <option value=""></option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+            </mat-form-field>
+            <mat-error *ngIf="addressForm.controls['SEXO_PAC'].hasError('required')">
+                El campo Sexo es <strong>obligatorio</strong>
                 </mat-error>
             </div>
             <div class="col">
                 <mat-form-field class="full-width">
-                <input matInput placeholder="Parentesco" formControlName="parentesco">
+                    <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" formControlName="FECHA_NAC_PAC">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-                <mat-error *ngIf="addressForm.controls['parentesco'].hasError('required')">
-                    El campo es <strong>obligatorio</strong>
+                <mat-error *ngIf="addressForm.controls['FECHA_NAC_PAC'].hasError('required')">
+                    El campo es Vigencia <strong>fecha</strong>
                 </mat-error>
             </div>
-            </div>
-            <div class="row">
-                <div class="col">
+        </div>
+        <div class="row">
+            <div class="col">
                 <mat-form-field class="full-width">
-                    <input matInput placeholder="Antecedentes" formControlName="antecedentes">
+                    <input matInput placeholder="Correo electronico" formControlName="EMAIL_PAC">
                 </mat-form-field>
-                <mat-error *ngIf="addressForm.controls['antecedentes'].hasError('required')">
+                <mat-error *ngIf="addressForm.controls['EMAIL_PAC'].hasError('required')">
+                    El oridgen de seguro es <strong>obligatorio</strong>
+                </mat-error>
+            </div>
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Direccion y domicilio" formControlName="DIRECCION_PAC">
+                </mat-form-field>
+                <mat-error *ngIf="addressForm.controls['DIRECCION_PAC'].hasError('required')">
+                    El oridgen de seguro es <strong>obligatorio</strong>
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Telefono" formControlName="TELEFONO_PAC">
+                </mat-form-field>
+                <mat-error *ngIf="addressForm.controls['TELEFONO_PAC'].hasError('required')">
                     El nombre es <strong>obligatorio</strong>
-                    </mat-error>
-                </div>
-            </div>
+                </mat-error>
+            </div> 
+        </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" type="success" [disabled]="addressForm.invalid">Submit</button>
+            <button mat-raised-button color="primary" type="success" >Submit</button>
         </mat-card-actions>
     </mat-card>
 </form>

@@ -33,10 +33,6 @@
   },
   "Role": {
     "dataSource": "db",
-    "public": false
-  },
-  "usuario": {
-    "dataSource": "db",
     "public": true
   },
   "pacientes": {
@@ -44,6 +40,26 @@
     "public": true
   },
   "doctores": {
+    "dataSource": "db",
+    "public": true
+  },
+  "especialidad": {
+    "dataSource": "db",
+    "public": true
+  },
+  "cita": {
+    "dataSource": "db",
+    "public": true
+  },
+  "turno": {
+    "dataSource": "db",
+    "public": true
+  },
+  "sede": {
+    "dataSource": "db",
+    "public": true
+  },
+  "medico_sede": {
     "dataSource": "db",
     "public": true
   }

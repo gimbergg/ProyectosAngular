@@ -1,98 +1,103 @@
-<form [formGroup]="addressForm">
-<mat-card class="shipping-card">
-    <mat-card-header>
-    <mat-card-title>Informacion del Paciente</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-    <div class="row">
-        <div class="col">
-        <mat-form-field class="full-width" hideRequiredMarker>
-            <input matInput placeholder="Nombre" formControlName="nombre" value="{{paciente.nombre}}">
-        </mat-form-field>
-        </div>
-        <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Apellidos" formControlName="apellidos" value="{{paciente.apellidos}}">
-            </mat-form-field>
+<form [formGroup]="addressForm" >
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Informacion del Paciente</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                <input matInput formControlName="id" hidden>
+                <mat-form-field class="full-width">                
+                    <input matInput placeholder="Nro Seguro" formControlName="NRO_SEGURO_PAC" >
+                </mat-form-field>
+                <mat-error *ngIf="addressForm.controls['NRO_SEGURO_PAC'].hasError('required')">
+                    El nombre es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Cedula de Identidad o Libreta S.M" formControlName="CI_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['CI_PAC'].hasError('required')" >
+                    EL CI son <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
             </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Cdeula de Identidad" formControlName="ci" value="{{paciente.ci}}">
-        </mat-form-field>
-        </div>
-        <div class="col">
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Nro. Aseguradora" formControlName="aseguradora" value="{{paciente.aseguradora}}">
-        </mat-form-field>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Telefono o Celular" formControlName="telefono" value="{{paciente.telefono}}">
-        </mat-form-field>
-        </div>
-        <div class="col">
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Direccion y domicilio" formControlName="direccion" value="{{paciente.direccion}}">
-        </mat-form-field>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Origen de seguro" formControlName="seguro" value="{{paciente.seguro}}">
-        </mat-form-field>
-        </div>
-        <div class="col">
-        <mat-form-field class="full-width">
-            <input matInput [matDatepicker]="picker" formControlName="vigencia" placeholder="Vigencia">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        </div>
-    </div>
-    <mat-card-header>
-        <mat-card-title>Informacion de Contacto</mat-card-title>
-    </mat-card-header>
-        <div class="row">
-        <div class="col">
-            <mat-form-field class="full-width">
-            <input matInput placeholder="Nombre y Apllidos de contacto" formControlName="nombrec" value="{{paciente.nombrec}}">
-            </mat-form-field>
-        </div>
-        <div class="col">
-            <mat-form-field class="full-width">
-            <input matInput placeholder="Cdeula de Identidad" formControlName="cic" value="{{paciente.cic}}">
-            </mat-form-field>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col">
-            <mat-form-field class="full-width">
-            <input matInput placeholder="Telefono o Celular" formControlName="telefonoc" value="{{paciente.telefonoc}}">
-            </mat-form-field>
-        </div>
-        <div class="col">
-            <mat-form-field class="full-width">
-            <input matInput placeholder="Correo Electronico" formControlName="email" value="{{paciente.email}}">
-            </mat-form-field>
-        </div>
-        <div class="col">
-            <mat-form-field class="full-width">
-            <input matInput placeholder="Parentesco" formControlName="parentesco" value="{{paciente.parentesco}}">
-            </mat-form-field>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Antecedentes" formControlName="antecedentes" value="{{paciente.antecedentes}}">
-            </mat-form-field>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Nombre" formControlName="NOMBRE_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['NOMBRE_PAC'].hasError('required')">
+                        El CI es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Apellido Paterno" formControlName="APE_PAT_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['APE_PAT_PAC'].hasError('required')">
+                        La aseguradora es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Apellido Materno" formControlName="APE_MAT_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['APE_MAT_PAC'].hasError('required')">
+                        La asd es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
             </div>
-        </div>
-    </mat-card-content>
-</mat-card>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Sexo" formControlName="SEXO_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['SEXO_PAC'].hasError('required')">
+                        El campo Sexo es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" formControlName="FECHA_NAC_PAC">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['FECHA_NAC_PAC'].hasError('required')">
+                        El campo es Vigencia <strong>fecha</strong>
+                    </mat-error>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Correo electronico" formControlName="EMAIL_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['EMAIL_PAC'].hasError('required')">
+                        El oridgen de seguro es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Direccion y domicilio" formControlName="DIRECCION_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['DIRECCION_PAC'].hasError('required')">
+                        El oridgen de seguro es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Telefono" formControlName="TELEFONO_PAC">
+                    </mat-form-field>
+                    <mat-error *ngIf="addressForm.controls['TELEFONO_PAC'].hasError('required')">
+                        El nombre es <strong>obligatorio</strong>
+                    </mat-error>
+                </div>  
+            </div>    
+        </mat-card-content>
+    </mat-card>
 </form>
+    

@@ -1,0 +1,38 @@
+{
+  "name": "sede",
+  "plural": "sede",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "NOMBRE_SED": {
+      "type": "string",
+      "required": true
+    },
+    "DIRECCION_SED": {
+      "type": "string"
+    },
+    "TELEFONO_SED": {
+      "type": "number",
+      "default": 0
+    },
+    "FECHA_CREACION": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "FECHA_MODIF": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

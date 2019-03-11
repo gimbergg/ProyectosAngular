@@ -3,7 +3,7 @@ import { FormBuilder, Validators,FormGroup, FormControl  } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth.service';
 import { UserInterface } from 'src/app/models/user-interface';
 import { Router } from '@angular/router'
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService:AuthService,
     private fb: FormBuilder,
-    private router:Router) {}
+    private router:Router,
+    private location:Location) {}
 
   private user: UserInterface = {
       email:"",
@@ -41,7 +42,9 @@ export class LoginComponent implements OnInit {
         this.authService.setUser(data.user);
         let token = data.id;
         this.authService.setToken(token);
-        this.router.navigate(['/']);      
+        location.reload() 
+        this.router.navigate(['/']);
+         
       },    
       err => {
         alert('Datos incorrectos, verifique sus datos');

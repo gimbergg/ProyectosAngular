@@ -4,7 +4,7 @@
   
   .shipping-card {
     min-width: 120px;
-    margin: 20px auto;
+    margin:  auto;
   }
   
   .mat-radio-button {
@@ -25,4 +25,9 @@
   .col:last-child {
     margin-right: 0;
   }
-  
+  .mat-card-title{
+    color: #134c44;
+  }
+label {
+  color:green;
+}

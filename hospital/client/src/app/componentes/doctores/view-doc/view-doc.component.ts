@@ -22,23 +22,25 @@ export class ViewDocComponent implements OnInit {
      }
 
     addressForm = this.fb.group({
-      nombre: [{value: '', disabled: true}, Validators.required],
-      apellidos: [{value: '', disabled: true}, Validators.required],
-      ci: [{value: '', disabled: true}, Validators.required],
-      telefono: [{value: '', disabled: true}, Validators.required],
-      direccion: [{value: '', disabled: true}, Validators.required],
-      email:[{value: '', disabled: true}, Validators.required],
-      profecion:[{value: '', disabled: true}, Validators.required],
+      NOMBRE_MED: [{value: '', disabled: true}, Validators.required], 
+      APE_PAT_MED: [{value: '', disabled: true}, Validators.required], 
+      APE_MAT_MED: [{value: '', disabled: true}, Validators.required], 
+      SEXO_MED: [{value: '', disabled: true}, Validators.required], 
+      EMAIL_MED: [{value: '', disabled: true}, Validators.required], 
+      DIRECCION_MED: [{value: '', disabled: true}, Validators.required], 
+      TELEFONO_MED: [{value: '', disabled: true}, Validators.required], 
+      ID_ESPECIALIDAD : [{value: '', disabled: true}, Validators.required], 
     });
   
     private doctores: DoctoresInterface = {
-      nombre:'',
-      apellidos:'',
-      ci:'',
-      telefono:'',
-      direccion:'',
-      email:'',
-      profecion:''    
+      NOMBRE_MED:'', 
+      APE_PAT_MED:'', 
+      APE_MAT_MED:'', 
+      SEXO_MED:'', 
+      EMAIL_MED:'', 
+      DIRECCION_MED:'', 
+      TELEFONO_MED:'', 
+      ID_ESPECIALIDAD :'',  
     }
 
   ngOnInit() {
