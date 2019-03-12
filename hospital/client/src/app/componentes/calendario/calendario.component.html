@@ -1,11 +1,97 @@
-<div class="calendario">
+<div class="row">
+  <div class="col-sm-12">
+      
+  <h3>
+      <button mat-raised-button color="btn-success" class="pull-right" (click)="addEvent()">
+        Nueva Cita
+      </button>
+      <div class="clearfix"></div>
+    </h3>
+    
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Primary color</th>
+          <th>Secondary color</th>
+          <th>Starts at</th>
+          <th>Ends at</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <tr *ngFor="let event of events; let index = index">
+          <td>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="event.title"
+              (keyup)="refresh.next()"
+            />
+          </td>
+          <td>
+            <input
+              type="color"
+              [(ngModel)]="event.color.primary"
+              (change)="refresh.next()"
+            />
+          </td>
+          <td>
+            <input
+              type="color"
+              [(ngModel)]="event.color.secondary"
+              (change)="refresh.next()"
+            />
+          </td>
+          <td>
+            <input
+              class="form-control"
+              type="text"
+              mwlFlatpickr
+             
+              
+              
+              
+              
+              dateFormat="Y-m-dTH:i"
+              altFormat="F j, Y H:i"
+              placeholder="Not set"
+            />
+          </td>
+          <td>
+            <input
+              class="form-control"
+              type="text"
+              mwlFlatpickr
+              [(ngModel)]="event.end"
+              
+              
+              
+              
+              dateFormat="Y-m-dTH:i"
+              altFormat="F j, Y H:i"
+              placeholder="Not set"
+            />
+          </td>
+          <td>
+            <button
+            mat-raised-button color="default"
+              (click)="events.splice(index, 1); refresh.next()"
+            >
+            <mat-icon color="warn" >delete_forever</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
+<div class="calendario">
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
-    <h5 class="modal-title">Event action occurred</h5>
-    <button mat-raised-button color="primary" type="button" class="close" (click)="close()">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    <h5 class="modal-title">Cita medica</h5>
   </div>
   <div class="modal-body">
     <div>
@@ -18,7 +104,7 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button mat-raised-button color="primary" type="button" class="btn btn-outline-secondary" (click)="close()">
+    <button mat-raised-button color="primary"  (click)="close()">
       OK
     </button>
   </div>
@@ -60,21 +146,21 @@
     <div class="col-md-4">
       <div class="btn-group">
         <button
-        mat-stroked-button color="primary"
+        mat-raised-button color="primary"
           (click)="view = CalendarView.Month"
           [class.active]="view === CalendarView.Month"
         >
           Mes
         </button>
         <button
-          mat-stroked-button color="warn"
+        mat-raised-button color="primary"
           (click)="view = CalendarView.Week"
           [class.active]="view === CalendarView.Week"
         >
           Semana
         </button>
         <button
-          mat-stroked-button color="default"
+        mat-raised-button color="primary"
           (click)="view = CalendarView.Day"
           [class.active]="view === CalendarView.Day"
         >
@@ -116,92 +202,5 @@
     >
     </mwl-calendar-day-view>
   </div>
-  
-  <br /><br /><br />
-  
-  <h3>
-    Edit events
-    <button mat-raised-button color="primary" class="pull-right" (click)="addEvent()">
-      Add new
-    </button>
-    <div class="clearfix"></div>
-  </h3>
-  
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Primary color</th>
-        <th>Secondary color</th>
-        <th>Starts at</th>
-        <th>Ends at</th>
-        <th>Remove</th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <tr *ngFor="let event of events; let index = index">
-        <td>
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="event.title"
-            (keyup)="refresh.next()"
-          />
-        </td>
-        <td>
-          <input
-            type="color"
-            [(ngModel)]="event.color.primary"
-            (change)="refresh.next()"
-          />
-        </td>
-        <td>
-          <input
-            type="color"
-            [(ngModel)]="event.color.secondary"
-            (change)="refresh.next()"
-          />
-        </td>
-        <td>
-          <input
-            class="form-control"
-            type="text"
-            mwlFlatpickr
-           
-            
-            
-            
-            
-            dateFormat="Y-m-dTH:i"
-            altFormat="F j, Y H:i"
-            placeholder="Not set"
-          />
-        </td>
-        <td>
-          <input
-            class="form-control"
-            type="text"
-            mwlFlatpickr
-            [(ngModel)]="event.end"
-            
-            
-            
-            
-            dateFormat="Y-m-dTH:i"
-            altFormat="F j, Y H:i"
-            placeholder="Not set"
-          />
-        </td>
-        <td>
-          <button
-          mat-raised-button color="warn"
-            (click)="events.splice(index, 1); refresh.next()"
-          >
-            Delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <br />
 </div>

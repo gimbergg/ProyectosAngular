@@ -11,8 +11,6 @@ padding: 15px;
     padding: 0px 15px 0px 15px;
     background-color: #fff;
 }
-
-
 .cabecera{
     background: #3f51b5;
     padding: 20px;
@@ -20,4 +18,15 @@ padding: 15px;
 .title-c{
     color: #FFF;
     font-size: 22px
+}
+.cal-header{
+    background: red !important;
+}
+.cal-month-view .cal-day-number {
+    float: left !important;
+}
+.cal-month-view .cal-cell-top {
+    min-height: 78px;
+    flex: 1;
+    margin-bottom: 80px !important;
 }
