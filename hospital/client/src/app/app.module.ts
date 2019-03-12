@@ -36,6 +36,7 @@ import { PerfilComponent } from './componentes/user/perfil/perfil.component';
 import { Page404Component } from './componentes/page404/page404.component';
 import { MatCardModule } from '@angular/material/card';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { HttpClientModule } from '@angular/common/http';
 //services
@@ -104,12 +105,12 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatBadgeModule,
     NgxSpinnerModule,
+    MatTabsModule,
     
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
     MatIconModule,
     MatListModule,
     HttpClientModule,

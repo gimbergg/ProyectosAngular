@@ -16,7 +16,7 @@ import { NgxSpinnerService} from 'ngx-spinner';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit{
-  public app_name = "HOSPITAL";
+  public app_name = "Prueba";
   public user: UserInterface;
   public islogged:boolean = false;
   public ruta = '/user/perfil';

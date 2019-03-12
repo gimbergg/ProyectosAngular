@@ -1,32 +1,13 @@
-import {
-  Component,OnInit,
-  ChangeDetectionStrategy,
-  ViewChild,
-  TemplateRef
-} from '@angular/core';
-import {
-  startOfDay,
-  endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
-  isSameDay,
-  isSameMonth,
-  addHours
-} from 'date-fns';
+import {Component,OnInit,ChangeDetectionStrategy,ViewChild,TemplateRef} from '@angular/core';
+import {startOfDay,endOfDay,subDays,addDays,endOfMonth,isSameDay,isSameMonth,addHours} from 'date-fns';
 import { Subject } from 'rxjs';
-import {
-  CalendarEvent,
-  CalendarEventAction,
-  CalendarEventTimesChangedEvent,
-  CalendarView
-} from 'angular-calendar';
+import {CalendarEvent,CalendarEventAction,  CalendarEventTimesChangedEvent,  CalendarView} from 'angular-calendar';
 import { NgbModal  } from '@ng-bootstrap/ng-bootstrap';
 
 const colors: any = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
+  primary: {
+    primary: '#3f51b5',
+    secondary: '#3f51b5'
   },
   blue: {
     primary: '#1e90ff',
@@ -43,13 +24,11 @@ const colors: any = {
   templateUrl: './calendario.component.html',
   styleUrls: ['./calendario.component.css']
 })
+
 export class CalendarioComponent implements OnInit {
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
-
   view: CalendarView = CalendarView.Month;
-
   CalendarView = CalendarView;
-
   viewDate: Date = new Date();
 
   modalData: {
@@ -59,7 +38,7 @@ export class CalendarioComponent implements OnInit {
 
   actions: CalendarEventAction[] = [
     {
-      label: '<i class="fa fa-fw fa-pencil"></i>',
+      label: '<i class="fa fa-fw fa-pencil">asdsadsadsad</i>',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.handleEvent('Edited', event);
       }
@@ -77,21 +56,14 @@ export class CalendarioComponent implements OnInit {
 
   events: CalendarEvent[] = [
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
+      start: addHours(startOfDay("2019-03-16"), 6),
+      end: addHours(startOfDay("2019-03-16"), 7),
+      title: 'A draggable and resizable event 123',
+      color: colors.primary,
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
+      title: 'Verificando si la hora funviona',
       color: colors.yellow,
       actions: this.actions
     },
@@ -151,10 +123,10 @@ export class CalendarioComponent implements OnInit {
 
   addEvent(): void {
     this.events.push({
-      title: 'New event',
+      title: 'NUEVA CITA',
       start: startOfDay(new Date()),
       end: endOfDay(new Date()),
-      color: colors.red,
+      color: colors.primary,
       draggable: true,
       resizable: {
         beforeStart: true,
