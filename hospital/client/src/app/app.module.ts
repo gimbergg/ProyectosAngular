@@ -55,6 +55,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarioComponent } from './componentes/calendario/calendario.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     ResListComponent,
     ResFormComponent,
     ResViewComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

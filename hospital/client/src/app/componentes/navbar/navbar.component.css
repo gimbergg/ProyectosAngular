@@ -43,10 +43,12 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgb(2,76,69) !important;
+  /*background: rgb(2,76,69) !important;*/
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
 }
 mat-toolbar-row, .mat-toolbar-single-row {
   height: 50px;
+  overflow: auto;
 }
 .example-fill-remaining-space {
   flex: 1 1 auto;
