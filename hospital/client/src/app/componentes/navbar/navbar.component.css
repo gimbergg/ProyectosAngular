@@ -1,5 +1,5 @@
 .fondo-nav{
-  background: #eaeaea;
+  background: #eeeeee;
 }
 
 .img-fondo{
@@ -17,6 +17,10 @@
 }
 .sidenav {
   width: 240px;
+  margin-top: 60px;
+  font-weight: 400;
+  line-height: 1.5;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 .sidenav .mat-toolbar {
   background: inherit;
@@ -47,7 +51,7 @@
   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
 }
 mat-toolbar-row, .mat-toolbar-single-row {
-  height: 50px;
+  height: 60px;
   overflow: auto;
 }
 .example-fill-remaining-space {
@@ -67,7 +71,33 @@ mat-toolbar-row, .mat-toolbar-single-row {
   border: solid #ccc 3px;
   border-style: double;
 }
+.titulo_nav,
 .rol-user{
   margin: auto;
-
+  text-transform: uppercase;
 }
+.sidenav-container mat-icon, 
+mat-toolbar mat-icon{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid #9b9ea2;
+  font-size: 1rem;
+  color: #9b9ea2;
+}
+.linea{
+  border-top:1px solid #ddd;
+}
+mat-nav-list{ 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 1rem;
+}
+mat-nav-list a{
+  color:#666;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} 

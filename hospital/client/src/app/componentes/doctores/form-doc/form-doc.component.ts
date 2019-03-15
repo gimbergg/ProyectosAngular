@@ -4,6 +4,7 @@ import { DataApiService } from 'src/app/services/data-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DoctoresInterface } from 'src/app/models/doctores-interface';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-form-doc',
@@ -16,6 +17,7 @@ export class FormDocComponent implements OnInit {
     private fb: FormBuilder,
     private dataApi: DataApiService, 
     private route: ActivatedRoute,
+    private toastr: ToastrService,
     private dialogRef: MatDialogRef<FormDocComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
       if(data.key != '0'){
@@ -71,11 +73,12 @@ export class FormDocComponent implements OnInit {
     if(this.id == null){
       console.log('GUARDAR'+this.id);
       this.dataApi.saveDoctores(this.addressForm.value).subscribe(
-        paciente => location.reload()
+        paciente => {this.toastr.success('Creacion', 'Exitosa!'), location.reload()}
       );
     }else{
       console.log('UPDATE'+this.id);
       this.dataApi.updateDoctores(this.addressForm.value, this.id).subscribe(
+        paciente => {this.toastr.success('Actualizacion', 'Exitosa')}
       );
     }
     this.onClose();

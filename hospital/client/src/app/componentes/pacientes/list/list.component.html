@@ -17,8 +17,8 @@
     <mat-icon matPrefix>search</mat-icon>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar paciente">
   </mat-form-field>
-<div class="mat-elevation-z8" >
-<table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
+<div>
+<table mat-table [dataSource]="dataSource" matSort>
     <!-- Name Column -->
     <ng-container matColumnDef="NRO_SEGURO_PAC">
       <th mat-header-cell *matHeaderCellDef> Nro Seguro </th>

@@ -37,6 +37,7 @@ import { Page404Component } from './componentes/page404/page404.component';
 import { MatCardModule } from '@angular/material/card';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ToastrModule } from 'ngx-toastr';
 
 import { HttpClientModule } from '@angular/common/http';
 //services
@@ -108,6 +109,7 @@ import { SidebarComponent } from './componentes/sidebar/sidebar.component';
     MatBadgeModule,
     NgxSpinnerModule,
     MatTabsModule,
+    ToastrModule.forRoot(),
     
     BrowserAnimationsModule,
     LayoutModule,

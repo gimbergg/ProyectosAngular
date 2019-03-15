@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+}
 table {
   width: 100%;
 }
@@ -56,4 +60,7 @@ h1 {
 .titulo{
   color:rgb(2,76,69) !important;
   font-size: 2em;
+}
+.mat-elevation-z8{
+  box-shadow: 1px solid #ddd !important;
 }
