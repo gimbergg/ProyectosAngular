@@ -6,7 +6,8 @@ import { DataSource, isDataSource } from '@angular/cdk/collections';
 
 import { DoctoresInterface } from '../../../models/doctores-interface';
 import { ViewDocComponent } from '../view-doc/view-doc.component';
-import { FormDocComponent } from '../form-doc/form-doc.component'
+import { FormDocComponent } from '../form-doc/form-doc.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-doc',
@@ -17,7 +18,11 @@ export class ListDocComponent implements OnInit {
   title = 'Doctores';
   subtitle = 'Gestion de personal Medico';
 
-  constructor(private dataApi: DataApiService, public dialog: MatDialog) { }
+  constructor(
+    private dataApi: DataApiService, 
+    private toastr:ToastrService,
+    public dialog: MatDialog,    
+    ) { }
 
   private doctores: DoctoresInterface;  
 
@@ -73,8 +78,8 @@ export class ListDocComponent implements OnInit {
     if(confirm('Esta Seguro que desea eliminar?')){
     this.dataApi.deleteDoctores(id)
       .subscribe(
-        res => console.log('Eliminacion exitosa'),
-        err => console.log('ERROR no se pudo eliminar')
+        res => {this.toastr.success('Exitosa!', 'Eliminacion')},
+        err => {this.toastr.success('No se pudo elminar el registro', 'ERROR!')},
       );
     }
   }

@@ -73,12 +73,14 @@ export class FormDocComponent implements OnInit {
     if(this.id == null){
       console.log('GUARDAR'+this.id);
       this.dataApi.saveDoctores(this.addressForm.value).subscribe(
-        paciente => {this.toastr.success('Creacion', 'Exitosa!'), location.reload()}
+        paciente => {this.toastr.success('Exitosa!', 'Creacion'), location.reload()},
+        err => {this.toastr.error('No se realizo la creacion', 'ERROR!')},
       );
     }else{
       console.log('UPDATE'+this.id);
       this.dataApi.updateDoctores(this.addressForm.value, this.id).subscribe(
-        paciente => {this.toastr.success('Actualizacion', 'Exitosa')}
+        paciente => {this.toastr.success('Exitosa!', 'Actualizacion')},
+        err => {this.toastr.error('No se realizo la Actualizacion','ERROR!')},
       );
     }
     this.onClose();

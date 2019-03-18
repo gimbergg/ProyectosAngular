@@ -1,0 +1,18 @@
+{
+  "session": {
+  },
+  "auth": {
+  },
+  "parse": {
+  },
+  "routes": {
+    "loopback#rest": {
+      "paths": ["${restApiRoot}"]
+    }
+  },
+  "files": {
+  },
+  "final:after": {
+    "strong-error-handler": {}
+  }
+}

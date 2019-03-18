@@ -6,6 +6,7 @@ import { DataApiService } from 'src/app/services/data-api.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { PacietnesInterface } from 'src/app/models/pacientes-interface';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-form-create',
@@ -20,6 +21,7 @@ export class FormCreateComponent implements OnInit {
     private dataApi: DataApiService, 
     private location: Location,
     private route: ActivatedRoute,
+    private toastr: ToastrService,
     private dialogRef: MatDialogRef<FormCreateComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
       if(data.key != '0'){
@@ -84,7 +86,8 @@ export class FormCreateComponent implements OnInit {
     if(this.id == null){
       console.log()
       this.dataApi.savePacientes(this.addressForm.value).subscribe(
-        paciente => location.reload()
+        paciente => {this.toastr.success('Actualizacion', 'Exitosa')},
+        err => {this.toastr.error('ERROR!', 'No se realizo la creacion')},
       );
     }else{
       this.dataApi.updatePacientes(this.addressForm.value, this.id).subscribe(
