@@ -22,12 +22,12 @@
     <!-- Name Column -->
     <ng-container matColumnDef="NRO_SEGURO_PAC">
       <th mat-header-cell *matHeaderCellDef> Nro Seguro </th>
-      <td mat-cell *matCellDef="let element"> {{element.NRO_SEGURO_PAC}} </td>
+      <td  mat-cell *matCellDef="let element"> {{element.NRO_SEGURO_PAC}} </td>
     </ng-container>
     <!-- Name Column -->
     <ng-container matColumnDef="CI_PAC">
       <th mat-header-cell *matHeaderCellDef> CI </th>
-      <td mat-cell *matCellDef="let element"> {{element.CI_PAC}} </td>
+      <td (click)="openDialogView(element.id)" style="color:blue; " mat-cell *matCellDef="let element"> {{element.CI_PAC}} </td>
     </ng-container>
     <!-- Name Column -->
     <ng-container matColumnDef="NOMBRE_PAC">
@@ -77,8 +77,8 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
-                  <button  (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="primary">launch</mat-icon></button>
-                  <button  (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>
+                  <button (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
+                  <button (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>
                   <button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>
               </mat-menu>
         </td>

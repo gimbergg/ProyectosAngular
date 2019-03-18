@@ -41,3 +41,7 @@ h1 {
   width: 50%;
   text-align: right;
 }
+button:focus {
+  outline: 1px dotted !important;
+  outline: 5px auto -webkit-focus-ring-color !important;
+}

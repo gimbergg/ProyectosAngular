@@ -22,11 +22,13 @@ font-size: 13px !important;
 tr.mat-header-row{
   background:rgba(2,76,69,0.1) !important;
   font-weight: bold;
+  text-align: center;
+}
+th .mat-header-cell{
+  color: #253949;
 }
 .mat-header-cell{
-  font-size: 14px;
   padding: 10px;
-  text-align: center;
 }
 .mat-cell{
   font-size: 12px;
@@ -58,7 +60,7 @@ h1 {
   display: block !important;
 }
 .titulo{
-  color:rgb(2,76,69) !important;
+  color:#25394a!important;
   font-size: 2em;
 }
 .mat-elevation-z8{

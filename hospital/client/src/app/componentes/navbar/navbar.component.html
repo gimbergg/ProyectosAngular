@@ -2,34 +2,13 @@
   <p style="font-size: 20px; color: white">Cargando...</p>
 </ngx-spinner>
 
-<mat-toolbar *ngIf="islogged" color="primary" >
-  <!--<button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-    *ngIf="isHandset$ | async">
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>-->
-  <button type="button" mat-button (click)="drawer.toggle()">
-    <mat-icon aria-label="Side nav toggle icon" style="color:#FFF;">menu</mat-icon>
-  </button>
-  <span class="titulo_nav">{{app_name}}</span>
-  <span class="example-fill-remaining-space"></span>
-  <span>
-    <button mat-button ><mat-icon routerLink="/">home</mat-icon></button>
-  </span>
-  <span>
-    <mat-menu #appMenu="matMenu">
-      <button routerLink="/user/perfil" mat-menu-item><mat-icon>info</mat-icon>  Perfil</button>
-      <button mat-menu-item (click)="onLogout()"><mat-icon>power_settings_new</mat-icon>  Salir</button>
-      <span><a routerLink="/" mat-list-item class="my-text"><mat-icon color="default">home</mat-icon></a></span>
-    </mat-menu>
-    <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>person</mat-icon>  Usuario </button>
-  </span>
-</mat-toolbar>
-
 <mat-sidenav-container class="sidenav-container" >  
     <mat-sidenav  #drawer class="sidenav" fixedInViewport="flase"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)" >
-    <br><br>
+    <mat-toolbar>
+        <span class="titulo_nav">{{app_name}}</span>
+    </mat-toolbar>
     <span> <img src="../../../../assets/avatar.png" class="rounded-circle img-nav" alt="perfil" ></span>
     <mat-toolbar-row class="my-row-sidebar">
         <span class="rol-user">Bienvenido <b>{{user.username}} </b></span>
@@ -39,19 +18,40 @@
       <span><a routerLink="/" mat-list-item class="my-text"><mat-icon color="default">home</mat-icon> INICIO</a></span>
       <span><a routerLink="/pacientes" routerLinkActive="active" mat-list-item class="my-text"><mat-icon color="default">person_outline</mat-icon> PACIENTES</a></span>
       <span><a routerLink="/doctores" mat-list-item class="my-text"><mat-icon color="default">assignment_ind</mat-icon>MEDICOS</a></span>
-      <span><a routerLink="/citas" mat-list-item class="my-text"><mat-icon color="warn">assignment</mat-icon> <span matBadge="20" matBadgeOverlap="false"> CITA MEDICA</span> </a>
+      <span><a routerLink="/citas" mat-list-item class="my-text"><mat-icon color="accent">assignment</mat-icon> <span matBadgeColor="warn" matBadge="20" matBadgeOverlap="false">CITA MEDICA</span> </a>
       </span>
       <span><a mat-list-item class="my-text"><mat-icon color="default">attach_file</mat-icon> REPORTES</a></span>
     </mat-nav-list>
     <mat-toolbar-row class="my-row-sidebar">
-      <span><mat-icon color="accent">settings</mat-icon>CONFIGURACIONES</span>
+      <span class="rol-user"><mat-icon color="accent">settings</mat-icon>CONFIGURACIONES</span>
     </mat-toolbar-row>
     <mat-nav-list>
       <a routerLink="user" mat-list-item class="my-text"><mat-icon color="default">people</mat-icon>  USUARIOS</a>
       <a mat-list-item class="my-text" (click)="onLogout()"><mat-icon color="default">power_settings_new</mat-icon>  SALIR</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="fondo-nav">      
+  
+  <mat-sidenav-content class="fondo-nav">   
+      <mat-toolbar *ngIf="islogged" color="primary" >
+          <!--<button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>-->
+          <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon aria-label="Side nav toggle icon" style="font-size: 23px; color:#25394a;">view_quilt</mat-icon>
+          </button>
+          
+          <span class="example-fill-remaining-space"></span>
+
+          <span>
+            <mat-menu #appMenu="matMenu">
+                <button mat-menu-item routerLink="/"><mat-icon color="primary">home</mat-icon>INICIO</button>
+              <button routerLink="/user/perfil" mat-menu-item><mat-icon color="primary">perm_identity</mat-icon>  PEFIL</button>
+              <button mat-menu-item (click)="onLogout()"><mat-icon color="primary">power_settings_new</mat-icon>  SALIR</button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="appMenu" ><mat-icon style="font-size: 23px; color:#25394a;">person</mat-icon>   </button>
+          </span>
+        </mat-toolbar>   
     <!-- Add Content Here -->
     <br>
     <div class="container-fluid contenido">
