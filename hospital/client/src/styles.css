@@ -35,6 +35,10 @@ th .mat-header-cell{
   padding: 4px;
   text-align: left;
 }
+.click{
+  color:#0383e4; 
+  cursor: pointer; 
+}
 .mat-dialog-container{
   padding: 5px !important;
   background: #CCC;

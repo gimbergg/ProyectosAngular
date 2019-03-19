@@ -4,7 +4,7 @@
       <div class="col-sm-6">
         <div class="opciones">
           <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle mat-raised-button (click)="openDialogAdd()"><i class="material-icons">add_circle</i> Crear Nuevo</mat-button-toggle>
+            <mat-button-toggle mat-raised-button (click)="openDialogAdd()"><i class="material-icons icon-coloradd">add_circle</i> Crear Nuevo</mat-button-toggle>
           </mat-button-toggle-group>
         </div>
       </div>
@@ -20,12 +20,12 @@
       <!-- Name Column -->
       <ng-container matColumnDef="NOMBRE_MED">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.NOMBRE_MED}} </td>
+        <td (click)="openDialogView(element.id)" class="click"  mat-cell *matCellDef="let element"> {{element.NOMBRE_MED}} </td>
       </ng-container>
       <!-- Weight Column -->
       <ng-container matColumnDef="APE_PAT_MED">
         <th mat-header-cell *matHeaderCellDef> Apellido P. </th>
-        <td mat-cell *matCellDef="let element"> {{element.APE_PAT_MED}} </td>
+        <td (click)="openDialogView(element.id)" class="click" mat-cell *matCellDef="let element"> {{element.APE_PAT_MED}} </td>
       </ng-container>
       <!-- Symbol Column -->
       <ng-container matColumnDef="APE_MAT_MED">
