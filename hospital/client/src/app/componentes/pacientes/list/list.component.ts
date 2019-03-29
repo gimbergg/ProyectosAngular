@@ -8,6 +8,8 @@ import { PacietnesInterface } from '../../../models/pacientes-interface';
 import { FormCreateComponent } from '../form-create/form-create.component';
 import { ViewComponent } from '../view/view.component';
 
+import { NgxSpinnerService} from 'ngx-spinner';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -18,7 +20,10 @@ export class ListComponent implements OnInit {
   title = 'Pacientes';
   subtitle = 'Gestion de Pacientes';
 
-  constructor(private dataApi: DataApiService, public dialog: MatDialog) { }
+  constructor(
+    private dataApi: DataApiService,
+    private spinnerServiceList: NgxSpinnerService, 
+    public dialog: MatDialog) { }
 
   private pacientes: PacietnesInterface;  
 
@@ -33,11 +38,17 @@ export class ListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
+    this.spinnerlist();
     this.getListPacientes();
     //this.dataSource.sort = this.sort;
     //this.dataSource2.paginator = this.paginator;
   }
-
+  spinnerlist(): void{
+    this.spinnerServiceList.show();
+    setTimeout(() => {
+      this.spinnerServiceList.hide();
+    }, 1000);
+  }
   getListPacientes() {
     this.dataApi
       .getAllPacinetes()
@@ -101,5 +112,7 @@ export class PacientesDataSource extends DataSource<any> {
   connect(): Observable<PacietnesInterface[]> {
     return this.dataApiService.getAllPacinetes();
   }
-  disconnect() { }
+  disconnect() { 
+  
+  }
 }

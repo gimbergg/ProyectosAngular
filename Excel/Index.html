@@ -1,0 +1,87 @@
+<html>
+    <header>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.jexcel.js"></script>
+        <link rel="stylesheet" href="css/jquery.jexcel.css" type="text/css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </header>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Actualizacion de Inventarios</a>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        </div>
+    </nav><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <h5 class="card-header">Envio de Inventarios de HBM</h5>
+                    <div class="card-body">
+                        <button type="button" id='json' onclick="get('POST')" class="btn btn-primary btn-sm">Enviar</button>
+                        <button type="button" class="btn btn-secondary btn-sm">Limpiar</button>
+                        <br><br>
+                        <div id="my"></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>    
+</body>
+
+<script>
+data = [];
+update = function (obj, cel, row) {
+    function checkPos(pos) {
+        return pos == producto;
+    }
+    
+    }
+
+$('#my').jexcel({ 
+    data:data,
+        onchange:update,
+        colHeaders: ['Codigo_cliente','Codigo_Producto', 'Cantidad_Minima','Codigo_Vendedor', 'Organizacion_Ventas', 'Canal', 'Area_Mercado'],
+        colWidths: [ 150, 150, 150, 150, 200, 50, 150],
+        columns: [
+            { type: 'text'},
+            { type: 'text', readOnly:false},
+            { type: 'text', readOnly:false},
+            { type: 'text'},
+            { type: 'text'},
+            { type: 'text'},
+            { type: 'text'}
+          ]    
+    });
+$('#json').on('click', function () {
+    var data = $('#my').jexcel('getData');
+});
+
+
+
+function get(method) {            
+    var datos = $('#my').jexcel('getData');
+        datos = JSON.stringify(datos);
+        //datos = {"ReciboID":"4b29a5e6-4292-4c41-b4ca-5e860519e6d7","Estado":"Cont. Manual"};
+    var urls = "http://localhost:55/planinventario";
+    console.log(datos);
+    $.ajax({
+        type: method,
+        //contentType: "application/json",
+        url: urls,
+        //dataType: "Json",
+        data: datos,
+        success: function (e) {
+            console.log('Conexion Exitosa', data);
+        },
+        error: function (data) {
+            console.log('ERROR, No se pudo conectar', data);
+        }
+    });
+}
+</script>
+</html>
