@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         </div>
     </nav><br>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -34,21 +34,22 @@
 </body>
 
 <script>
+$.support.cors = true;
 data = [];
 update = function (obj, cel, row) {
     function checkPos(pos) {
         return pos == producto;
     }
-    
-    }
+}
 
 $('#my').jexcel({ 
     data:data,
         onchange:update,
-        colHeaders: ['Codigo_cliente','Codigo_Producto', 'Cantidad_Minima','Codigo_Vendedor', 'Organizacion_Ventas', 'Canal', 'Area_Mercado'],
-        colWidths: [ 150, 150, 150, 150, 200, 50, 150],
+        colHeaders: ['Codigo cliente','Codigo Producto', 'Cantidad Minima','Cantidad Maxima','Codigo Vendedor', 'Organizacion Ventas', 'Canal', 'Area Mercado'],
+        colWidths: [ 130, 150, 150, 150, 150, 200, 50, 150],
         columns: [
             { type: 'text'},
+            { type: 'text', readOnly:false},
             { type: 'text', readOnly:false},
             { type: 'text', readOnly:false},
             { type: 'text'},
@@ -60,14 +61,14 @@ $('#my').jexcel({
 $('#json').on('click', function () {
     var data = $('#my').jexcel('getData');
 });
-
-
-
-function get(method) {            
+$.support.cors = true;
+function get(method) {     
+    $.support.cors = true;
+           
     var datos = $('#my').jexcel('getData');
         datos = JSON.stringify(datos);
         //datos = {"ReciboID":"4b29a5e6-4292-4c41-b4ca-5e860519e6d7","Estado":"Cont. Manual"};
-    var urls = "http://localhost:55/planinventario";
+    var urls = "http://192.168.1.24:55/mule/planinventario";
     console.log(datos);
     $.ajax({
         type: method,
@@ -76,10 +77,12 @@ function get(method) {
         //dataType: "Json",
         data: datos,
         success: function (e) {
-            console.log('Conexion Exitosa', data);
+            console.log('Conexion Exitosa', e);
+            alert("Envio exitoso de la Informacion");
         },
         error: function (data) {
             console.log('ERROR, No se pudo conectar', data);
+            alert("ERROR!!!, No se pudo procesar la informacion. Intentelo nuevamente");
         }
     });
 }
