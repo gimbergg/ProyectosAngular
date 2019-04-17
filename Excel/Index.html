@@ -79,6 +79,7 @@ function get(method) {
         success: function (e) {
             console.log('Conexion Exitosa', e);
             alert("Envio exitoso de la Informacion");
+            location.reload(true);
         },
         error: function (data) {
             console.log('ERROR, No se pudo conectar', data);
