@@ -16,6 +16,7 @@ import { MyNavComponent } from './componentes/my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
+
 import { PedidosService } from './servicios/pedidos.service';
 
 @NgModule({
