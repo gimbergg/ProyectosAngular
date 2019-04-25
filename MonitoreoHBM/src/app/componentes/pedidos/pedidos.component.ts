@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-//import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { PedidosService } from '../../servicios/pedidos.service';
 import { Pedidos } from 'src/app/model/pedidos.model';
 
@@ -12,14 +12,15 @@ export class PedidosComponent implements OnInit {
 
   list: Pedidos[];
   constructor(
-    private pedidosService:PedidosService
+    private pedidosService:PedidosService,
+    private firestore: AngularFirestore
   ) { }
 
   ngOnInit() {
-    this.pedidosService.getPedidos().subscribe(actionArray =>{
+    this.pedidosService.getPedidos().subscribe(actionArray => {
       this.list = actionArray.map(item => {
         return {
-          PedidoID : item.payload.doc.id,
+          PedidoID: item.payload.doc.id,
           ...item.payload.doc.data()
         } as Pedidos;
       })

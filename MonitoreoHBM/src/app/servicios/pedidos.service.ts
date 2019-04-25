@@ -7,7 +7,6 @@ import { Pedidos } from '../model/pedidos.model'
   providedIn: 'root'
 })
 export class PedidosService {
-  formData: Pedidos;
   constructor(private firestore: AngularFirestore) { }
 
   getPedidos() {

@@ -15,3 +15,12 @@
   top: 0;
   z-index: 1;
 }
+.mat-toolbar{
+  height: 50px;
+  background: #ab0303;
+}
+.titulo{
+  color: #0707cc;
+  margin: auto;
+  font-size: 30px;
+}
