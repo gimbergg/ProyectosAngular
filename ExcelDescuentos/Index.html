@@ -1,0 +1,127 @@
+<html>
+    <header>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.jexcel.js"></script>
+        <link rel="stylesheet" href="css/jquery.jexcel.css" type="text/css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </header>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Productos Descuentos</a>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        </div>
+    </nav><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <h5 class="card-header">Productos con descuento</h5>
+                    <div class="card-body">
+                        <button type="button" id='json' onclick="get()" class="btn btn-primary btn-sm">Enviar</button>
+                        <button type="button" onclick="limpiar()"  class="btn btn-secondary btn-sm">Limpiar</button>
+                        <br><br>
+                        <div id="my">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>    
+</body>
+
+<script>
+data = [
+    ['Mazda', 2001, 2000],
+    ['Pegeout', 2010, 5000],
+    ['Honda Fit', 2009, 3000],
+    ['Honda CRV', 2010, 6000],
+    ['Mazda', 2001, 2000],
+    ['Pegeout', 2010, 5000],
+    ['Honda Fit', 2009, 3000],
+    ['Honda CRV', 2010, 6000],
+    ['Mazda', 2001, 2000],
+    ['Pegeout', 2010, 5000],
+    ['Honda Fit', 2009, 3000],
+    ['Honda CRV', 2010, 6000]
+];
+update = function (obj, cel, row) {
+    function checkPos(pos) {
+        return pos == producto;
+    }
+}
+
+$('#my').jexcel({ 
+    data:data,
+    onchange:update,
+    colHeaders: ['Codigo Producto','Canal', 'Sector','Centro','Fecha Inicio', 'Fecha Finalizacion', 'Descuento', 'Tipo Descuento','Grupo Cliente'],
+    colWidths: [ 150, 70, 100, 100, 150, 150, 120, 150, 120],
+    columns: [
+        { type: 'text'},
+        { type: 'text',  options:{ reverse: true }},
+        { type: 'text', readOnly:false},
+        { type: 'text', readOnly:true},
+        { type: 'text'},
+        { type: 'text'},
+        { type: 'text'},
+        { type: 'text'},
+        { type: 'text'}
+        ]  
+});
+
+$('#json').on('click', function () {
+    var data = $('#my').jexcel('getData');
+});
+
+function limpiar(){
+    $('#my').jexcel({ 
+    data:[],
+    onchange:update,
+    colHeaders: ['Codigo Producto','Canal', 'Sector','Centro','Fecha Inicio', 'Fecha Finalizacion', 'Descuento', 'Tipo Descuento','Grupo Cliente'],
+    colWidths: [ 150, 70, 100, 100, 150, 150, 120, 150, 120],
+    columns: [
+        { type: 'text'},
+        { type: 'text', readOnly:false},
+        { type: 'text', readOnly:false},
+        { type: 'text', readOnly:false},
+        { type: 'text'},
+        { type: 'text'},
+        { type: 'text'},
+        { type: 'text'},
+        { type: 'text'}
+        ]    
+});
+}
+function validar(datos){
+    
+}
+function get(method) {     
+    var datos = $('#my').jexcel('getData');
+    datos = JSON.stringify(datos);
+    //datos = {"ReciboID":"4b29a5e6-4292-4c41-b4ca-5e860519e6d7","Estado":"Cont. Manual"};
+    var urls = "http://localhost:55";//"http://192.168.1.24:55/mule/planinventario";
+    console.log(datos);
+    $.ajax({
+        type: 'POST',
+        //contentType: "application/json",
+        url: urls,
+        //dataType: "Json",
+        data: datos,
+        success: function (e) {
+            console.log('Conexion Exitosa', e);
+            alert("Envio exitoso de la Informacion");
+            location.reload(true);
+        },
+        error: function (data) {
+            console.log('ERROR, No se pudo conectar', data);
+            alert("ERROR!!!, No se pudo procesar la informacion. Intentelo nuevamente");
+        }
+    });
+}
+</script>
+</html>
