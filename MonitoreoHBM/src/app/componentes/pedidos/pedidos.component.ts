@@ -10,15 +10,15 @@ import { Pedidos } from 'src/app/model/pedidos.model';
 })
 export class PedidosComponent implements OnInit {
 
-  list: Pedidos[];
+  list: any;
   constructor(
     private pedidosService:PedidosService,
     private firestore: AngularFirestore
   ) { }
 
   ngOnInit() {
-    this.pedidosService.getPedidos().subscribe(actionArray => {
-      this.list = actionArray.map(item => {
+    this.pedidosService.getPedidos().subscribe(data => {
+      this.list = data.map(item => {
         return {
           PedidoID: item.payload.doc.id,
           ...item.payload.doc.data()
@@ -26,4 +26,5 @@ export class PedidosComponent implements OnInit {
       })
     });
   }
+
 }

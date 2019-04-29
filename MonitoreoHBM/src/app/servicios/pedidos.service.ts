@@ -1,5 +1,5 @@
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Pedidos } from '../model/pedidos.model'
 
 
@@ -7,9 +7,11 @@ import { Pedidos } from '../model/pedidos.model'
   providedIn: 'root'
 })
 export class PedidosService {
-  constructor(private firestore: AngularFirestore) { }
+  constructor(
+    private firestore: AngularFirestore
+    ) { }
 
   getPedidos() {
-    return this.firestore.collection(':80/Pedido').snapshotChanges();
+    return this.firestore.collection(':80/Pedido/').snapshotChanges();
   }
 }

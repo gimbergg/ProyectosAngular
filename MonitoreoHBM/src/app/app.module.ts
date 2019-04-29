@@ -1,15 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { environment } from 'src/environments/environment';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 import { CobranzasComponent } from './componentes/cobranzas/cobranzas.component';
@@ -17,6 +12,10 @@ import { MyNavComponent } from './componentes/my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
 
 import { PedidosService } from './servicios/pedidos.service';
 
@@ -33,6 +32,7 @@ import { PedidosService } from './servicios/pedidos.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     AngularFireDatabaseModule,
     LayoutModule,
     MatToolbarModule,

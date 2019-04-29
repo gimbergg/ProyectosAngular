@@ -4,26 +4,27 @@ class customSCO_OrdenCompraViewDescuento_producto extends ViewHtml {
 
   public function display() {   
     echo ' 
-      <script src="/custom/include/javascript/Excel/js/jquery-3.3.1.min.js"></script>
-      <script src="/custom/include/javascript/Excel/js/jquery.jexcel.js"></script>
-      <link rel="stylesheet" href="/custom/include/javascript/Excel/css/jquery.jexcel.css" type="text/css" />
-      <link rel="stylesheet" href="/custom/in?clude/javascript/Excel/css/style.css" type="text/css" /> 
-     <br>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="card">
-                        <h5 class="card-header">Descuento Productos AEL</h5>
-                        <div class="card-body">
-                            <button type="button" id="json" onclick="get()" class="btn btn-primary btn-sm">Enviar</button>
-                            <button type="button" class="btn btn-secondary btn-sm">Limpiar</button>
-                            <br><br>
-                            <div id="my"></div>
-                        </div>
-                    </div>
+    <script src="/custom/include/javascript/Excel/js/jquery-3.3.1.min.js"></script>
+    <script src="/custom/include/javascript/Excel/js/jquery.jexcel.js"></script>
+    <link rel="stylesheet" href="/custom/include/javascript/Excel/css/jquery.jexcel.css" type="text/css" />
+    <link rel="stylesheet" href="/custom/in?clude/javascript/Excel/css/style.css" type="text/css" /> 
+    <br>
+    <div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <h5 class="card-header">Descuento Productos AEL</h5>
+                <div class="card-body">
+                    <button type="button" id="json" onclick="get()" class="btn btn-primary btn-sm">Enviar</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Limpiar</button>
+                    <br><br>
+                    <div id="my"></div>
                 </div>
-            </div>    
-            ';
+            </div>
+        </div>
+    </div>    
+    ';
     
     echo "<script>
     $.support.cors = true;
