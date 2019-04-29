@@ -12,6 +12,6 @@ export class PedidosService {
     ) { }
 
   getPedidos() {
-    return this.firestore.collection(':80/Pedido/').snapshotChanges();
+    return this.firestore.collection(':80/Pedido').snapshotChanges();
   }
 }
