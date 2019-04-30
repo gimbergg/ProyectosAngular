@@ -1,11 +1,28 @@
+.fondo-nav{
+  background-image: linear-gradient(-225deg, #FFFEFF 50%, #D7FFFE 100%);
+}
+
+.img-fondo{
+  width: 100%;
+  content: "";
+  position: absolute;  
+  background-image: linear-gradient(transparent,#eaeaea);
+}
+.mat-card{
+  background: red;
+  border-radius: 0 !important;
+}
 .sidenav-container {
   height: 100%;
 }
-
 .sidenav {
-  width: 200px;
+  width: 240px;
+  margin-top: 0px;
+  font-weight: 400;
+  line-height: 1.5;
+  background-image: linear-gradient(to right, #243949 1000%, #517fa4 0%);    
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
-
 .sidenav .mat-toolbar {
   background: inherit;
 }
@@ -15,12 +32,95 @@
   top: 0;
   z-index: 1;
 }
-.mat-toolbar{
-  height: 50px;
-  background: #ab0303;
-}
-.titulo{
-  color: #0707cc;
+.sidenav .mat-toolbar {
+  font-size: 35px;
+  color: #fff;
+  background: inherit;
+  text-shadow: 5px 5px 8px rgba(0,0,0,0.3);
+  text-anchor: unset;
   margin: auto;
-  font-size: 30px;
+  margin-top: 10px;
+}
+.my-row-sidebar{
+  color:#000;
+  }
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /*background: rgb(2,76,69) !important;*/
+  background:#ccc;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+mat-toolbar-row, .mat-toolbar-single-row {
+  height: 50px;
+  overflow: auto;
+}
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+.img-nav{
+  margin-left: 38%;  
+  width: 60px; 
+  height: 60px;
+  border: solid #ccc 5px;
+  border-style: double;
+}
+.img-menu{
+  margin-left: 35%;  
+  width: 30px; 
+  height: 30px;
+  border: solid #ccc 3px;
+  border-style: double;
+}
+.titulo_nav{
+  margin: auto;
+  color: #dddddd;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+.rol-user{
+  margin: auto;
+  color: #dddddd;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.80rem;
+ 
+}
+.sidenav-container mat-icon{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #999999;
+}
+mat-toolbar mat-icon{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #333;
+}
+.linea{
+  border-top:1px solid #999999;
+}
+mat-nav-list{ 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 1rem;
+}
+mat-nav-list a{
+  color:#999;
+  font-size: 0.70rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} 
+button:focus {
+  outline: 0px dotted !important;
+  outline: 0px auto -webkit-focus-ring-color !important;
 }

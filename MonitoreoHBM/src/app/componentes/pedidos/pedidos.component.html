@@ -1,12 +1,43 @@
-{{lista}}
-hoal
+<div class="container-fluid">
+<br>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6"><h3 class="titulo">{{title}}</h3></div>
+      <div class="col-sm-6">
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--algo-->
+
 <table class="table table-hover">
     <thead>
-        <th>PedidoID</th>        
+        <th>#</th>
+        <th>PedidoID</th>  
+        <th>ActividadID</th>   
+        <th>NroPedido</th>
+        <th>NroSAP</th>
+        <th>Fecha</th>
+        <th>CodUsuario</th>
+        <th>Acciones</th>        
     </thead>
     <tbody>
-        <tr *ngFor="let pedido of list">
-            <td></td>
+        <tr *ngFor="let elemento of listaPedido;let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{elemento.PedidoID}}</td>
+            <td>{{elemento.ActividadID}}</td>
+            <td>{{elemento.NroPedido}}</td>
+            <td>{{elemento.NroSAP}}</td>
+            <td>{{elemento.Fecha}}</td>
+            <td>{{elemento.CodUsuario}}</td>
+            <td >               
+                <button  (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
+                <button  (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>
+                <!--<button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>-->
+            </td>
         </tr>
     </tbody>
 </table>
+
+</div>
