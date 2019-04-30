@@ -28,7 +28,7 @@
             <td>{{elemento.PedidoID}}</td>
             <td>{{elemento.ActividadID}}</td>
             <td>{{elemento.NroPedido}}</td>
-            <td>{{elemento.NroSAP}}</td>
+            <td><span *ngIf="elemento.NroSAP == '' ? 'bordered': 'greyedOut'">{{elemento.NroSAP}}</span></td>
             <td>{{elemento.Fecha}}</td>
             <td>{{elemento.CodUsuario}}</td>
             <td >               
