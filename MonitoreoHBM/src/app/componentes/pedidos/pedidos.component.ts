@@ -1,9 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { MatDialog, MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { PedidosService } from '../../servicios/pedidos.service';
-import { Observable } from 'rxjs';
-import { Pedidos } from 'src/app/model/pedidos.model';
+import { ViewComponent } from './view/view.component';
 
 @Component({
   selector: 'app-pedidos',
@@ -15,7 +13,8 @@ export class PedidosComponent implements OnInit {
   lista: any;
   listaPedido: any;
   constructor(
-    private pedidosService:PedidosService
+    private pedidosService:PedidosService,
+    public dialog: MatDialog,
   ) { }
 
 
@@ -28,11 +27,29 @@ export class PedidosComponent implements OnInit {
       .subscribe(data => {
         this.listaPedido = []
         data.forEach(element => {
-          let x = element.payload.toJSON()
+          let x = element.payload.toJSON();
           this.listaPedido.push(x);          
         })
         console.log(this.listaPedido);
       });
   }
+
+  openDialogView(id: string): void{
+    console.log(id);
+    this.pedidosService.getPedidosId(id);    
+    const dialogRef = this.dialog.open(ViewComponent, {
+      width: '80%',
+      height: 'auto',
+      data: { key: id }
+    });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  openDialogUpdate(id: string): void{
+    console.log(id);
+  } 
 
 }

@@ -10,7 +10,10 @@ import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 import { CobranzasComponent } from './componentes/cobranzas/cobranzas.component';
 import { MyNavComponent } from './componentes/my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,MatDialogModule, } from '@angular/material';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
@@ -18,6 +21,11 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 
 import { PedidosService } from './servicios/pedidos.service';
+import { ActividadComponent } from './componentes/actividad/actividad.component';
+import { Page404Component } from './componentes/page404/page404.component';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { ViewComponent } from './componentes/pedidos/view/view.component';
+import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,12 @@ import { PedidosService } from './servicios/pedidos.service';
     MenuComponent,
     PedidosComponent,
     CobranzasComponent,
-    MyNavComponent
+    MyNavComponent,
+    ActividadComponent,
+    Page404Component,
+    UsuariosComponent,
+    ViewComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +52,18 @@ import { PedidosService } from './servicios/pedidos.service';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatStepperModule,
+    MatButtonToggleModule
+  ],
+  exports:[
+    BrowserAnimationsModule
+  ],
+  entryComponents:[
+    ViewComponent
   ],
   providers: [PedidosService],
   bootstrap: [AppComponent]

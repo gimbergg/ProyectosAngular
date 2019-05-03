@@ -36,17 +36,7 @@ export class ViewComponent implements OnInit {
       TELEFONO_PAC:[{value: '', disabled: true}, Validators.required]
     });
   private paciente: PacietnesInterface = {
-    id: null,
-    NRO_SEGURO_PAC:'',
-    CI_PAC:'',
-    NOMBRE_PAC:'',
-    APE_PAT_PAC:'',
-    APE_MAT_PAC:'',
-    SEXO_PAC:'',
-    FECHA_NAC_PAC:'',
-    EMAIL_PAC:'',
-    DIRECCION_PAC:'',
-    TELEFONO_PAC:''
+
   }
 
   ngOnInit(){    

@@ -11,7 +11,15 @@ export const environment = {
     projectId: "hansa-business-mobile-qas",
     storageBucket: "hansa-business-mobile-qas.appspot.com",
     messagingSenderId: "135236642723"
-  }
+  }/*
+  firebaseConfig : {
+    apiKey: "AIzaSyAWwG_aze7unnvtaFtQYWleDb6OeZeGL4A",
+    authDomain: "hansa-bussines-mobile.firebaseapp.com",
+    databaseURL: "https://hansa-bussines-mobile.firebaseio.com",
+    projectId: "hansa-bussines-mobile",
+    storageBucket: "hansa-bussines-mobile.appspot.com",
+    messagingSenderId: "414741511676"
+  }*/
 };
 
 /*

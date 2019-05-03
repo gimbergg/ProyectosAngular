@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9"><h3 class="titulo">{{title}}</h3></div>
+            <div class="col-sm-3">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="bold"><mat-icon color="default">menu</mat-icon> Lista</mat-button-toggle>
+            <mat-button-toggle value="italic"><mat-icon color="default">bar_chart</mat-icon> Dashboard</mat-button-toggle>
+            <mat-button-toggle routerLink="/inicio" routerLinkActive="active" value="underline"><mat-icon color="default">home</mat-icon></mat-button-toggle>
+            </mat-button-toggle-group>
+            </div>
+        </div>
+    </div>
+    <br>
+      <!--algo-->
+
+    <table class="table table-striped">
+        <thead>
+            <th>#</th>
+            <th>CodUsuario</th>
+            <th>Nombre</th>
+            <th>CodigoSap</th>
+            <th>Division</th>
+            <th>Estado</th>
+            <th>Mercado</th>
+            <th>Organizacion</th>
+            <th>Regional</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elemento of listaUsuario; let i = index" >
+                <td>{{i + 1}}</td>
+                <td>{{elemento.CodUsuario}}</td>
+                <td>{{elemento.Nombre}}</td>
+                <td>{{elemento.CodigoSap}}</td>
+                <td>{{elemento.Division}}</td>
+                <td><span >{{elemento.Estado}}</span></td>
+                <td>{{elemento.Mercado}}</td>
+                <td>{{elemento.Organizacion}}</td>
+                <td>{{elemento.Regional}}</td>
+                <td >               
+                    <button  (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
+                    <button  (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>
+                    <!--<button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>

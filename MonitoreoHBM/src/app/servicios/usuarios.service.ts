@@ -6,24 +6,15 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
 @Injectable({
   providedIn: 'root'
 })
-export class PedidosService {
+export class UsuariosService {
   pedidos: AngularFireList<any>;     
   constructor(
     private db: AngularFireDatabase,
     private firestore:AngularFirestore
   ){}
 
-  getPedidos() {
+  getUsuarios() {
     //return this.firestore.collection(':80/Pedido').snapshotChanges();
-    return this.db.list(':80/Pedido').snapshotChanges();
-  }
-  getPedidosId(id: String){
-    return this.db.list(':80/Pedido/' + id).snapshotChanges();
-  }
-  getPedidoDetalleId(id: String){
-    return this.db.list(':80/PedidoDetalle/' + id).snapshotChanges();
-  }
-  getHistorialPedidosId(id: String){
-    return this.db.list(':80/HistorialPedidos/' + id).snapshotChanges();
+    return this.db.list(':80/Usuario').snapshotChanges();
   }
 }

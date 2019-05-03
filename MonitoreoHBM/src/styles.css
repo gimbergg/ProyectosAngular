@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.table th, .table td {
+    padding: 0.2rem;     
+    /* border-top: 1px solid #dee2e6; */
+}
+.table{
+    font-size: 13px;
+}
+.titulo{
+    font-size: 22px;
+}
