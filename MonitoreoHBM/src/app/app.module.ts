@@ -14,6 +14,10 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
@@ -57,7 +61,10 @@ import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.co
     ReactiveFormsModule,
     FormsModule,
     MatStepperModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatBadgeModule
   ],
   exports:[
     BrowserAnimationsModule

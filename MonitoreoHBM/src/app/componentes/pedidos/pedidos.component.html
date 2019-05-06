@@ -1,20 +1,38 @@
 <div class="container-fluid">
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-9"><h3 class="titulo">{{title}}</h3></div>
-            <div class="col-sm-3">
-            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle routerLink="/pedidos" routerLinkActive="active"  value="bold"><mat-icon color="default">menu</mat-icon> Lista</mat-button-toggle>
-            <mat-button-toggle routerLink="/pedidos/Dashboard" routerLinkActive="active" value="italic"><mat-icon color="default">bar_chart</mat-icon> Dashboard</mat-button-toggle>
-            <mat-button-toggle routerLink="/inicio" routerLinkActive="active" value="underline"><mat-icon color="default">home</mat-icon></mat-button-toggle>
-            </mat-button-toggle-group>
-            </div>
+<div class="cabecera">
+<div class="row">
+    <div class="col-sm-4">
+        <h3 class="titulo">{{title}}</h3>
+    </div>
+    <div class="col-sm-4">
+        <div class="contadorCuerpo">
+        <span> Total Econtrados: </span>
+        <span class="contador">{{contador}}</span>
         </div>
     </div>
-<br>
-  <!--algo-->
+    <div class="col-sm-4">
+        <div class="opciones">
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle routerLink="/pedidos" routerLinkActive="active" value="bold"><mat-icon color="default">menu</mat-icon> Lista</mat-button-toggle>
+        <mat-button-toggle routerLink="/pedidos/Dashboard" routerLinkActive="active" value="italic"><mat-icon color="default">bar_chart</mat-icon> Dashboard</mat-button-toggle>
+        <mat-button-toggle routerLink="/inicio" routerLinkActive="active" value="underline"><mat-icon color="default">home</mat-icon></mat-button-toggle>
+        </mat-button-toggle-group>
+        </div>
+    </div>
+</div>
+</div>
 
+    <!--buscador-->
+<div class="row">
+    <div class="col-sm-12">
+        <mat-form-field  class="example-full-width buscar" >
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput placeholder="Buscar">
+        </mat-form-field>
+    </div>
+</div>
+
+    <!--tabla-->
 <table class="table table-striped">
     <thead>
         <th>#</th>

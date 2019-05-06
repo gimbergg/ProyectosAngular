@@ -1,19 +1,25 @@
 <div class="container-fluid">
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-9"><h3 class="titulo">{{title}}</h3></div>
-            <div class="col-sm-3">
-            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle value="bold"><mat-icon color="default">menu</mat-icon> Lista</mat-button-toggle>
-            <mat-button-toggle value="italic"><mat-icon color="default">bar_chart</mat-icon> Dashboard</mat-button-toggle>
-            <mat-button-toggle routerLink="/inicio" routerLinkActive="active" value="underline"><mat-icon color="default">home</mat-icon></mat-button-toggle>
-            </mat-button-toggle-group>
-            </div>
+<div class="cabecera">
+<div class="row">
+    <div class="col-sm-8"><h3 class="titulo">{{title}}</h3></div>
+    <div class="col-sm-4">
+        <div class="opciones">
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle routerLink="/" routerLinkActive="active" value="bold"><mat-icon color="default">menu</mat-icon> Lista</mat-button-toggle>
+        <mat-button-toggle routerLink="/" routerLinkActive="active" value="italic"><mat-icon color="default">bar_chart</mat-icon> Dashboard</mat-button-toggle>
+        <mat-button-toggle routerLink="/inicio" routerLinkActive="active" value="underline"><mat-icon color="default">home</mat-icon></mat-button-toggle>
+        </mat-button-toggle-group>
         </div>
     </div>
-    <br>
-<!--algo-->
+</div>
+</div>
+
+    <!--buscador-->
+<mat-form-field  class="example-full-width buscar" >
+<mat-icon matPrefix>search</mat-icon>
+<input matInput placeholder="Buscar">
+</mat-form-field>
+    <!--tabla-->
 
 <table class="table table-striped">
     <thead>

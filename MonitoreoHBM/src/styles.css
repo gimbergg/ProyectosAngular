@@ -7,8 +7,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     /* border-top: 1px solid #dee2e6; */
 }
 .table{
-    font-size: 13px;
+    font-size: 12px;
 }
+
 .titulo{
-    font-size: 22px;
+    font-size: 20px;
+}
+.cabecera{
+    background: #fff;
+    padding: 15px 0px 0px 0px;
+}
+.opciones{
+    float: right;
+    margin: auto;
+    text-align: right;
+}
+
+.example-full-width {
+width: 100%;
+}
+.contadorCuerpo{
+    background: #fff;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+.contador{
+    color: blue;
+    font-size: 14px;
 }

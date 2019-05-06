@@ -9,9 +9,11 @@ import { ViewComponent } from './view/view.component';
   styleUrls: ['./pedidos.component.css']
 })
 export class PedidosComponent implements OnInit {
+
   title = 'Lista de Pedidos';
   lista: any;
   listaPedido: any;
+  contador :any = 0;
   constructor(
     private pedidosService:PedidosService,
     public dialog: MatDialog,
@@ -28,9 +30,10 @@ export class PedidosComponent implements OnInit {
         this.listaPedido = []
         data.forEach(element => {
           let x = element.payload.toJSON();
-          this.listaPedido.push(x);          
+          this.listaPedido.push(x);      
         })
-        console.log(this.listaPedido);
+        this.contador = this.listaPedido.length;
+        console.log(this.listaPedido.length);
       });
   }
 
