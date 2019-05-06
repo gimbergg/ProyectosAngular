@@ -6,8 +6,10 @@ import { ActividadComponent } from './componentes/actividad/actividad.component'
 import { Page404Component } from './componentes/page404/page404.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 const routes: Routes = [
+  { path: 'inicio', component: InicioComponent},
   { path: 'actividad', component: ActividadComponent},
   { path: 'pedidos', component: PedidosComponent},
   { path: 'pedidos/Dashboard', component: DashboardComponent},

@@ -17,6 +17,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatBadgeModule} from '@angular/material/badge';
+import {ChartsModule} from 'ng2-charts';
 
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -30,6 +31,7 @@ import { Page404Component } from './componentes/page404/page404.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { ViewComponent } from './componentes/pedidos/view/view.component';
 import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.co
     Page404Component,
     UsuariosComponent,
     ViewComponent,
-    DashboardComponent
+    DashboardComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.co
     MatButtonToggleModule,
     MatFormFieldModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    ChartsModule
   ],
   exports:[
     BrowserAnimationsModule

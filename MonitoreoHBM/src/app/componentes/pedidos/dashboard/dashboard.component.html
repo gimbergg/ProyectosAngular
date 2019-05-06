@@ -14,3 +14,55 @@
     </div>
     <br>
         <!--algo-->
+<div class="row">
+    <div class="col-sm-3">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Total Pedidos</h5>
+                <h2>{{contador}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Total con SAP</h5>
+                <h2>{{totalnosap}}</h2>
+            </div>
+        </div>
+    </div>    
+    <div class="col-sm-3">
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Total sin SAP</h5>
+                <h2>{{totalsap}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Pedidos Erroneos</h5>
+                <h2>{{totalsap}}</h2>
+            </div>
+        </div>
+    </div>
+</div>    
+<div class="row">
+    <div class="col-sm-12">
+        <div style="display: block">
+            <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+            </canvas>
+        </div>
+        <button mat-button mat-raised-button color="primary" (click)="randomize()">Actualizar</button>
+    </div>
+    <div class="col-sm-6">
+        
+    </div>    
+</div>    
