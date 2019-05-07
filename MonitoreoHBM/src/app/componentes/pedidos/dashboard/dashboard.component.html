@@ -1,68 +1,80 @@
 <div class="container-fluid">
-    <br>
-    <div class="row">
-        <div class="col-sm-8"><h3 class="titulo">{{title}}</h3></div>
-        <div class="col-sm-4">
-            <div class="opciones">
-            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle routerLink="/pedidos" routerLinkActive="active" value="bold"><mat-icon color="default">menu</mat-icon> Lista</mat-button-toggle>
-            <mat-button-toggle routerLink="/pedidos/Dashboard" routerLinkActive="active" value="italic"><mat-icon color="default">bar_chart</mat-icon> Dashboard</mat-button-toggle>
-            <mat-button-toggle routerLink="/inicio" routerLinkActive="active" value="underline"><mat-icon color="default">home</mat-icon></mat-button-toggle>
-            </mat-button-toggle-group>
+    <div class="cabecera">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3 class="titulo">{{title}}</h3>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4">
+                <div class="opciones">
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle routerLink="/pedidos" routerLinkActive="active" value="bold"><mat-icon color="default">menu</mat-icon> Lista</mat-button-toggle>
+                <mat-button-toggle routerLink="/pedidos/Dashboard" routerLinkActive="active" value="italic"><mat-icon color="default">bar_chart</mat-icon> Dashboard</mat-button-toggle>
+                <mat-button-toggle routerLink="/inicio" routerLinkActive="active" value="underline"><mat-icon color="default">home</mat-icon></mat-button-toggle>
+                </mat-button-toggle-group>
+                </div>
             </div>
         </div>
     </div>
-    <br>
+<br>
         <!--algo-->
 <div class="row">
     <div class="col-sm-3">
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Total Pedidos</h5>
-                <h2>{{contador}}</h2>
+                <p class="card-title">Total</p>
+                <h3>{{contador}}</h3>
             </div>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Total con SAP</h5>
-                <h2>{{totalnosap}}</h2>
+                <p class="card-title">Total con SAP</p>
+                <h3>{{totalsap}}</h3>
             </div>
         </div>
     </div>    
     <div class="col-sm-3">
         <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Total sin SAP</h5>
-                <h2>{{totalsap}}</h2>
+                <p class="card-title">Total sin SAP</p>
+                <h3>{{totalnosap}}</h3>
             </div>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Pedidos Erroneos</h5>
-                <h2>{{totalsap}}</h2>
+                <p class="card-title">Pendientes</p>
+                <h3>{{totalPendiente}}</h3>
             </div>
         </div>
     </div>
 </div>    
 <div class="row">
     <div class="col-sm-12">
+        <div class="card bg-violeta mb-3">
+        <div class="card-body">
         <div style="display: block">
             <canvas baseChart
-                [datasets]="barChartData"
-                [labels]="barChartLabels"
+                [datasets]="datosUsers"
+                [labels]="labelUsers"
                 [options]="barChartOptions"
                 [plugins]="barChartPlugins"
                 [legend]="barChartLegend"
                 [chartType]="barChartType">
             </canvas>
         </div>
-        <button mat-button mat-raised-button color="primary" (click)="randomize()">Actualizar</button>
-    </div>
+        </div>
+        </div>
+        <!--<button mat-button mat-raised-button color="primary" (click)="randomize()">Actualizar</button>-->
+    </div> 
+</div>    
+<div class="row">
     <div class="col-sm-6">
         
-    </div>    
-</div>    
+    </div>
+</div>

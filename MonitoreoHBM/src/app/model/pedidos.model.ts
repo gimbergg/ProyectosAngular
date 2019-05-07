@@ -49,5 +49,6 @@ export class Pedidos {
     TipoCambio?: string;
     TipoDescCab?: string;
     TipoSinc?: string;
+    Error?: string;
 }
 

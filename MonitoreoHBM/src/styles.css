@@ -6,15 +6,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 0.2rem;     
     /* border-top: 1px solid #dee2e6; */
 }
+.mat-sidenav-content{
+    background-color:#eeeeee;
+}
 .table{
     font-size: 12px;
+    background-color: #FFF;
 }
 
 .titulo{
     font-size: 20px;
 }
 .cabecera{
-    background: #fff;
     padding: 15px 0px 0px 0px;
 }
 .opciones{
@@ -27,7 +30,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 width: 100%;
 }
 .contadorCuerpo{
-    background: #fff;
     padding: 5px;
     text-align: center;
     font-size: 14px;
@@ -36,6 +38,17 @@ width: 100%;
     color: blue;
     font-size: 14px;
 }
+.card{
+    border: 0px;
+    border-radius: 2px;
+}
 .card-body{
     text-align: center;
+    padding: 5px;
+}
+.bg-white{
+    background-color: #FFF !important;
+}
+.bg-violeta{
+    background-color: #2b1a5d !important;
 }

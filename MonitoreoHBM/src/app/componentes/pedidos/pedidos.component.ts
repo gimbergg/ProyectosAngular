@@ -1,7 +1,8 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, HostListener,Injectable } from '@angular/core';
 import { MatDialog, MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { PedidosService } from '../../servicios/pedidos.service';
 import { ViewComponent } from './view/view.component';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-pedidos',
@@ -18,6 +19,9 @@ export class PedidosComponent implements OnInit {
     private pedidosService:PedidosService,
     public dialog: MatDialog,
   ) { }
+  @HostListener('input', ['$event.target']) oninput(targetElement: any) {
+    console.log(targetElement.value);
+  }
 
 
   ngOnInit() {
@@ -53,6 +57,6 @@ export class PedidosComponent implements OnInit {
 
   openDialogUpdate(id: string): void{
     console.log(id);
-  } 
+  }
 
 }

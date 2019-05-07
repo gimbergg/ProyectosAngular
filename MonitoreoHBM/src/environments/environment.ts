@@ -3,15 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  firebaseConfig : {
+  production: false,  
+
+  /*firebaseConfig : {
     apiKey: "AIzaSyADd36wL9ZiA1QKPMDK4_fsMcwi4hC1xsk",
     authDomain: "hansa-business-mobile-qas.firebaseapp.com",
     databaseURL: "https://hansa-business-mobile-qas.firebaseio.com",
     projectId: "hansa-business-mobile-qas",
     storageBucket: "hansa-business-mobile-qas.appspot.com",
     messagingSenderId: "135236642723"
-  }/*
+  }*/
   firebaseConfig : {
     apiKey: "AIzaSyAWwG_aze7unnvtaFtQYWleDb6OeZeGL4A",
     authDomain: "hansa-bussines-mobile.firebaseapp.com",
@@ -19,7 +20,7 @@ export const environment = {
     projectId: "hansa-bussines-mobile",
     storageBucket: "hansa-bussines-mobile.appspot.com",
     messagingSenderId: "414741511676"
-  }*/
+  }
 };
 
 /*

@@ -10,7 +10,7 @@ import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 import { CobranzasComponent } from './componentes/cobranzas/cobranzas.component';
 import { MyNavComponent } from './componentes/my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,MatDialogModule, } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,MatDialogModule, MatSortModule } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -61,6 +61,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     MatIconModule,
     MatListModule,
     MatDialogModule,
+    MatSortModule,    
     ReactiveFormsModule,
     FormsModule,
     MatStepperModule,
@@ -71,7 +72,8 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     ChartsModule
   ],
   exports:[
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSortModule
   ],
   entryComponents:[
     ViewComponent
