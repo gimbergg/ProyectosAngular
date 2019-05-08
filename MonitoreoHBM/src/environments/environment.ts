@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,  
-
   /*firebaseConfig : {
     apiKey: "AIzaSyADd36wL9ZiA1QKPMDK4_fsMcwi4hC1xsk",
     authDomain: "hansa-business-mobile-qas.firebaseapp.com",

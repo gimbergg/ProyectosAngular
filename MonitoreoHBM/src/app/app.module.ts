@@ -32,6 +32,9 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { ViewComponent } from './componentes/pedidos/view/view.component';
 import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { PieChartComponent } from './componentes/pedidos/dashboard/pie-chart/pie-chart.component';
+import { BarChartComponent } from './componentes/pedidos/dashboard/bar-chart/bar-chart.component';
+import { BarChart02Component } from './componentes/pedidos/dashboard/bar-chart02/bar-chart02.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     UsuariosComponent,
     ViewComponent,
     DashboardComponent,
-    InicioComponent
+    InicioComponent,
+    PieChartComponent,
+    BarChartComponent,
+    BarChart02Component
   ],
   imports: [
     BrowserModule,
