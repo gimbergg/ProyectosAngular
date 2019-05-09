@@ -11,6 +11,7 @@ export class ActividadComponent implements OnInit {
   title = 'Lista de Actividades';
   lista: any;
   listaActividad: any;
+  contador :any = 0;
   constructor(
     private actividadService:ActividadService
   ) { }
@@ -28,6 +29,7 @@ export class ActividadComponent implements OnInit {
           let x = element.payload.toJSON()
           this.listaActividad.push(x);          
         })
+        this.contador = this.listaActividad.length;
         console.log(this.listaActividad);
       });
   }

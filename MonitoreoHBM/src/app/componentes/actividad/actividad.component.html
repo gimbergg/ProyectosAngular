@@ -1,7 +1,13 @@
 <div class="container-fluid">
 <div class="cabecera">
 <div class="row">
-    <div class="col-sm-8"><h3 class="titulo">{{title}}</h3></div>
+    <div class="col-sm-4"><h3 class="titulo">{{title}}</h3></div>
+    <div class="col-sm-4">
+            <div class="contadorCuerpo">
+            <span> Total: </span>
+            <span class="contador">{{contador}}</span>
+            </div>
+        </div>
     <div class="col-sm-4">
         <div class="opciones">
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
