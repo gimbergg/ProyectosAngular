@@ -11,6 +11,7 @@ export class CobranzasComponent implements OnInit {
   title = 'Lista de Cobranzas';
   lista: any;
   listaCobranza: any;
+  contador: any = 0;
   constructor(
     private cobranzasService:CobranzasService
   ) { }
@@ -28,6 +29,7 @@ export class CobranzasComponent implements OnInit {
           let x = element.payload.toJSON()
           this.listaCobranza.push(x);          
         })
+        this.contador = this.listaCobranza.length;
         console.log(this.listaCobranza);
       });
   }

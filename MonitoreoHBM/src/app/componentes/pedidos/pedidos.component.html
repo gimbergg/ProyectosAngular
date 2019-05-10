@@ -44,8 +44,9 @@
         <th>Fecha</th>
         <th>Moneda</th>
         <th>MontoTotal</th>
+        <th>ComentarioCompPago</th>
         <th>PedidoID</th>
-        
+        <th>ActividadID</th>
         <th>Acciones</th>        
     </thead>
     <tbody>
@@ -54,6 +55,7 @@
             <td>{{elemento.CodUsuario}}</td>
             <td>{{elemento.RazonSocial}}</td>            
             <td>{{elemento.NroPedido}}</td>
+
             <td>
                 <span *ngIf="elemento.NroSAP == ''" class="text-danger">{{elemento.NroSAP}}</span>
                 <span *ngIf="elemento.NroSAP != ''" class="text-success">{{elemento.NroSAP}}</span>
@@ -62,8 +64,10 @@
             <td>{{elemento.Fecha}}</td>
             <td>{{elemento.Moneda}}</td>
             <td>{{elemento.MontoTotal}}</td>
+            <td colspan="1">{{elemento.ComentarioCompPago}}</td>
             <td>{{elemento.PedidoID}}</td>
-            <td >               
+            <td>{{elemento.ActividadID}}</td>
+            <td>
                 <button  (click)="openDialogView(elemento.PedidoID)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
                 <button  (click)="openDialogUpdate(elemento.PedidoID)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>
                 <!--<button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>-->
