@@ -30,12 +30,16 @@
   <table class="table table-striped">
       <thead>
           <th>#</th>
-          <th>ActividadID</th>  
-          <th>CodDivision</th>   
+          <th>ActividadID</th>
+          <th>CodDivision</th>
           <th>CodUsuario</th>
+          <th>CodVendedor</th>
+          <th>NombreCliente</th>
           <th>Estado</th>
           <th>FechaCrea</th>
+          <th>FechaFinPlan</th>
           <th>OrgVenta</th>
+          <th>Regional</th>
           <th>Acciones</th>        
       </thead>
       <tbody>
@@ -44,9 +48,13 @@
               <td>{{elemento.ActividadID}}</td>
               <td>{{elemento.CodDivision}}</td>
               <td>{{elemento.CodUsuario}}</td>
+              <td>{{elemento.CodVendedor}}</td>
+              <td>{{elemento.NombreCliente}}</td>
               <td>{{elemento.Estado}}</td>
               <td>{{elemento.FechaCrea}}</td>
+              <td>{{elemento.FechaFinPlan}}</td>
               <td>{{elemento.OrgVenta}}</td>
+              <td>{{elemento.Regional}}</td>
               <td >               
                   <button  (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
                   <button  (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>

@@ -5,16 +5,28 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-        {{pedidos2 | json}}
+        <!--{{pedidos2 | json}}-->
     </div>
     <div class="col-sm-4">
         <mat-vertical-stepper [linear]="isLinear" #stepper>
           <mat-step [stepControl]="firstFormGroup">
               <ng-template matStepLabel>Enviado</ng-template>
           </mat-step>
+          <mat-step [stepControl]="firstFormGroup">
+              <ng-template matStepLabel>Enviado</ng-template>
+          </mat-step>
+          <mat-step [stepControl]="firstFormGroup">
+              <ng-template matStepLabel>Enviado</ng-template>
+          </mat-step>
+          <mat-step [stepControl]="firstFormGroup">
+              <ng-template matStepLabel>Enviado</ng-template>
+          </mat-step>
           <mat-step [stepControl]="secondFormGroup">
               <ng-template matStepLabel>Contabilizado</ng-template>
           </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <ng-template matStepLabel>Contabilizado</ng-template>
+        </mat-step>
           <mat-step>
             <ng-template matStepLabel>Fin</ng-template>
             You are now done.
