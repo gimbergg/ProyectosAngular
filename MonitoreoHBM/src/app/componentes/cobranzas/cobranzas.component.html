@@ -34,9 +34,10 @@
         <th>CodRecibo</th>
 
         <th>Estado</th>
+        <td>FormaPago</td>
         <th>Fecha</th>
         <th>ReciboID</th>  
-        <th>ActividadID</th>
+
         <th>Acciones</th>        
     </thead>
     <tbody>
@@ -47,13 +48,14 @@
             
             <td>
                 <span *ngIf="elemento.Estado == 'Enviado' " class="text-success">{{elemento.Estado}}</span>
-                <span *ngIf="elemento.Estado === 'Pendiente' " class="text-danger">{{elemento.Estado}}</span>
+                <span *ngIf="elemento.Estado === 'Pendiente' " class="text-danger" style="background-color: red">{{elemento.Estado}}</span>
                 <span *ngIf="elemento.Estado != 'Enviado' && elemento.Estado != 'Pendiente' && elemento.Estado.substr(0, 5) != 'Caso:'" class="text-danger">{{elemento.Estado}}</span>
                 <span *ngIf="elemento.Estado.substr(0, 5) === 'Caso:'" class="text-danger" class="text-primary">{{elemento.Estado}}</span>
             </td>
+            <td>{{elemento.FormaPago}}</td>
             <td>{{elemento.Fecha}}</td>
             <td>{{elemento.ReciboID}}</td>
-            <td>{{elemento.ActividadID}}</td>
+
             <td >               
                 <button  (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
                 <button  (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>

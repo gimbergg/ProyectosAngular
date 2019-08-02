@@ -12,8 +12,8 @@ export class ActividadService {
     private firestore:AngularFirestore
   ){}
 
-  getActividad() {
+  getActividad(org) {
     //return this.firestore.collection(':80/Pedido').snapshotChanges();
-    return this.db.list(':80/Actividad/1100').snapshotChanges();
+    return this.db.list(':80/Actividad/'+ org).snapshotChanges();
   }
 }

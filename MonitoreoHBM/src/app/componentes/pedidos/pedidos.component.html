@@ -24,10 +24,20 @@
 
     <!--buscador-->
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-2">
+        <mat-form-field>
+            <mat-label>Seleccione División</mat-label>
+            <mat-select [(value)]="selected" >
+                <mat-option *ngFor="let food of foods" [value]="food.value" (click)="getDiv(food.viewValue)">
+                {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-sm-10">
         <mat-form-field  class="example-full-width buscar" >
             <mat-icon matPrefix>search</mat-icon>
-            <input matInput [(ngModel)]="searchText" placeholder="Buscar" id="buscar">
+            <input matInput placeholder="Buscar">
         </mat-form-field>
     </div>
 </div>
@@ -40,13 +50,14 @@
         <th>RazonSocial</th>        
         <th>NroPedido</th>
         <th>NroSAP</th>
+        <th>Error</th>
         <th>Pendiente</th>
         <th>Fecha</th>
         <th>Moneda</th>
         <th>MontoTotal</th>
         <th>ComentarioCompPago</th>
         <th>PedidoID</th>
-        <th>ActividadID</th>
+        
         <th>Acciones</th>        
     </thead>
     <tbody>
@@ -60,13 +71,14 @@
                 <span *ngIf="elemento.NroSAP == ''" class="text-danger">{{elemento.NroSAP}}</span>
                 <span *ngIf="elemento.NroSAP != ''" class="text-success">{{elemento.NroSAP}}</span>
             </td>
+            <td>{{elemento.Error}}</td>
             <td>{{elemento.Pendiente}}</td>
             <td>{{elemento.Fecha}}</td>
             <td>{{elemento.Moneda}}</td>
             <td>{{elemento.MontoTotal}}</td>
             <td colspan="1">{{elemento.ComentarioCompPago}}</td>
             <td>{{elemento.PedidoID}}</td>
-            <td>{{elemento.ActividadID}}</td>
+            
             <td>
                 <button  (click)="openDialogView(elemento.PedidoID)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
                 <button  (click)="openDialogUpdate(elemento.PedidoID)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>

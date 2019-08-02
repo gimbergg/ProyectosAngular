@@ -17,6 +17,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatSelectModule} from '@angular/material/select';
 import {ChartsModule} from 'ng2-charts';
 
 
@@ -75,6 +76,7 @@ import { BarChart02Component } from './componentes/pedidos/dashboard/bar-chart02
     MatFormFieldModule,
     MatInputModule,
     MatBadgeModule,
+    MatSelectModule,
     ChartsModule
   ],
   exports:[

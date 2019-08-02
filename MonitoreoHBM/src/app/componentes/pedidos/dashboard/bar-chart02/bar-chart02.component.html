@@ -1,3 +1,10 @@
-<p>
-  bar-chart02 works!
-</p>
+<div style="display: block">
+    <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="labelUsers"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+    </canvas>
+    </div>

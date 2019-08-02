@@ -4,6 +4,11 @@ import { PedidosService } from '../../servicios/pedidos.service';
 import { ViewComponent } from './view/view.component';
 import { __values } from 'tslib';
 
+export interface Food {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -19,6 +24,13 @@ export class PedidosComponent implements OnInit {
     private pedidosService:PedidosService,
     public dialog: MatDialog,
   ) { }
+  foods: Food[] = [
+    {value: '1100', viewValue: '1100'},
+    {value: '1200', viewValue: '1200'},
+    {value: '9900', viewValue: '9900'}
+  ];
+  selected = '1100';
+
   @HostListener('input', ['$event.target']) oninput(targetElement: any) {
     console.log(targetElement.value);
   }
@@ -26,6 +38,17 @@ export class PedidosComponent implements OnInit {
 
   ngOnInit() {
     this.getListPedido();
+  }
+
+  getDiv(elemento){
+    this.pedidosService.getPedidos()      
+      .subscribe(data => {
+        this.listaPedido = []
+        data.forEach(element => {
+          let x = element.payload.toJSON();
+          this.listaPedido.push(x);      
+        })
+      });
   }
 
   getListPedido() {

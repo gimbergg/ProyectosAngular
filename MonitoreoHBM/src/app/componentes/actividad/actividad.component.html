@@ -4,8 +4,17 @@
     <div class="col-sm-4"><h3 class="titulo">{{title}}</h3></div>
     <div class="col-sm-4">
         <div class="contadorCuerpo">
-        <span> Total: </span>
-        <span class="contador">{{contador}}</span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p class="text-primary">Industria: <b>{{contador}}</b></p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="text-success">Consumo: <b>{{contador2}}</b></p>
+                </div>   
+                <div class="col-sm-4">
+                    <p class="text-info">Cobranzas : <b>{{contador9}}</b></p>
+                </div>
+            </div>         
         </div>
     </div>
     <div class="col-sm-4">
@@ -21,47 +30,62 @@
 </div>
 
     <!--buscador-->
-<mat-form-field  class="example-full-width buscar" >
-<mat-icon matPrefix>search</mat-icon>
-<input matInput placeholder="Buscar">
-</mat-form-field>
+<div class="row">
+    <div class="col-sm-2">
+        <mat-form-field>
+            <mat-label>Seleccione División</mat-label>
+            <mat-select [(value)]="selected" >
+                <mat-option *ngFor="let food of foods" [value]="food.value" (click)="getDiv(food.viewValue)">
+                {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-sm-10">
+        <mat-form-field  class="example-full-width buscar" >
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput placeholder="Buscar">
+        </mat-form-field>
+    </div>
+</div>
+
     <!--tabla-->
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <thead>
+                <th>#</th>
+                <th>ActividadID</th>
+                <th>CodUsuario</th>
+                <th>NombreCliente</th>
+                <th>Estado</th>
+                <th>FechaCrea</th>
+                <th>FechaFinPlan</th>
+                <th>OrgVenta</th>
+                <th>Regional</th>
+                <th>Acciones</th>        
+            </thead>
+            <tbody>
+                <tr *ngFor="let elemento of listaActividad;let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{elemento.ActividadID}}</td>
+                    <td>{{elemento.CodUsuario}}</td>
+                    <td>{{elemento.NombreCliente}}</td>
+                    <td>{{elemento.Estado}}</td>
+                    <td>{{elemento.FechaCrea}}</td>
+                    <td>{{elemento.FechaFinPlan}}</td>
+                    <td>{{elemento.OrgVenta}}</td>
+                    <td>{{elemento.Regional}}</td>
+                    <td >               
+                        <button  (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
+                        <button  (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>
+                        <!--<button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>-->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
   
-  <table class="table table-striped">
-      <thead>
-          <th>#</th>
-          <th>ActividadID</th>
-          <th>CodDivision</th>
-          <th>CodUsuario</th>
-          <th>CodVendedor</th>
-          <th>NombreCliente</th>
-          <th>Estado</th>
-          <th>FechaCrea</th>
-          <th>FechaFinPlan</th>
-          <th>OrgVenta</th>
-          <th>Regional</th>
-          <th>Acciones</th>        
-      </thead>
-      <tbody>
-          <tr *ngFor="let elemento of listaActividad;let i = index">
-              <td>{{i + 1}}</td>
-              <td>{{elemento.ActividadID}}</td>
-              <td>{{elemento.CodDivision}}</td>
-              <td>{{elemento.CodUsuario}}</td>
-              <td>{{elemento.CodVendedor}}</td>
-              <td>{{elemento.NombreCliente}}</td>
-              <td>{{elemento.Estado}}</td>
-              <td>{{elemento.FechaCrea}}</td>
-              <td>{{elemento.FechaFinPlan}}</td>
-              <td>{{elemento.OrgVenta}}</td>
-              <td>{{elemento.Regional}}</td>
-              <td >               
-                  <button  (click)="openDialogView(element.id)" mat-icon-button><mat-icon color="accent">launch</mat-icon></button>
-                  <button  (click)="openDialogUpdate(element.id)" mat-icon-button><mat-icon color="primary">edit</mat-icon></button>
-                  <!--<button (click)="onDelete(element.id)" mat-icon-button><mat-icon color="warn" >delete_forever</mat-icon></button>-->
-              </td>
-          </tr>
-      </tbody>
-  </table>
   
   </div>
