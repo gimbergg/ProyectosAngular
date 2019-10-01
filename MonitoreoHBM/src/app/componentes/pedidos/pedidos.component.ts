@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener,Injectable } from '@angular/core';
 import { MatDialog, MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { PedidosService } from '../../servicios/pedidos.service';
+import { Pedidos } from '../../model/pedidos.model'
 import { ViewComponent } from './view/view.component';
 import { __values } from 'tslib';
 
@@ -20,10 +21,12 @@ export class PedidosComponent implements OnInit {
   lista: any;
   listaPedido: any;
   contador :any = 0;
+
   constructor(
     private pedidosService:PedidosService,
     public dialog: MatDialog,
   ) { }
+
   foods: Food[] = [
     {value: '1100', viewValue: '1100'},
     {value: '1200', viewValue: '1200'},
@@ -35,9 +38,21 @@ export class PedidosComponent implements OnInit {
     console.log(targetElement.value);
   }
 
-
   ngOnInit() {
     this.getListPedido();
+//this.getPed();
+  }
+  public p: Pedidos[]
+  getPed(){
+    this.pedidosService.getPed().subscribe(
+      response => {
+        console.log(response);
+          this.p = response.p        
+      },
+      error =>{
+        console.log(<any> error);
+      }
+    )
   }
 
   getDiv(elemento){

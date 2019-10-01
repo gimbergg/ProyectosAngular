@@ -63,15 +63,17 @@ export class BarChartComponent implements OnInit {
       .subscribe((elemento) => {
         elemento.forEach(element => {
           let x:any = element.payload.toJSON();
-          this.usuarios.push(x.CodUsuario);
-          if(x.NroSAP == ''){
-            if(x.Pendiente == 1){
-              this.usuariosPendientes.push(x.CodUsuario);   
-            }else{
-              this.usuariosNoSap.push(x.CodUsuario);
+          if(x.OrgVenta == '1200'){
+          this.usuarios.push(x.CodUsuario);          
+            if(x.NroSAP == ''){
+              if(x.Pendiente == 1){
+                this.usuariosPendientes.push(x.CodUsuario);   
+              }else{
+                this.usuariosNoSap.push(x.CodUsuario);
+              }
+            }else{ 
+              this.usuariosSap.push(x.CodUsuario);
             }
-          }else{ 
-            this.usuariosSap.push(x.CodUsuario);
           }
         })
         

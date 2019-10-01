@@ -19,43 +19,71 @@
         </div>
     </div>
 <br>
-        <!--algo-->
 <div class="row">
     <div class="col-sm-3">
-        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-body">
-                <p class="card-title">Total</p>
-                <h3>{{contador}}</h3>
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon bg-primary">                    
+                    <h3>{{contador}}</h3>
+                </div>
+                <p class="card-category">Total</p>
+                <h3 class="card-title"><small> Realizados</small></h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">                    
+                    <a href="javascript:void(0)">Mas información...</a>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-sm-3">
-        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-            <div class="card-body">
-                <p class="card-title">Total con SAP</p>
-                <h3>{{totalsap}}</h3>
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon bg-success">                    
+                    <h3 >{{totalsap}}</h3>
+                </div>
+                <p class="card-category">Total Exitosos</p>
+                <h3 class="card-title"><small> Con No. SAP</small></h3>
+            </div><div class="card-footer">
+                <div class="stats">                    
+                    <a href="javascript:void(0)">Mas información...</a>
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
     <div class="col-sm-3">
-        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-            <div class="card-body">
-                <p class="card-title">Total sin SAP</p>
-                <h3>{{totalnosap}}</h3>
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon bg-danger">                    
+                    <h3 >{{totalnosap}}</h3>
+                </div>
+                <p class="card-category">Total sin SAP</p>
+                <h3 class="card-title"><small> Sin No. SAP</small></h3>
+            </div><div class="card-footer">
+                <div class="stats">                    
+                    <a href="javascript:void(0)">Mas información...</a>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-sm-3">
-        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-            <div class="card-body">
-                <p class="card-title">Pendientes</p>
-                <h3>{{totalPendiente}}</h3>
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon bg-warning">                    
+                    <h3 >{{totalPendiente}}</h3>
+                </div>
+                <p class="card-category">Total Pendientes</p>
+                <h3 class="card-title"><small> Pendientes</small></h3>
+            </div><div class="card-footer">
+                <div class="stats">                    
+                    <a href="javascript:void(0)">Mas información...</a>
+                </div>
             </div>
         </div>
     </div>
-</div>    
+</div>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         <div class="card bg-white mb-3">
             <div class="card-body">
                 <app-bar-chart></app-bar-chart>
@@ -64,7 +92,7 @@
         
         <!--<button mat-button mat-raised-button color="primary" (click)="randomize()">Actualizar</button>-->
     </div> 
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         <div class="card bg-white mb-3">
             <div class="card-body">
                 <app-bar-chart02></app-bar-chart02>
@@ -73,7 +101,7 @@
     </div>
 </div>    
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         
     </div>
 </div>

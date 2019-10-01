@@ -1,0 +1,144 @@
+type SifeSincronizar @db(name: "sife_sincronizar") {
+  id: ID! @id
+  cuis: String @db(name: "CUIS")
+  estado: Int @db(name: "Estado")
+  fechaSincronizacion: DateTime @db(name: "FechaSincronizacion")
+  mensaje: String @db(name: "Mensaje")
+  nit: Int @db(name: "Nit")
+  servicioWeb: String @db(name: "ServicioWeb")
+}
+
+type SifeSincronizarActividade @db(name: "sife_sincronizarActividades") {
+  id: ID! @id
+  codigoCaeb: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarListaLeyendasFactura @db(name: "sife_sincronizarListaLeyendasFactura") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarListaMensajesServicio @db(name: "sife_sincronizarListaMensajesServicios") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarListaProductosServicio @db(name: "sife_sincronizarListaProductosServicios") {
+  id: ID! @id
+  codigoActividad: Int
+  codigoProducto: Int
+  descripcionProducto: String
+  fecha: DateTime
+  nandina: String
+}
+
+type SifeSincronizarParametricaEventosSignificativo @db(name: "sife_sincronizarParametricaEventosSignificativos") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaMotivoAnulacion @db(name: "sife_sincronizarParametricaMotivoAnulacion") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaPaisOrigen @db(name: "sife_sincronizarParametricaPaisOrigen") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoAmbiente @db(name: "sife_sincronizarParametricaTipoAmbiente") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoComponente @db(name: "sife_sincronizarParametricaTipoComponente") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoDepartamento @db(name: "sife_sincronizarParametricaTipoDepartamento") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoDocumentoFiscal @db(name: "sife_sincronizarParametricaTipoDocumentoFiscal") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoDocumentoIdentidad @db(name: "sife_sincronizarParametricaTipoDocumentoIdentidad") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoDocumentoSector @db(name: "sife_sincronizarParametricaTipoDocumentoSector") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoEmision @db(name: "sife_sincronizarParametricaTipoEmision") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoMetodoPago @db(name: "sife_sincronizarParametricaTipoMetodoPago") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoModalidad @db(name: "sife_sincronizarParametricaTipoModalidad") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoMoneda @db(name: "sife_sincronizarParametricaTipoMoneda") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaTipoPuntoVenta @db(name: "sife_sincronizarParametricaTipoPuntoVenta") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}
+
+type SifeSincronizarParametricaUnidadMedida @db(name: "sife_sincronizarParametricaUnidadMedida") {
+  id: ID! @id
+  codigoClasificador: Int
+  descripcion: String
+  fecha: DateTime
+}

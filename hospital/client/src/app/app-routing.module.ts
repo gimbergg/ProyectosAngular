@@ -14,17 +14,17 @@ import { ResListComponent } from './componentes/reservas/res-list/res-list.compo
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent,canActivate:[AuthGuard] },
-  { path: 'pacientes', component: ListComponent,canActivate:[AuthGuard]},
+  { path: '', component: HomeComponent},
+  { path: 'pacientes', component: ListComponent},
   { path: 'pacientes/:id', component: ViewComponent },
   { path: 'pacientes/create', component: FormCreateComponent },
-  { path: 'doctores', component: ListDocComponent, canActivate:[AuthGuard] },
+  { path: 'doctores', component: ListDocComponent},
   { path: 'citas', component: ResListComponent },
-  { path: 'user', component: ListUserComponent,canActivate:[AuthGuard] },
+  { path: 'user', component: ListUserComponent },
   { path: 'user/login', component: LoginComponent },
   { path: 'user/register', component: RegisterComponent },
   { path: 'user/perfil', component: PerfilComponent }, // Only user auth
-  { path: '**', component: Page404Component,canActivate:[AuthGuard] }
+  { path: '**', component: Page404Component }//,canActivate:[AuthGuard]
 ];
 
 @NgModule({

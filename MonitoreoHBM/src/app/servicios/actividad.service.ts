@@ -16,4 +16,14 @@ export class ActividadService {
     //return this.firestore.collection(':80/Pedido').snapshotChanges();
     return this.db.list(':80/Actividad/'+ org).snapshotChanges();
   }
+
+  getActividadAll() {
+    //return this.firestore.collection(':80/Pedido').snapshotChanges();
+    return this.db.list(':80/Actividad').snapshotChanges();
+  }
+
+  getTarea() {
+    //return this.firestore.collection(':80/Pedido').snapshotChanges();
+    return this.db.list(':80/Tarea').snapshotChanges();
+  }
 }

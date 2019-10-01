@@ -56,7 +56,8 @@ export class DataApiService {
     // TODO: obtener token
     // TODO: not null
     let token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/pacientes?access_token=${token}`;
+    const url_api = `http://localhost:3000/api/pacientes`;
+    //const url_api = `http://localhost:3000/api/pacientes?access_token=${token}`
     return this.http
     .post<PacietnesInterface>(url_api, paciente,{headers: this.headers})
     .pipe(map(data => data));
@@ -65,7 +66,8 @@ export class DataApiService {
     // TODO: obtener token
     // TODO: not null
     const token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/pacientes/${id}/?access_token=${token}`;
+    const url_api = `http://localhost:3000/api/pacientes/${id}`;
+    //const url_api = `http://localhost:3000/api/pacientes/${id}/?access_token=${token}`;
     return this.http
     .put<PacietnesInterface>(url_api, paciente,{headers: this.headers})
     .pipe(map(data => data));
@@ -76,7 +78,8 @@ export class DataApiService {
     console.log(id);
     //const url_api = `http://localhost:3000/api/pacientes/${id}`;
     let token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/pacientes/${id}/?access_token=${token}`;
+    //const url_api = `http://localhost:3000/api/pacientes/${id}/?access_token=${token}`;
+    const url_api = `http://localhost:3000/api/pacientes/${id}`;
     console.log(url_api);
     return this.http
     .delete<PacietnesInterface>(url_api,{headers: this.headers})
@@ -86,7 +89,8 @@ export class DataApiService {
   getAllUsers(){
     let token = this.authService.getToken();
     console.log(token);
-    const url_api = `http://localhost:3000/api/Users/?access_token=${token}`;
+    //const url_api = `http://localhost:3000/api/Users/?access_token=${token}`;
+    const url_api = `http://localhost:3000/api/Users`;
     console.log(url_api);
     return this.http.get(url_api);
   }
@@ -103,7 +107,8 @@ export class DataApiService {
     // TODO: obtener token
     // TODO: not null
     let token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/doctores?access_token=${token}`;
+    //const url_api = `http://localhost:3000/api/doctores?access_token=${token}`;
+    const url_api = `http://localhost:3000/api/doctores`;
     return this.http
     .post<PacietnesInterface>(url_api, doctor,{headers: this.headers})
     .pipe(map(data => data));
@@ -112,7 +117,8 @@ export class DataApiService {
     // TODO: obtener token
     // TODO: not null
     const token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/doctores/${id}/?access_token=${token}`;
+    //const url_api = `http://localhost:3000/api/doctores/${id}/?access_token=${token}`;
+    const url_api = `http://localhost:3000/api/doctores/${id}`;
     return this.http
     .put<PacietnesInterface>(url_api, doctor,{headers: this.headers})
     .pipe(map(data => data));
@@ -123,7 +129,8 @@ export class DataApiService {
     console.log(id);
     //const url_api = `http://localhost:3000/api/pacientes/${id}`;
     let token = this.authService.getToken();
-    const url_api = `http://localhost:3000/api/doctores/${id}/?access_token=${token}`;
+    //const url_api = `http://localhost:3000/api/doctores/${id}/?access_token=${token}`;
+    const url_api = `http://localhost:3000/api/doctores/${id}`;
     console.log(url_api);
     return this.http
     .delete<PacietnesInterface>(url_api,{headers: this.headers})

@@ -2,32 +2,32 @@
   "name": "pacientes",
   "plural": "pacientes",
   "base": "PersistedModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": false
   },
   "properties": {
     "NRO_SEGURO_PAC": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "CI_PAC": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "NOMBRE_PAC": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": 0
     },
     "APE_PAT_PAC": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "0"
     },
     "APE_MAT_PAC": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "0"
     },
     "SEXO_PAC": {
@@ -37,7 +37,7 @@
     },
     "FECHA_NAC_PAC": {
       "type": "date",
-      "required": true,
+      "required": false,
       "default": "0"
     },
     "EMAIL_PAC": {
@@ -47,11 +47,11 @@
     },
     "DIRECCION_PAC": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "TELEFONO_PAC": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "MATR_BEN_PAC": {
       "type": "string",
@@ -71,13 +71,13 @@
     },
     "FECHA_CREACION": {
       "type": "date",
-      "required": true,
+      "required": false,
       "dataType": "timestamp",
       "defaultFn": "now"
     },
     "FECHA_MODIF": {
       "type": "date",
-      "required": true,
+      "required": false,
       "dataType": "timestamp",
       "defaultFn": "now"
     }

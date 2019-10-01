@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import { Pedidos } from '../model/pedidos.model'
 
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class PedidosService {
   pedidos: AngularFireList<any>;     
+
   constructor(
     private db: AngularFireDatabase,
-    private firestore:AngularFirestore
   ){}
 
   getPedidos() {
@@ -20,10 +22,17 @@ export class PedidosService {
   getPedidosId(id: String){
     return this.db.list(':80/Pedido/' + id).snapshotChanges();
   }
+  getPedidoDetalle(){
+    return this.db.list(':80/PedidoDetalle').snapshotChanges();
+  }
   getPedidoDetalleId(id: String){
     return this.db.list(':80/PedidoDetalle/' + id).snapshotChanges();
   }
-  getHistorialPedidosId(id: String){
-    return this.db.list(':80/HistorialPedidos/' + id).snapshotChanges();
+  getHistorialPedidos(){
+    return this.db.list(':80/HistorialPedidos/').snapshotChanges();
+  }
+
+  getPed(): Observable<any>{
+    return this.db.list(':80/Pedido').snapshotChanges();
   }
 }

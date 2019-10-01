@@ -13,7 +13,19 @@ export class CobranzasService {
     private firestore:AngularFirestore
   ){}
 
-  getCobranzas() {  
+  getRecibos() {  
     return this.db.list(':80/Recibo').snapshotChanges();
+  }
+
+  getAbonos() {  
+    return this.db.list(':80/Abono').snapshotChanges();
+  }
+
+  getHistorialRecibos() {  
+    return this.db.list(':80/HistorialCobranzas').snapshotChanges();
+  }
+
+  getDatosImagenes(){
+    return this.db.list(':80/DatosImagenes').snapshotChanges();
   }
 }

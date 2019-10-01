@@ -7,11 +7,11 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)" >
     <mat-toolbar>
-        <span class="titulo_nav">{{app_name}}</span>
+        <span class="titulo_nav">Hospital</span>
     </mat-toolbar>
     <span> <img src="../../../../assets/avatar.png" class="rounded-circle img-nav" alt="perfil" ></span>
     <mat-toolbar-row class="my-row-sidebar">
-        <span class="rol-user">Bienvenido <b>{{user.username}} </b></span>
+        <span class="rol-user">Bienvenido <b>LIMING </b></span>
     </mat-toolbar-row>
     <div class="linea"></div>
     <mat-nav-list>
@@ -32,11 +32,12 @@
   </mat-sidenav>
   
   <mat-sidenav-content class="fondo-nav">   
-      <mat-toolbar *ngIf="islogged" color="primary" >
-          <!--<button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+    <!--*ngIf="islogged"-->
+      <mat-toolbar  color="primary" >
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
             *ngIf="isHandset$ | async">
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-          </button>-->
+          </button>
           <button type="button" mat-button (click)="drawer.toggle()">
             <mat-icon aria-label="Side nav toggle icon" style="font-size: 23px; color:#25394a;">view_quilt</mat-icon>
           </button>
@@ -54,7 +55,7 @@
         </mat-toolbar>   
     <!-- Add Content Here -->
     <br>
-    <div class="container-fluid contenido">
+    <div class="container-fluid Contenido">
       <router-outlet></router-outlet>
     </div>
     <br>

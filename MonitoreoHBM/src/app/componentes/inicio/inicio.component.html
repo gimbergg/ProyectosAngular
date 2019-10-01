@@ -1,37 +1,194 @@
 <br><br>
 <div class="container-fluid">
-  <div class="row">
-      <div class="col-sm-3">
-          <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-              <div class="card-body">
-                  <h5 class="card-title">Total Pedidos</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-          </div>
-      </div>
-      <div class="col-sm-3">
-          <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-              <div class="card-body">
-                  <h5 class="card-title">Success card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-          </div>
-      </div>
-      <div class="col-sm-3">
-          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-              <div class="card-body">
-                  <h5 class="card-title">Info card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-          </div>
-      </div>
-      <div class="col-sm-3">
-          <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-              <div class="card-body">
-                  <h5 class="card-title">Warning card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-          </div>
-      </div>
-  </div>    
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3>{{CountPedido}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small> Pedidos</small></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{CountRecibo}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small> Recibos</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{CountActividadAll}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small> Actividades</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <span>Industria:{{CountActividadx}} </span>
+                        <span>Consumo:{{CountActividadx}} </span>
+                        <span>Cobranzas:{{CountActividadx}} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{CountTarea}}</h3>
+                    </div>
+                    <p class="card-category"> Total</p>
+                    <h3 class="card-title"><small> Tareas</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3>{{CountPedidoDetalle}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small> PedidoDetalle</small></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{CountAbono}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small> Abono</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{CountDatosImagenes}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small>DatosImagenes</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{CountUsuario}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small>Usuarios</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3>{{CountHitorialPedido}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small> HistorialPedidos</small></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{CountHistorialRecibo}}</h3>
+                    </div>
+                    <p class="card-category">Total</p>
+                    <h3 class="card-title"><small>HitorialCobranzas</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{totalnosap}}</h3>
+                    </div>
+                    <p class="card-category">Total sin SAP</p>
+                    <h3 class="card-title"><small> Sin No. SAP</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon bgMorado">                    
+                        <h3 >{{totalPendiente}}</h3>
+                    </div>
+                    <p class="card-category">Total Pendientes</p>
+                    <h3 class="card-title"><small> Pendientes</small></h3>
+                </div><div class="card-footer">
+                    <div class="stats">                    
+                        <a href="javascript:void(0)">Mas información...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

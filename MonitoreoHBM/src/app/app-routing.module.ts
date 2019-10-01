@@ -9,6 +9,7 @@ import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.co
 import { InicioComponent } from './componentes/inicio/inicio.component';
 
 const routes: Routes = [
+  { path: '', component: InicioComponent},
   { path: 'inicio', component: InicioComponent},
   { path: 'actividad', component: ActividadComponent},
   { path: 'pedidos', component: PedidosComponent},

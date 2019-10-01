@@ -22,7 +22,7 @@ export class CobranzasComponent implements OnInit {
   }
 
   getListCobranza() {
-    this.cobranzasService.getCobranzas()      
+    this.cobranzasService.getRecibos()      
       .subscribe(data => {
         this.listaCobranza = []
         data.forEach(element => {
