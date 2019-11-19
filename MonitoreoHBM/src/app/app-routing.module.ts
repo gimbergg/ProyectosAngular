@@ -6,6 +6,7 @@ import { ActividadComponent } from './componentes/actividad/actividad.component'
 import { Page404Component } from './componentes/page404/page404.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.component';
+import { DashboardComponent as dashboardRecibos } from './componentes/cobranzas/dashboard/dashboard.component'
 import { InicioComponent } from './componentes/inicio/inicio.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'pedidos', component: PedidosComponent},
   { path: 'pedidos/Dashboard', component: DashboardComponent},
   { path: 'cobranzas', component: CobranzasComponent},
+  { path: 'cobranzas/Dashboard', component: dashboardRecibos},
   { path: 'usuarios', component: UsuariosComponent},
   { path: '**', component: Page404Component }
 ];

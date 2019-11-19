@@ -1,0 +1,38 @@
+{
+  "name": "sife_sincronizar",
+  "plural": "sife_sincronizar",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false
+    },
+    "ServicioWeb": {
+      "type": "string"
+    },
+    "Estado": {
+      "type": "number"
+    },
+    "Mensaje": {
+      "type": "string"
+    },
+    "FechaSincronizacion": {
+      "type": "string"
+    },
+    "CUIS": {
+      "type": "string"
+    },
+    "Nit": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

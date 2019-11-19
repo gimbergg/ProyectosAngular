@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "sife_sincronizar": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarActividades": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarListaLeyendasFactura": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarListaMensajesServicios": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarListaProductosServicios": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_FechaHora": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaEventosSignificativos": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaMotivoAnulacion": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaPaisOrigen": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoAmbiente": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoComponente": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoDepartamento": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoDocumentoFiscal": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoDocumentoIdentidad": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_global": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoDocumentoSector": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoEmision": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoMetodoPago": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoModalidad": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoMoneda": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaTipoPuntoVenta": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_sincronizarParametricaUnidadMedida": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_FechaHora_H": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "sife_pdv": {
+    "dataSource": "qas",
+    "public": true
+  },
+  "test": {
+    "dataSource": "qas",
+    "public": true
+  }
+}

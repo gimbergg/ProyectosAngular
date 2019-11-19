@@ -1,0 +1,35 @@
+{
+  "name": "sife_FechaHora",
+  "plural": "sife_FechaHora",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "required": false
+    },
+    "fechaHora": {
+      "type": "string"
+    },
+    "transaccion": {
+      "type": "string"
+    },
+    "fechaHoraSer": {
+      "type": "string"
+    },
+    "delta": {
+      "type": "number"
+    },
+    "listaCodigosRespuestas": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

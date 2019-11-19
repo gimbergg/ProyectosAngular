@@ -32,6 +32,7 @@ import { Page404Component } from './componentes/page404/page404.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { ViewComponent } from './componentes/pedidos/view/view.component';
 import { DashboardComponent } from './componentes/pedidos/dashboard/dashboard.component';
+import { DashboardComponent as dashboardRecibos} from './componentes/cobranzas/dashboard/dashboard.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { PieChartComponent } from './componentes/pedidos/dashboard/pie-chart/pie-chart.component';
 import { BarChartComponent } from './componentes/pedidos/dashboard/bar-chart/bar-chart.component';
@@ -49,6 +50,7 @@ import { BarChart02Component } from './componentes/pedidos/dashboard/bar-chart02
     UsuariosComponent,
     ViewComponent,
     DashboardComponent,
+    dashboardRecibos,
     InicioComponent,
     PieChartComponent,
     BarChartComponent,

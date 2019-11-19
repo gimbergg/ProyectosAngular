@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PedidosService } from 'src/app/servicios/pedidos.service';
-import { Pedidos } from '../../../model/pedidos.model'
+import { CobranzasService } from 'src/app/servicios/cobranzas.service';
+import { Cobranzas } from '../../../model/cobranzas.model'
 
 @Component({
   selector: 'app-dashboard',
@@ -15,11 +15,11 @@ export class DashboardComponent implements OnInit {
   totalnosap:any = 0;
   totalPendiente:any = 0;
 
-  otro: Pedidos[] = [];
+  otro: Cobranzas[] = [];
 
 
   constructor(
-    private pedidosService:PedidosService,
+    private pedidosService:CobranzasService,
   ) { }
 
   ngOnInit() {
@@ -28,9 +28,9 @@ export class DashboardComponent implements OnInit {
   }
 
   getPed(){
-    this.pedidosService.getPed().subscribe(
+    this.pedidosService.getRecibos().subscribe(
       datos => {
-        this.otro = datos;
+        /* this.otro = datos; */
         console.log("DATOS DE PEDIDOS" + this.otro.length)
       },
       erro => {
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   pendiente:any;
   arr: any;
   getListPedido() {
-    this.pedidosService.getPedidos()      
+    this.pedidosService.getRecibos()      
       .subscribe(elemento => {
         this.sap = [];
         this.nosap = [];

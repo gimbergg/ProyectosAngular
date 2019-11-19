@@ -1,0 +1,23 @@
+{
+  "db": {
+    "host": "192.168.1.101",
+    "port": 3306,
+    "url": "",
+    "database": "sifedb",
+    "password": "sample",
+    "name": "db",
+    "user": "root",
+    "connector": "mysql",
+    "connectionTimeout": 10000
+  },
+  "qas": {
+    "host": "192.168.1.101",
+    "port": 3306,
+    "url": "",
+    "database": "sifedb",
+    "password": "sample",
+    "name": "qas",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

@@ -32,7 +32,7 @@ export class PedidosService {
     return this.db.list(':80/HistorialPedidos/').snapshotChanges();
   }
 
-  getPed(): Observable<any>{
+  getPed(): Observable<any>{     
     return this.db.list(':80/Pedido').snapshotChanges();
   }
 }

@@ -21,9 +21,13 @@ export class ActividadComponent implements OnInit {
   contador :any = 0;
   contador2 :any = 0;
   contador9 :any = 0;
+
   constructor(
     private actividadService:ActividadService
   ) { }
+  public actividades = []
+  public actividad = ''
+
   foods: Food[] = [
     {value: '1100', viewValue: '1100'},
     {value: '1200', viewValue: '1200'},
@@ -33,7 +37,10 @@ export class ActividadComponent implements OnInit {
   selected = '1100';
 
   ngOnInit() {
-    this.getListActividad();
+    //this.getListActividad();
+    this.actividadService.getActividadAll().subscribe(actividades => {
+        console.log('Actividades resultado = ', actividades);
+    })
   }
   getDiv(elemento){
     this.actividadService.getActividad(elemento)      
@@ -45,6 +52,7 @@ export class ActividadComponent implements OnInit {
         })
       });
   }
+
   getListActividad() {
     this.actividadService.getActividad(1100)      
       .subscribe(data => {

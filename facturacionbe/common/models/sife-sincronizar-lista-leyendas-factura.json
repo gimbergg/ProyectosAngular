@@ -1,0 +1,29 @@
+{
+  "name": "sife_sincronizarListaLeyendasFactura",
+  "plural": "sife_sincronizarListaLeyendasFactura",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false
+    },
+    "codigoClasificador": {
+      "type": "number"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "fecha": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

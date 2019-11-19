@@ -1,0 +1,35 @@
+{
+  "name": "sife_sincronizarListaProductosServicios",
+  "plural": "sife_sincronizarListaProductosServicios",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false
+    },
+    "codigoActividad": {
+      "type": "number"
+    },
+    "codigoProducto": {
+      "type": "number"
+    },
+    "descripcionProducto": {
+      "type": "string"
+    },
+    "nandina": {
+      "type": "string"
+    },
+    "fecha": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

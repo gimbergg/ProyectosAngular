@@ -50,93 +50,94 @@ export class InicioComponent implements OnInit {
   cantidad(){
 
   }
+  
   getPedidos(){
-    this.pedidosService.getPed().subscribe(
+    /* this.pedidosService.getPed().subscribe(
       response => {
         this.CountPedido = response.length;         
       },
       error =>{}
-    )  
+    )  */ 
   }
 
   getPedidoDetalles(){
-    this.pedidosService.getPedidoDetalle().subscribe(
+    /* this.pedidosService.getPedidoDetalle().subscribe(
       response => {
         this.CountPedidoDetalle = response.length;         
       },
       error =>{}
-    )  
+    )   */
   }
 
   getHistorialPedidos(){
-    this.pedidosService.getHistorialPedidos().subscribe(
+    /* this.pedidosService.getHistorialPedidos().subscribe(
       response => {
         this.CountHitorialPedido = response.length;         
       },
       error =>{}
-    )
+    ) */
   }
 
   getRecibos(){
-    this.cobranzasService.getRecibos().subscribe(
+    /* this.cobranzasService.getRecibos().subscribe(
       response => {
         this.CountRecibo = response.length;         
       },
       error =>{}
-    )
+    ) */
   }
 
   getAbonos(){
-    this.cobranzasService.getAbonos().subscribe(
+    /* this.cobranzasService.getAbonos().subscribe(
       response => {
         this.CountAbono = response.length;         
       },
       error =>{}
-    )
+    ) */
   }
 
   getHistorialCobranzas(){
-    this.cobranzasService.getHistorialRecibos().subscribe(
+    /* this.cobranzasService.getHistorialRecibos().subscribe(
       response => {
         this.CountHistorialRecibo = response.length;         
       },
       error =>{}
-    )
+    ) */
   }
 
   getDatosImagens(){
-    this.cobranzasService.getDatosImagenes().subscribe(
+   /*  this.cobranzasService.getDatosImagenes().subscribe(
       response => {
         this.CountDatosImagenes = response.length;         
       },
       error =>{}
-    )
+    ) */
   }
 
   getActividades(x:any){    
-    this.actividadService.getActividad(x).subscribe(
+    /* this.actividadService.getActividad(x).subscribe(
       response => {
         return  response.length;         
       },
       error =>{}
-    )
+    ) */
   }
   getActividadesAll(){    
-    this.actividadService.getActividadAll().subscribe(
+    /* this.actividadService.getActividadAll().subscribe(
       response => {
         this.CountActividadAll = response.length;          
       },
       error =>{}
-    )
+    ) */
   }
 
   getTarea(){
-    this.actividadService.getTarea().subscribe(
+    /* this.actividadService.getTarea().subscribe(
       response => {
         this.CountTarea = response.length;          
       },
       error =>{}
-    )
+    ) */
   }
 
   getCustomers(){}
