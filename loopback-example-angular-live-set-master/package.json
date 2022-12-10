@@ -9,7 +9,7 @@
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "errorhandler": "^1.1.1",
-    "express": "^4.13.0",
+    "express": "^4.17.3",
     "gulp-bower": "0.0.14",
     "gulp-loopback-sdk-angular": "^1.0.0",
     "loopback": "^3.0.0",
